@@ -6,6 +6,12 @@ export default defineConfig({
   plugins: [react()],
   base: '/',
   publicDir: 'public',
+  server: {
+    host: true,
+    port: 5173,
+    strictPort: false,
+    open: false
+  },
   build: {
     assetsDir: 'assets',
     copyPublicDir: true,
