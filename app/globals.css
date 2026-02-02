@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    @apply bg-white text-secondary antialiased;
+    font-family: var(--font-inter), system-ui, sans-serif;
+  }
+
+  :root {
+    --color-warm-red: #FF4E45;
+    --color-outer-space: #2B2D42;
+    --color-perfect-white: #FFFFFF;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+}
+
+@layer components {
+  /* Button Styles with Animation and Border */
+  .btn-primary {
+    @apply rounded-md border-2 border-primary bg-primary px-6 py-3 text-base font-semibold text-white transition-all duration-300 hover:bg-primary-dark hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply rounded-md border-2 border-secondary bg-secondary px-6 py-3 text-base font-semibold text-white transition-all duration-300 hover:bg-secondary-dark hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 active:scale-95;
+  }
+
+  .btn-outline {
+    @apply rounded-md border-2 border-primary bg-transparent px-6 py-3 text-base font-semibold text-primary transition-all duration-300 hover:bg-primary hover:text-white hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 active:scale-95;
+  }
+
+  .btn-outline-secondary {
+    @apply rounded-md border-2 border-secondary bg-transparent px-6 py-3 text-base font-semibold text-secondary transition-all duration-300 hover:bg-secondary hover:text-white hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 active:scale-95;
+  }
+}
