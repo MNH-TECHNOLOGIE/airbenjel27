@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 export default function KitsPage() {
-  const products = getProductsByCategory("kits");
+  const products = getProductsByCategory("kits") || [];
 
   return (
     <div className="min-h-screen bg-white pt-12 sm:pt-14">
