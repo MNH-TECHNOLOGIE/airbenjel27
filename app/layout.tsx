@@ -20,11 +20,12 @@ export const metadata: Metadata = {
     template: "%s | AIR BENJEL 27",
   },
   description: "AIR BENJEL 27 - Équipementier sportif spécialisé dans la conception, fabrication et commercialisation d'articles de sport, vêtements et accessoires de mode, construction de sites sportifs et consulting.",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-  },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({
