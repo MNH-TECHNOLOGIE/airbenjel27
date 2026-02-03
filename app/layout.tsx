@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import Loading from "@/components/layout/Loading";
 import { CartProvider } from "@/lib/cart-context";
 import { CartDrawerProvider } from "@/lib/cart-drawer-context";
 import CartDrawer from "@/components/cart/CartDrawer";
@@ -34,6 +35,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className={inter.variable}>
       <body>
+        <Loading />
         <CartProvider>
           <CartDrawerProvider>
             <div className="flex min-h-screen flex-col">
