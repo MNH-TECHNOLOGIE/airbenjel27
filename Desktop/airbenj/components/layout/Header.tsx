@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useCart } from "@/lib/cart-context";
 import { useCartDrawer } from "@/lib/cart-drawer-context";
@@ -13,6 +14,7 @@ const navItems = [
   { name: "Promotion", href: "/promotion" },
   { name: "Catalogue", href: "/collections" },
   { name: "Cadeaux", href: "/gifts" },
+  { name: "À propos", href: "/about" },
 ];
 
 export default function Header() {
@@ -46,11 +48,16 @@ export default function Header() {
             <div className="flex items-center">
               <Link
                 href="/"
-                className={`text-base font-bold tracking-tight transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:text-lg md:text-xl ${
-                  scrolled || !isHomePage ? "text-secondary" : "text-white"
-                }`}
+                className="flex items-center transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
               >
-                AIR BENJEL 27
+                <Image
+                  src="/logowithout.png"
+                  alt="AIR BENJEL 27 Logo"
+                  width={120}
+                  height={40}
+                  className="h-8 w-auto object-contain sm:h-10 md:h-12"
+                  priority
+                />
               </Link>
             </div>
 

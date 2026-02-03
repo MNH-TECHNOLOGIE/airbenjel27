@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "À propos",
@@ -7,390 +8,277 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-white pt-12 sm:pt-14">
-      {/* Hero Section */}
-      <div className="bg-gradient-to-br from-secondary to-secondary-dark py-16 sm:py-20">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 pt-12 sm:pt-14">
+      {/* Hero Section - Modern & Clean */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-secondary via-secondary to-primary py-20 sm:py-28">
+        <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-5"></div>
+        <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl font-bold text-white sm:text-5xl md:text-6xl">
+            <div className="mb-6 inline-block rounded-full bg-white/10 px-4 py-2 backdrop-blur-sm">
+              <span className="text-sm font-semibold text-white">À propos de nous</span>
+            </div>
+            <h1 className="mb-4 text-4xl font-bold text-white sm:text-5xl md:text-6xl lg:text-7xl">
               AIR BENJEL 27
             </h1>
-            <p className="mt-4 text-xl text-white/90 sm:text-2xl">
-              Équipementier Sportif
+            <p className="mx-auto max-w-2xl text-lg text-white/90 sm:text-xl md:text-2xl">
+              Une marque africaine d&apos;authentiques vêtements de sport, basée à Casablanca au Maroc
             </p>
-            {/* Badge Partenaire Officiel */}
-            <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-primary/20 px-6 py-3 backdrop-blur-sm">
-              <span className="text-2xl">🇬🇶</span>
-              <span className="text-sm font-semibold text-white sm:text-base">
-                Fournisseur Officiel - NZALANG NACIONAL
-              </span>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+              <div className="flex items-center gap-2 rounded-full bg-white/20 px-4 py-2 backdrop-blur-sm">
+                <span className="text-2xl">🇬🇶</span>
+                <span className="text-sm font-semibold text-white">Fournisseur Officiel</span>
+              </div>
+              <div className="text-sm text-white/80">NZALANG NACIONAL</div>
             </div>
-            <p className="mt-3 text-sm text-white/80 sm:text-base">
-              Équipe Nationale de Guinée Équatoriale
-            </p>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Main Content */}
-      <div className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-        {/* Company Description */}
-        <section className="mb-12 sm:mb-16">
-          <div className="prose prose-lg mx-auto max-w-3xl">
-            <h2 className="text-3xl font-bold text-secondary sm:text-4xl">
-              Qui sommes-nous ?
+      {/* Biographie Section - Modern Card Design */}
+      <section className="py-16 sm:py-20">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 text-3xl font-bold text-secondary sm:text-4xl md:text-5xl">
+              Biographie
             </h2>
-            <p className="mt-6 text-base leading-7 text-gray-700 sm:text-lg">
-              <strong>AIR BENJEL 27</strong> est un équipementier sportif de référence,
-              spécialisé dans la conception, la fabrication et la commercialisation
-              d&apos;articles de sport de haute qualité. Notre engagement est de fournir
-              des équipements, articles et accessoires de sport qui répondent aux besoins
-              des athlètes professionnels comme des amateurs passionnés.
-            </p>
-            
-            {/* Partenariat Officiel */}
-            <div className="mt-8 rounded-lg border-2 border-primary/20 bg-primary/5 p-6 sm:p-8">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0">
-                  <span className="text-4xl">🇬🇶</span>
+            <div className="mx-auto h-1 w-20 bg-primary"></div>
+          </div>
+
+          {/* Founders Card - Modern Layout */}
+          <div className="mb-16 overflow-hidden rounded-2xl bg-white shadow-xl transition-shadow hover:shadow-2xl">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+              {/* Image Side */}
+              <div className="relative h-96 bg-gradient-to-br from-primary/10 to-secondary/10 md:h-auto">
+                <div className="absolute inset-0 flex items-center justify-center p-8">
+                  <div className="relative h-80 w-80 overflow-hidden rounded-2xl shadow-2xl">
+                    <Image
+                      src="/image (30).png"
+                      alt="Fondateurs de AIR BENJEL 27 - Jean Francis BELINGA BENJEL et Samuel BENJEL E. BELINGA"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 320px"
+                      priority
+                    />
+                  </div>
                 </div>
-                <div className="flex-1">
-                  <h3 className="mb-2 text-xl font-bold text-secondary sm:text-2xl">
-                    Partenaire Officiel
-                  </h3>
-                  <p className="mb-3 text-base font-semibold text-primary sm:text-lg">
-                    Fournisseur officiel des produits dérivés de l&apos;équipe nationale de Guinée Équatoriale
+              </div>
+              
+              {/* Content Side */}
+              <div className="flex flex-col justify-center p-8 sm:p-12">
+                <div className="mb-4 inline-block w-fit rounded-full bg-primary/10 px-4 py-1.5">
+                  <span className="text-sm font-semibold text-primary">Fondateurs</span>
+                </div>
+                <h3 className="mb-4 text-2xl font-bold text-secondary sm:text-3xl">
+                  Une famille passionnée de football
+                </h3>
+                <div className="mb-6 space-y-2">
+                  <p className="text-lg font-semibold text-gray-900">
+                    Jean Francis BELINGA BENJEL
                   </p>
-                  <p className="mb-2 text-base text-gray-700">
-                    <strong>NZALANG NACIONAL</strong> 🇬🇶
-                  </p>
-                  <p className="text-sm text-gray-600 sm:text-base">
-                    Nous sommes fiers d&apos;être le fournisseur officiel de l&apos;équipe nationale
-                    de Guinée Équatoriale, fournissant des équipements et produits dérivés de
-                    qualité supérieure pour soutenir les performances de nos athlètes sur la
-                    scène internationale.
+                  <p className="text-lg font-semibold text-gray-900">
+                    Samuel BENJEL E. BELINGA
                   </p>
                 </div>
+                <p className="text-base leading-relaxed text-gray-600 sm:text-lg">
+                  Fondée en 2025, AIR BENJEL 27 a pour mission de promouvoir l&apos;individualité et l&apos;originalité grâce à des technologies et des designs de pointe pour les clubs et athlètes.
+                </p>
               </div>
             </div>
           </div>
-        </section>
 
-        {/* Main Activities */}
-        <section className="mb-12 sm:mb-16">
-          <h2 className="mb-8 text-center text-3xl font-bold text-secondary sm:text-4xl">
-            Nos Activités Principales
-          </h2>
+          {/* Mission Section */}
+          <div className="mb-12 grid gap-8 md:grid-cols-2">
+            <div className="rounded-xl bg-white p-8 shadow-lg">
+              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10">
+                <svg className="h-7 w-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="mb-3 text-xl font-bold text-secondary">Notre Mission</h3>
+              <p className="leading-relaxed text-gray-600">
+                Rendre accessibles les vêtements de sports de haute qualité, tout en offrant une large gamme de services personnalisés, notamment des designs uniques et la production des produits dérivés, grâce à des technologies innovantes et des installations ultramodernes.
+              </p>
+            </div>
+
+            <div className="rounded-xl bg-white p-8 shadow-lg">
+              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10">
+                <svg className="h-7 w-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="mb-3 text-xl font-bold text-secondary">Notre Vision</h3>
+              <p className="leading-relaxed text-gray-600">
+                Produire et fournir une gamme de vêtements pour les athlètes professionnels, les fédérations sportives, ainsi que les clubs amateurs et toutes autres organisations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Création Story Section - Timeline Style */}
+      <section className="bg-white py-16 sm:py-20">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 text-3xl font-bold text-secondary sm:text-4xl md:text-5xl">
+              Création de AIR BENJEL 27
+            </h2>
+            <div className="mx-auto h-1 w-20 bg-primary"></div>
+          </div>
+
+          <div className="mx-auto max-w-4xl">
+            <div className="space-y-8">
+              {/* Story Card 1 */}
+              <div className="relative rounded-xl bg-gradient-to-br from-primary/5 to-primary/10 p-8 shadow-lg">
+                <div className="absolute -left-4 top-8 h-8 w-8 rounded-full bg-primary sm:-left-6"></div>
+                <h3 className="mb-4 text-xl font-bold text-secondary sm:text-2xl">
+                  Une révolution panafricaine
+                </h3>
+                <p className="leading-relaxed text-gray-700">
+                  <strong>Jean Francis BELINGA BENJEL</strong> et <strong>Samuel BENJEL E. BELINGA</strong> ont révolutionné l&apos;industrie du vêtement de sport en Afrique du Nord, du Centre et de l&apos;Ouest. La famille a identifié un manque sur le marché des répliques de maillots de haute qualité pour les clubs sportifs, fédérations et associations sportives.
+                </p>
+              </div>
+
+              {/* Story Card 2 */}
+              <div className="relative rounded-xl bg-gradient-to-br from-secondary/5 to-secondary/10 p-8 shadow-lg">
+                <div className="absolute -left-4 top-8 h-8 w-8 rounded-full bg-secondary sm:-left-6"></div>
+                <h3 className="mb-4 text-xl font-bold text-secondary sm:text-2xl">
+                  La naissance d&apos;une marque
+                </h3>
+                <p className="leading-relaxed text-gray-700">
+                  C&apos;est ainsi qu&apos;elle a décidé de répondre à ce besoin en créant sa propre marque, <strong>AIR BENJEL 27 en 2025</strong>, avec l&apos;ambition de proposer des vêtements non seulement esthétiques, mais aussi fonctionnels et durables.
+                </p>
+              </div>
+
+              {/* Story Card 3 */}
+              <div className="relative rounded-xl bg-gradient-to-br from-primary/5 to-primary/10 p-8 shadow-lg">
+                <div className="absolute -left-4 top-8 h-8 w-8 rounded-full bg-primary sm:-left-6"></div>
+                <h3 className="mb-4 text-xl font-bold text-secondary sm:text-2xl">
+                  Comprendre les besoins
+                </h3>
+                <p className="leading-relaxed text-gray-700">
+                  Dès le départ, les fondateurs ont pris conscience des difficultés rencontrées par les fans de football pour se procurer des répliques de maillots de leurs équipes favorites, en raison de la disponibilité limitée, de la mauvaise qualité et du manque d&apos;options de personnalisation.
+                </p>
+              </div>
+
+              {/* Story Card 4 */}
+              <div className="relative rounded-xl bg-gradient-to-br from-secondary/5 to-secondary/10 p-8 shadow-lg">
+                <div className="absolute -left-4 top-8 h-8 w-8 rounded-full bg-secondary sm:-left-6"></div>
+                <h3 className="mb-4 text-xl font-bold text-secondary sm:text-2xl">
+                  Innovation et durabilité
+                </h3>
+                <p className="leading-relaxed text-gray-700">
+                  La marque se distingue par l&apos;utilisation de matériaux écologiques et novateurs, conçus pour améliorer les performances physiques. Cette frustration a conduit le Père et le Fils à réfléchir à la création d&apos;une marque de sport locale qui puisse répondre aux besoins spécifiques des passionnés de sport africains.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Psaume 27 Section - Elegant Design */}
+      <section className="bg-gradient-to-br from-secondary to-primary py-16 sm:py-20">
+        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl bg-white/10 p-8 backdrop-blur-lg sm:p-12">
+            <div className="mb-6 text-center">
+              <div className="mb-4 inline-block rounded-full bg-white/20 px-4 py-1.5">
+                <span className="text-sm font-semibold text-white">Inspiration</span>
+              </div>
+              <h3 className="mb-6 text-2xl font-bold text-white sm:text-3xl">
+                (27) tiré du Psaume 27.1
+              </h3>
+            </div>
+            <div className="rounded-xl bg-white/10 p-8 backdrop-blur-sm">
+              <p className="text-center text-lg italic leading-relaxed text-white sm:text-xl">
+                L&apos;Eternel est ma lumière et mon salut :<br />
+                <span className="font-semibold">De qui aurai-je peur ?</span>
+                <br /><br />
+                L&apos;Eternel est le soutien de ma vie :<br />
+                <span className="font-semibold">Qui devrais-je redouter ?</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Partenariat Section - Highlight */}
+      <section className="bg-white py-16 sm:py-20">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="overflow-hidden rounded-2xl bg-gradient-to-br from-primary/10 via-primary/5 to-secondary/10 p-8 shadow-xl sm:p-12">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+              <div className="flex items-center justify-center">
+                <div className="text-8xl">🇬🇶</div>
+              </div>
+              <div className="flex flex-col justify-center">
+                <div className="mb-4 inline-block w-fit rounded-full bg-primary px-4 py-1.5">
+                  <span className="text-sm font-semibold text-white">Partenariat Officiel</span>
+                </div>
+                <h3 className="mb-4 text-2xl font-bold text-secondary sm:text-3xl">
+                  NZALANG NACIONAL
+                </h3>
+                <p className="mb-4 text-lg font-semibold text-primary">
+                  Équipe Nationale de Guinée Équatoriale
+                </p>
+                <p className="leading-relaxed text-gray-700">
+                  Nous sommes fiers d&apos;être le fournisseur officiel de l&apos;équipe nationale de Guinée Équatoriale, fournissant des équipements et produits dérivés de qualité supérieure pour soutenir les performances de nos athlètes sur la scène internationale.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Activities Section - Modern Grid */}
+      <section className="bg-gray-50 py-16 sm:py-20">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 text-3xl font-bold text-secondary sm:text-4xl md:text-5xl">
+              Nos Activités
+            </h2>
+            <div className="mx-auto h-1 w-20 bg-primary"></div>
+            <p className="mt-4 text-lg text-gray-600">
+              Des services complets pour répondre à tous vos besoins sportifs
+            </p>
+          </div>
+
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {/* Card 1 */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                <svg
-                  className="h-6 w-6 text-primary"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                  />
-                </svg>
+            {[
+              { icon: "📋", title: "Conception & Fabrication", desc: "Articles de sport de qualité supérieure répondant aux standards internationaux" },
+              { icon: "🛒", title: "Commercialisation", desc: "Équipements, articles et accessoires de sport et de mode" },
+              { icon: "🏗️", title: "Construction de Sites Sportifs", desc: "Aménagement selon les normes internationales" },
+              { icon: "💼", title: "Consulting de Sport", desc: "Conseil et accompagnement pour professionnels et organisations" },
+              { icon: "🌐", title: "Négoce International", desc: "Import et export d'équipements sportifs à l'échelle mondiale" },
+              { icon: "📈", title: "Marketing & Services", desc: "Représentation commerciale et prestations de services" },
+            ].map((activity, index) => (
+              <div
+                key={index}
+                className="group rounded-xl bg-white p-6 shadow-md transition-all hover:shadow-xl hover:-translate-y-1"
+              >
+                <div className="mb-4 text-4xl">{activity.icon}</div>
+                <h3 className="mb-2 text-xl font-bold text-secondary">{activity.title}</h3>
+                <p className="text-gray-600">{activity.desc}</p>
               </div>
-              <h3 className="mb-2 text-xl font-semibold text-secondary">
-                Conception & Fabrication
-              </h3>
-              <p className="text-sm text-gray-600 sm:text-base">
-                Conception et fabrication d&apos;articles de sport de qualité supérieure,
-                répondant aux standards internationaux.
-              </p>
-            </div>
-
-            {/* Card 2 */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                <svg
-                  className="h-6 w-6 text-primary"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
-                  />
-                </svg>
-              </div>
-              <h3 className="mb-2 text-xl font-semibold text-secondary">
-                Commercialisation
-              </h3>
-              <p className="text-sm text-gray-600 sm:text-base">
-                Commercialisation d&apos;équipements, articles et accessoires de sport,
-                ainsi que de vêtements et accessoires de mode.
-              </p>
-            </div>
-
-            {/* Card 3 */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                <svg
-                  className="h-6 w-6 text-primary"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                  />
-                </svg>
-              </div>
-              <h3 className="mb-2 text-xl font-semibold text-secondary">
-                Construction de Sites Sportifs
-              </h3>
-              <p className="text-sm text-gray-600 sm:text-base">
-                Construction et aménagement de sites sportifs selon les normes
-                internationales.
-              </p>
-            </div>
-
-            {/* Card 4 */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                <svg
-                  className="h-6 w-6 text-primary"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
-                  />
-                </svg>
-              </div>
-              <h3 className="mb-2 text-xl font-semibold text-secondary">
-                Consulting de Sport
-              </h3>
-              <p className="text-sm text-gray-600 sm:text-base">
-                Services de conseil et d&apos;accompagnement pour les professionnels du
-                sport et les organisations sportives.
-              </p>
-            </div>
-
-            {/* Card 5 */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                <svg
-                  className="h-6 w-6 text-primary"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
-              </div>
-              <h3 className="mb-2 text-xl font-semibold text-secondary">
-                Négoce International
-              </h3>
-              <p className="text-sm text-gray-600 sm:text-base">
-                Import et export d&apos;équipements sportifs à l&apos;échelle internationale,
-                avec un réseau de partenaires de confiance.
-              </p>
-            </div>
-
-            {/* Card 6 */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                <svg
-                  className="h-6 w-6 text-primary"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"
-                  />
-                </svg>
-              </div>
-              <h3 className="mb-2 text-xl font-semibold text-secondary">
-                Marketing & Services
-              </h3>
-              <p className="text-sm text-gray-600 sm:text-base">
-                Représentation commerciale, marketing et prestations de services pour
-                accompagner vos projets sportifs.
-              </p>
-            </div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Values Section */}
-        <section className="rounded-lg bg-accent px-6 py-12 sm:px-8 sm:py-16">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-6 text-3xl font-bold text-secondary sm:text-4xl">
-              Notre Engagement
-            </h2>
-            <p className="mb-6 text-base leading-7 text-gray-700 sm:text-lg">
-              Chez <strong>AIR BENJEL 27</strong>, nous nous engageons à fournir des
-              produits et services de la plus haute qualité. Notre expertise couvre
-              l&apos;ensemble de la chaîne de valeur, de la conception à la
-              commercialisation, en passant par la fabrication et le consulting. Nous
-              sommes fiers de contribuer au développement du sport à travers nos
-              équipements innovants et nos services professionnels.
-            </p>
-            <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-3">
-              <div className="rounded-lg bg-white p-6 shadow-sm">
-                <div className="mb-3 text-3xl">🏆</div>
-                <h3 className="mb-2 text-lg font-semibold text-secondary">
-                  Qualité Premium
-                </h3>
-                <p className="text-sm text-gray-600">
-                  Standards internationaux pour tous nos produits
-                </p>
-              </div>
-              <div className="rounded-lg bg-white p-6 shadow-sm">
-                <div className="mb-3 text-3xl">🌍</div>
-                <h3 className="mb-2 text-lg font-semibold text-secondary">
-                  Portée Internationale
-                </h3>
-                <p className="text-sm text-gray-600">
-                  Présence mondiale avec import-export
-                </p>
-              </div>
-              <div className="rounded-lg bg-white p-6 shadow-sm">
-                <div className="mb-3 text-3xl">🤝</div>
-                <h3 className="mb-2 text-lg font-semibold text-secondary">
-                  Partenariats Stratégiques
-                </h3>
-                <p className="text-sm text-gray-600">
-                  Collaboration avec équipes nationales et clubs
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Expertise Section */}
-        <section className="my-12 sm:my-16">
-          <div className="mx-auto max-w-4xl">
-            <h2 className="mb-8 text-center text-3xl font-bold text-secondary sm:text-4xl">
-              Notre Expertise
-            </h2>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-              <div className="rounded-lg border border-gray-200 bg-white p-6">
-                <h3 className="mb-3 text-xl font-semibold text-secondary">
-                  🏗️ Infrastructure Sportive
-                </h3>
-                <p className="text-sm text-gray-600 sm:text-base">
-                  Conception et construction de sites sportifs selon les normes
-                  internationales. Nous réalisons des projets complets d&apos;infrastructure
-                  sportive pour répondre aux besoins des professionnels et des amateurs.
-                </p>
-              </div>
-              <div className="rounded-lg border border-gray-200 bg-white p-6">
-                <h3 className="mb-3 text-xl font-semibold text-secondary">
-                  👕 Vêtements & Accessoires
-                </h3>
-                <p className="text-sm text-gray-600 sm:text-base">
-                  Conception et fabrication de vêtements de sport et accessoires de mode.
-                  Nos produits allient performance, confort et style pour répondre à tous
-                  les besoins.
-                </p>
-              </div>
-              <div className="rounded-lg border border-gray-200 bg-white p-6">
-                <h3 className="mb-3 text-xl font-semibold text-secondary">
-                  🎯 Consulting Sportif
-                </h3>
-                <p className="text-sm text-gray-600 sm:text-base">
-                  Services de conseil et d&apos;accompagnement pour les organisations
-                  sportives, clubs et fédérations. Notre expertise couvre la stratégie,
-                  le marketing et le développement sportif.
-                </p>
-              </div>
-              <div className="rounded-lg border border-gray-200 bg-white p-6">
-                <h3 className="mb-3 text-xl font-semibold text-secondary">
-                  🌐 Commerce International
-                </h3>
-                <p className="text-sm text-gray-600 sm:text-base">
-                  Import et export d&apos;équipements sportifs à l&apos;échelle mondiale.
-                  Nous disposons d&apos;un réseau de partenaires de confiance pour faciliter
-                  vos échanges internationaux.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Additional Info Section */}
-        <section className="my-12 rounded-lg bg-secondary px-6 py-12 text-white sm:px-8 sm:py-16">
-          <div className="mx-auto max-w-4xl">
-            <h2 className="mb-8 text-center text-3xl font-bold sm:text-4xl">
-              Informations Complémentaires
-            </h2>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-              <div>
-                <h3 className="mb-3 text-xl font-semibold">📋 Activités</h3>
-                <ul className="space-y-2 text-sm sm:text-base">
-                  <li>• Conception & Fabrication</li>
-                  <li>• Commercialisation</li>
-                  <li>• Construction de Sites Sportifs</li>
-                  <li>• Consulting de Sport</li>
-                  <li>• Négoce International</li>
-                  <li>• Représentation Commerciale</li>
-                  <li>• Marketing & Services</li>
-                  <li>• Import - Export</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="mb-3 text-xl font-semibold">🎯 Domaines d&apos;Expertise</h3>
-                <ul className="space-y-2 text-sm sm:text-base">
-                  <li>• Équipements Sportifs</li>
-                  <li>• Articles & Accessoires</li>
-                  <li>• Vêtements de Sport</li>
-                  <li>• Accessoires de Mode</li>
-                  <li>• Infrastructure Sportive</li>
-                  <li>• Produits Dérivés</li>
-                  <li>• Commerce Général</li>
-                  <li>• Prestations de Services</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Contact CTA */}
-        <section className="mt-12 text-center sm:mt-16">
-          <h2 className="mb-4 text-2xl font-bold text-secondary sm:text-3xl">
+      {/* CTA Section */}
+      <section className="bg-gradient-to-br from-secondary to-primary py-16 sm:py-20">
+        <div className="mx-auto w-full max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+          <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
             Intéressé par nos services ?
           </h2>
-          <p className="mb-6 text-gray-600">
+          <p className="mb-8 text-lg text-white/90">
             Contactez-nous pour discuter de vos besoins en équipements sportifs
           </p>
           <a
             href="/contact"
-            className="btn-primary inline-block sm:px-10 sm:py-4 sm:text-lg"
+            className="inline-block rounded-lg bg-white px-8 py-4 text-lg font-semibold text-secondary transition-all hover:scale-105 hover:shadow-xl"
           >
             Nous contacter
           </a>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
   );
 }
-
