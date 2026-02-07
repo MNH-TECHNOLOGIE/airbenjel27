@@ -10,18 +10,29 @@ import CustomizationModal from "./CustomizationModal";
 interface ProductSelectorProps {
   product: Product;
   onAddToCart?: (size: string | null, color: string | null, audience?: string) => void;
+  forcedColor?: string | null;
+  lockColor?: boolean;
 }
 
 export default function ProductSelector({
   product,
   onAddToCart,
+  forcedColor = null,
+  lockColor = false,
 }: ProductSelectorProps) {
   const { addToCart } = useCart();
   const { openCartDrawer } = useCartDrawer();
+  const availableColors = product.colors && product.colors.length > 0 ? product.colors : [];
+  const resolvedForcedColor =
+    forcedColor && availableColors.includes(forcedColor)
+      ? forcedColor
+      : availableColors.length > 0
+      ? availableColors[0]
+      : null;
+  const colorsToShow =
+    lockColor && resolvedForcedColor ? [resolvedForcedColor] : availableColors;
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
-  const [selectedColor, setSelectedColor] = useState<string | null>(
-    product.colors && product.colors.length > 0 ? product.colors[0] : null
-  );
+  const [selectedColor, setSelectedColor] = useState<string | null>(resolvedForcedColor);
   const [selectedAudience, setSelectedAudience] = useState<string>("Hommes");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [showCustomizationModal, setShowCustomizationModal] = useState(false);
@@ -87,20 +98,25 @@ export default function ProductSelector({
   return (
     <div className="space-y-4 sm:space-y-6">
       {/* Color Selector */}
-      {product.colors && product.colors.length > 0 && (
+      {colorsToShow.length > 0 && (
         <div>
           <label className="mb-3 block text-base font-semibold text-secondary">
             Couleur
           </label>
           <div className="flex flex-wrap gap-2 sm:gap-3">
-            {product.colors.map((color) => {
+            {colorsToShow.map((color) => {
               const colorCode = colorMap[color] || "#CCCCCC";
               const isSelected = selectedColor === color;
               const isLight = isLightColor(color);
               return (
                 <button
                   key={color}
-                  onClick={() => setSelectedColor(color)}
+                  onClick={() => {
+                    if (!lockColor) {
+                      setSelectedColor(color);
+                    }
+                  }}
+                  disabled={lockColor}
                   className={`relative flex h-10 w-10 items-center justify-center rounded-full border-2 transition-all sm:h-12 sm:w-12 ${
                     isSelected
                       ? `border-primary ring-2 ring-primary ring-offset-2 ${isLight ? "ring-offset-gray-200" : ""}`

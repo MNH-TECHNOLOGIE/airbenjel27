@@ -8,19 +8,33 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   const imageSrc = product.images[0] || "/placeholder-product.jpg";
+  const defaultColor = product.colors && product.colors.length > 0 ? product.colors[0] : null;
+  const buyHref = defaultColor
+    ? `/products/${product.slug}?color=${encodeURIComponent(defaultColor)}&lockColor=1`
+    : `/products/${product.slug}`;
 
   return (
     <div className="group relative flex flex-col overflow-hidden rounded-lg bg-gray-100 transition-all hover:shadow-xl hover:-translate-y-1">
       {/* Image Container - Fill card with a clean crop */}
       <div className="relative aspect-[3/4] w-full overflow-hidden bg-gray-200">
         {product.images.length > 0 ? (
-          <Image
-            src={imageSrc}
-            alt={product.name}
-            fill
-            className="object-cover object-center transition-transform duration-300 group-hover:scale-[1.04]"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-          />
+          <>
+            <Image
+              src={imageSrc}
+              alt={product.name}
+              fill
+              className="object-cover object-center transition-transform duration-300 group-hover:scale-[1.04]"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            />
+            <a
+              href={imageSrc}
+              target="_blank"
+              rel="noreferrer"
+              className="absolute inset-0"
+              aria-label={`Ouvrir la photo de ${product.name}`}
+              title="Ouvrir la photo"
+            />
+          </>
         ) : (
           <div className="flex h-full items-center justify-center text-gray-400">
             <svg
@@ -71,7 +85,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         {/* Buy Now Button - Style like player cards */}
         <div className="flex">
           <Link
-            href={`/products/${product.slug}`}
+            href={buyHref}
             className="w-full rounded-md bg-primary px-4 py-2 text-xs font-bold uppercase tracking-wide text-white transition-all duration-300 hover:bg-primary-dark hover:scale-105 active:scale-95 shadow-md sm:w-auto sm:px-5 sm:py-2.5"
           >
             Acheter

@@ -9,6 +9,7 @@ import ProductAccordion from "@/components/catalog/ProductAccordion";
 
 interface ProductPageProps {
   params: Promise<{ slug: string }>;
+  searchParams?: { color?: string | string[]; lockColor?: string | string[] };
 }
 
 export async function generateStaticParams() {
@@ -41,9 +42,16 @@ export async function generateMetadata({
   };
 }
 
-export default async function ProductPage({ params }: ProductPageProps) {
+export default async function ProductPage({ params, searchParams }: ProductPageProps) {
   const { slug } = await params;
   const product = getProductBySlug(slug);
+  const colorParam = Array.isArray(searchParams?.color)
+    ? searchParams?.color[0]
+    : searchParams?.color;
+  const lockColorParam = Array.isArray(searchParams?.lockColor)
+    ? searchParams?.lockColor[0]
+    : searchParams?.lockColor;
+  const lockColor = lockColorParam === "1" || lockColorParam === "true";
 
   if (!product) {
     notFound();
@@ -115,7 +123,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
             </div>
 
             {/* Product Selector (Size, Color, Audience) */}
-            <ProductSelector product={product} />
+            <ProductSelector
+              product={product}
+              forcedColor={colorParam ?? null}
+              lockColor={lockColor}
+            />
 
             {/* Description */}
             <div className="pt-4">
