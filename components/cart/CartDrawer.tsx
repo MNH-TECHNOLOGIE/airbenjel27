@@ -144,7 +144,9 @@ export default function CartDrawer() {
                     </div>
                     <div className="mt-1 text-sm text-gray-600">
                       {item.size && <span>Taille: {item.size}</span>}
-                      {item.size && item.color && <span> • </span>}
+                      {item.size && item.audience && <span> • </span>}
+                      {item.audience && <span>Public: {item.audience}</span>}
+                      {(item.size || item.audience) && item.color && <span> • </span>}
                       {item.color && <span>Couleur: {item.color}</span>}
                     </div>
                     {item.customization && (

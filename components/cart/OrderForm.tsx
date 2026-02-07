@@ -216,7 +216,7 @@ export default function OrderForm({ items, onCancel }: OrderFormProps) {
           {/* Order Summary */}
           <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
             <h3 className="mb-3 text-lg font-semibold text-secondary">
-              R?sum? de la commande
+              Résumé de la commande
             </h3>
             <div className="space-y-2">
               {items.map((item) => (
@@ -225,25 +225,27 @@ export default function OrderForm({ items, onCancel }: OrderFormProps) {
                     <div className="font-medium text-secondary">{item.product.name}</div>
                     {item.customization && (
                       <span className="flex-shrink-0 rounded-full bg-primary px-2 py-0.5 text-[10px] font-bold uppercase text-white">
-                        Personnalis?
+                        Personnalisé
                       </span>
                     )}
                   </div>
                   <div className="mt-1 text-gray-600">
                     {item.size && <span>Taille: {item.size}</span>}
-                    {item.size && item.color && <span> ? </span>}
+                    {item.size && item.audience && <span> • </span>}
+                    {item.audience && <span>Public: {item.audience}</span>}
+                    {(item.size || item.audience) && item.color && <span> • </span>}
                     {item.color && <span>Couleur: {item.color}</span>}
                   </div>
                   {item.customization && (
                     <div className="mt-2 rounded-md bg-green-50 border border-green-200 p-2">
-                      <p className="text-xs font-semibold text-green-800 uppercase">Produit Personnalis?</p>
+                      <p className="text-xs font-semibold text-green-800 uppercase">Produit personnalisé</p>
                       <p className="mt-1 text-sm font-bold text-green-900">
-                        {item.customization.name.toUpperCase()} ? {item.customization.number}
+                        {item.customization.name.toUpperCase()} • {item.customization.number}
                       </p>
                     </div>
                   )}
                   <div className="mt-1">
-                    <span className="text-gray-600">Quantit?: {item.quantity}</span>
+                    <span className="text-gray-600">Quantité: {item.quantity}</span>
                   </div>
                 </div>
               ))}

@@ -107,7 +107,9 @@ export default function CartPage() {
                     </div>
                     <div className="mt-1 text-sm text-gray-600">
                       {item.size && <span>Taille: {item.size}</span>}
-                      {item.size && item.color && <span> • </span>}
+                      {item.size && item.audience && <span> • </span>}
+                      {item.audience && <span>Public: {item.audience}</span>}
+                      {(item.size || item.audience) && item.color && <span> • </span>}
                       {item.color && <span>Couleur: {item.color}</span>}
                     </div>
                     {item.customization && (
@@ -170,7 +172,7 @@ export default function CartPage() {
 
             {/* Order Summary */}
             <div className="rounded-lg border border-gray-200 bg-gray-50 p-6">
-              <h2 className="mb-4 text-xl font-bold text-secondary">R?sum? de la commande</h2>
+              <h2 className="mb-4 text-xl font-bold text-secondary">Résumé de la commande</h2>
               <p className="text-base text-gray-600">
                 Articles dans votre panier: {" "}
                 <span className="font-medium text-secondary">{totalItems}</span>

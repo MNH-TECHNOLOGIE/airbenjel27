@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Product } from "@/data/types";
 import { useCart } from "@/lib/cart-context";
@@ -33,7 +33,7 @@ export default function ProductSelector({
     lockColor && resolvedForcedColor ? [resolvedForcedColor] : availableColors;
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [selectedColor, setSelectedColor] = useState<string | null>(resolvedForcedColor);
-  const [selectedAudience, setSelectedAudience] = useState<string>("Hommes");
+  const [selectedAudience, setSelectedAudience] = useState<string>("Homme");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [showCustomizationModal, setShowCustomizationModal] = useState(false);
   const [customization, setCustomization] = useState<{ name: string; number: string } | undefined>(undefined);
@@ -56,7 +56,7 @@ export default function ProductSelector({
     
     try {
       // Use cart context (with or without customization)
-      addToCart(product, selectedSize, selectedColor, customization);
+      addToCart(product, selectedSize, selectedColor, selectedAudience, customization);
       
       // Open cart drawer
       openCartDrawer();
@@ -94,6 +94,15 @@ export default function ProductSelector({
     const lightColors = ["Blanc", "Jaune", "Rose"];
     return lightColors.includes(color);
   };
+
+  const childSizes = ["2-4 ans", "4-6 ans", "6-8 ans", "8-10 ans", "10-12 ans", "12-14 ans"];
+  const sizesToShow = selectedAudience === "Enfant" ? childSizes : product.sizes;
+
+  useEffect(() => {
+    if (selectedSize && !sizesToShow.includes(selectedSize)) {
+      setSelectedSize(null);
+    }
+  }, [selectedAudience, selectedSize, sizesToShow]);
 
   return (
     <div className="space-y-4 sm:space-y-6">
@@ -155,7 +164,7 @@ export default function ProductSelector({
       )}
 
       {/* Size Selector */}
-      {product.sizes.length > 0 && (
+      {sizesToShow.length > 0 && (
         <div>
           <div className="mb-3 flex items-center justify-between">
             <label className="block text-base font-semibold text-secondary">
@@ -169,7 +178,7 @@ export default function ProductSelector({
             </Link>
           </div>
           <div className="flex flex-wrap gap-2 sm:gap-3">
-            {product.sizes.map((size) => {
+            {sizesToShow.map((size) => {
               const isSelected = selectedSize === size;
               return (
                 <button
@@ -195,7 +204,7 @@ export default function ProductSelector({
           Public
         </label>
           <div className="flex gap-2">
-            {["Hommes", "Femmes", "Enfants"].map((audience) => {
+            {["Homme", "Femme", "Enfant"].map((audience) => {
               const isSelected = selectedAudience === audience;
               return (
                 <button

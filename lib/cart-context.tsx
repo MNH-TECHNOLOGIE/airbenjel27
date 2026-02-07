@@ -8,6 +8,7 @@ export interface CartItem {
   product: Product;
   size: string | null;
   color: string | null;
+  audience: string | null;
   quantity: number;
   customization?: {
     name: string;
@@ -17,7 +18,13 @@ export interface CartItem {
 
 interface CartContextType {
   items: CartItem[];
-  addToCart: (product: Product, size: string | null, color: string | null, customization?: { name: string; number: string }) => void;
+  addToCart: (
+    product: Product,
+    size: string | null,
+    color: string | null,
+    audience: string | null,
+    customization?: { name: string; number: string }
+  ) => void;
   removeFromCart: (itemId: string) => void;
   updateQuantity: (itemId: string, quantity: number) => void;
   clearCart: () => void;
@@ -59,7 +66,13 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     }
   }, [items, isLoaded]);
 
-  const addToCart = (product: Product, size: string | null, color: string | null, customization?: { name: string; number: string }) => {
+  const addToCart = (
+    product: Product,
+    size: string | null,
+    color: string | null,
+    audience: string | null,
+    customization?: { name: string; number: string }
+  ) => {
     setItems((prevItems) => {
       // Check if item already exists with same product, size, color, and customization
       const existingItemIndex = prevItems.findIndex(
@@ -67,6 +80,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
           item.product.id === product.id &&
           item.size === size &&
           item.color === color &&
+          item.audience === audience &&
           JSON.stringify(item.customization) === JSON.stringify(customization)
       );
 
@@ -78,10 +92,11 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       } else {
         // Add new item
         const newItem: CartItem = {
-          id: `${product.id}-${size || "no-size"}-${color || "no-color"}-${customization ? `-${customization.name}-${customization.number}` : ""}-${Date.now()}`,
+          id: `${product.id}-${size || "no-size"}-${color || "no-color"}-${audience || "no-audience"}-${customization ? `-${customization.name}-${customization.number}` : ""}-${Date.now()}`,
           product,
           size,
           color,
+          audience,
           quantity: 1,
           customization,
         };
@@ -140,4 +155,3 @@ export function useCart() {
   }
   return context;
 }
-

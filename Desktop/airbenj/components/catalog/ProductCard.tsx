@@ -120,18 +120,14 @@ export default function ProductCard({ product }: ProductCardProps) {
           aria-modal="true"
         >
           <div
-            className="relative max-h-[90vh] w-full max-w-3xl overflow-hidden rounded-lg bg-white"
+            className="relative max-h-[90vh] max-w-[90vw] overflow-hidden rounded-lg bg-white p-2"
             onClick={(event) => event.stopPropagation()}
           >
-            <div className="relative aspect-[3/4] w-full bg-gray-100">
-              <Image
-                src={imageSrc}
-                alt={product.name}
-                fill
-                className="object-contain"
-                sizes="(max-width: 768px) 100vw, 800px"
-              />
-            </div>
+            <img
+              src={imageSrc}
+              alt={product.name}
+              className="block h-auto w-auto max-h-[86vh] max-w-[86vw] object-contain"
+            />
             <button
               type="button"
               onClick={() => setShowImage(false)}
