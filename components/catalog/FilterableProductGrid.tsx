@@ -61,6 +61,12 @@ export default function FilterableProductGrid({
     }
   }, [currentPage, totalPages]);
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [currentPage]);
+
   const toggleFilter = (value: string) => {
     setSelectedFilters((prev) =>
       prev.includes(value) ? prev.filter((item) => item !== value) : [...prev, value]
