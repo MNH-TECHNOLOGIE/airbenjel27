@@ -178,21 +178,20 @@ export default function CartPage() {
             </div>
 
             {/* Order Button */}
-              <button
-                onClick={() => setShowOrderForm(true)}
-                className="btn-primary mt-6 w-full sm:text-lg"
-              >
-                Commander
-              </button>
+            <button
+              onClick={() => setShowOrderForm(true)}
+              className="btn-primary mt-6 w-full sm:text-lg"
+            >
+              Commander
+            </button>
 
-              {/* Continue Shopping */}
-              <Link
-                href="/kits"
-                className="btn-outline-secondary mt-4 block w-full text-center"
-              >
-                Continuer les achats
-              </Link>
-            </div>
+            {/* Continue Shopping */}
+            <Link
+              href="/kits"
+              className="btn-outline-secondary mt-4 block w-full text-center"
+            >
+              Continuer les achats
+            </Link>
           </>
         )}
       </div>
