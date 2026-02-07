@@ -18,7 +18,7 @@ const heroImages = [
     subtitle: "Des maillots aux accessoires exclusifs",
   },
   {
-    src: "/hero-7.png",
+    src: "/hero-7_1200x800.jpg",
     alt: "Hero Banner 7",
     title: "Équipementier Sportif",
     subtitle: "Conception, fabrication et commercialisation d'articles de sport",
