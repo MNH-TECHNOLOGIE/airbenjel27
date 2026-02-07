@@ -71,11 +71,9 @@ export default function HeroCarousel() {
                 priority={index === 0}
                 quality={100}
                 unoptimized={true}
-                className={`transition-transform duration-[10000ms] ease-out ${
-                  index === currentIndex ? "scale-100" : "scale-110"
-                }`}
+                className="transition-transform duration-[10000ms] ease-out scale-100"
                 style={{
-                  objectFit: "cover",
+                  objectFit: "contain",
                   objectPosition: "center",
                 }}
                 sizes="100vw"
