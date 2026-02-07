@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   },
   description:
     "AIR BENJEL 27 - Équipementier sportif spécialisé dans la conception, la fabrication et la commercialisation d'articles de sport, de vêtements et d'accessoires de mode, la construction de sites sportifs et le consulting.",
+  icons: {
+    icon: "/logo1.png",
+  },
 };
 
 export const viewport = {
