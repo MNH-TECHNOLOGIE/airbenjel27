@@ -94,7 +94,7 @@ export default function ClubsPartenairesPage() {
             <h3 className="mb-4 text-center text-xl font-bold text-secondary sm:text-2xl">
               Produits Partenaires
             </h3>
-            <div className="mx-auto grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-2">
+            <div className="mx-auto grid max-w-3xl grid-cols-2 gap-4 sm:grid-cols-2">
               {partnerProducts.map((card) => (
                 <div
                   key={card.slug}
