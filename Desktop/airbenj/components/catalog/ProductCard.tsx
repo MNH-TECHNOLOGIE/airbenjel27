@@ -120,20 +120,21 @@ export default function ProductCard({ product }: ProductCardProps) {
           aria-modal="true"
         >
           <div
-            className="relative max-h-[90vh] max-w-[90vw] overflow-hidden rounded-lg bg-white p-2"
+            className="relative max-h-[92vh] max-w-[92vw] rounded-lg bg-white p-3"
             onClick={(event) => event.stopPropagation()}
           >
             <img
               src={imageSrc}
               alt={product.name}
-              className="block h-auto w-auto max-h-[86vh] max-w-[86vw] object-contain"
+              className="block h-auto w-auto max-h-[88vh] max-w-[88vw] object-contain"
             />
             <button
               type="button"
               onClick={() => setShowImage(false)}
-              className="absolute right-3 top-3 rounded-full bg-black/70 px-3 py-1 text-xs font-semibold text-white"
+              className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-black/70 text-xs font-semibold text-white"
+              aria-label="Fermer"
             >
-              Fermer
+              X
             </button>
           </div>
         </div>
