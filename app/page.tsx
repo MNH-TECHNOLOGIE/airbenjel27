@@ -9,19 +9,19 @@ export default function Home() {
   const categorySections = [
     {
       title: "Maillots",
-      description: "Selection football officielle",
+      description: "Sélection officielle de football",
       href: "/kits",
       products: getProductsByCategory("kits").slice(0, 3),
     },
     {
-      title: "Vetements",
-      description: "Pieces confort pour tous les jours",
+      title: "Vêtements",
+      description: "Pièces confortables pour tous les jours",
       href: "/apparel",
       products: getProductsByCategory("apparel").slice(0, 3),
     },
     {
       title: "Basketball",
-      description: "Collection basket",
+      description: "Collection basketball",
       href: "/basketball",
       products: getProductsByCategory("basketball").slice(0, 3),
     },
@@ -33,19 +33,19 @@ export default function Home() {
     },
     {
       title: "Accessoires",
-      description: "Complements et essentiels",
+      description: "Compléments et essentiels",
       href: "/accessories",
       products: getProductsByCategory("accessories").slice(0, 3),
     },
     {
       title: "Maison & Lifestyle",
-      description: "Decor et confort a la maison",
+      description: "Décor et confort à la maison",
       href: "/home-lifestyle",
       products: getProductsByCategory("home-lifestyle").slice(0, 3),
     },
     {
       title: "Cadeaux",
-      description: "Idees premium a offrir",
+      description: "Idées premium à offrir",
       href: "/gifts",
       products: getProductsByCategory("gifts").slice(0, 3),
     },
@@ -61,7 +61,7 @@ export default function Home() {
         <div className="mx-auto w-full max-w-7xl px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-xl font-bold tracking-tight text-secondary sm:text-2xl md:text-3xl lg:text-4xl">
-              Collections en Vedette
+              Collections en vedette
             </h2>
             <p className="mt-2 text-sm text-gray-600 sm:mt-3 sm:text-base md:mt-4 md:text-lg">
               Explorez nos collections sélectionnées

@@ -16,10 +16,11 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "AIR BENJEL 27 - Équipementier Sportif",
+    default: "AIR BENJEL 27 - Équipementier sportif",
     template: "%s | AIR BENJEL 27",
   },
-  description: "AIR BENJEL 27 - Équipementier sportif spécialisé dans la conception, fabrication et commercialisation d'articles de sport, vêtements et accessoires de mode, construction de sites sportifs et consulting.",
+  description:
+    "AIR BENJEL 27 - Équipementier sportif spécialisé dans la conception, la fabrication et la commercialisation d'articles de sport, de vêtements et d'accessoires de mode, la construction de sites sportifs et le consulting.",
 };
 
 export const viewport = {

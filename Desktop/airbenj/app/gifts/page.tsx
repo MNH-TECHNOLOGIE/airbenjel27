@@ -21,7 +21,7 @@ export default function GiftsPage() {
               Cadeaux
             </h1>
             <p className="mt-3 text-base text-white/90 sm:mt-4 sm:text-lg">
-              Idees cadeaux pour tous les fans
+              Idées cadeaux pour tous les fans
             </p>
           </div>
         </div>

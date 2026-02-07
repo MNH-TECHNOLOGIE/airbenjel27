@@ -198,7 +198,7 @@ export default function ProductSelector({
         </div>
       )}
 
-      {/* Audience Selection Tabs */}
+      {/* Audience Sélection Tabs */}
       <div>
         <label className="mb-3 block text-base font-semibold text-secondary">
           Public

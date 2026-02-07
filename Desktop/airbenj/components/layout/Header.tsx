@@ -16,14 +16,14 @@ const navItems = [
       { name: "Basketball", href: "/basketball" },
     ],
   },
-  { name: "Vetements", href: "/apparel" },
+  { name: "Vêtements", href: "/apparel" },
   { name: "Accessoires", href: "/accessories" },
-  { name: "Clubs Partenaires", href: "/clubs-partenaires" },
-  { name: "Sport Militaire", href: "/sport-militaire" },
+  { name: "Clubs partenaires", href: "/clubs-partenaires" },
+  { name: "Sport militaire", href: "/sport-militaire" },
   { name: "Promotion", href: "/promotion" },
   { name: "Catalogue", href: "/collections" },
   { name: "Cadeaux", href: "/gifts" },
-  { name: "A propos", href: "/about" },
+  { name: "À propos", href: "/about" },
 ];
 
 export default function Header() {

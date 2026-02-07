@@ -100,7 +100,7 @@ export default function FilterableProductGrid({
             onClick={resetFilters}
             className="rounded-md border border-gray-300 px-3 py-2 text-sm font-semibold text-secondary transition-colors hover:border-primary hover:text-primary"
           >
-            Reinitialiser
+            Réinitialiser
           </button>
         </div>
 
@@ -130,7 +130,7 @@ export default function FilterableProductGrid({
         )}
 
         <div className="mt-4 text-sm text-gray-600">
-          {filteredProducts.length} resultat(s) trouve(s)
+          {filteredProducts.length} résultat(s) trouvé(s)
         </div>
       </div>
 
@@ -147,7 +147,7 @@ export default function FilterableProductGrid({
             disabled={safePage === 1}
             className="rounded-md border border-gray-300 px-3 py-2 text-sm font-semibold text-secondary transition-colors hover:border-primary hover:text-primary disabled:cursor-not-allowed disabled:opacity-50"
           >
-            Precedent
+            Précédent
           </button>
           <button
             type="button"

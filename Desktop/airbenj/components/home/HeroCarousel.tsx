@@ -20,7 +20,7 @@ const heroImages = [
   {
     src: "/hero-7_1200x800.jpg",
     alt: "Hero Banner 7",
-    title: "Équipementier Sportif",
+    title: "Équipementier sportif",
     subtitle: "Conception, fabrication et commercialisation d'articles de sport",
   },
 ];
@@ -81,7 +81,7 @@ export default function HeroCarousel() {
               {/* Overlay sombre pour lisibilité du texte et navbar */}
               <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/40"></div>
               
-              {/* Content centré comme Palmador */}
+              {/* Contenu centré comme Palmador */}
               <div className="relative z-10 flex h-full items-center justify-center px-4">
                 <div className="mx-auto w-full max-w-4xl text-center sm:px-6 lg:px-8">
                   <div
@@ -103,13 +103,13 @@ export default function HeroCarousel() {
                         href="/collections"
                         className="btn-primary w-full shadow-xl sm:w-auto sm:px-8 sm:py-4 sm:text-lg"
                       >
-                        Voir la Collection
+                        Voir la collection
                       </Link>
                       <Link
                         href="/kits"
                         className="w-full rounded-md border-2 border-white bg-white/10 px-6 py-3 text-base font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/20 hover:scale-105 hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:scale-95 sm:w-auto sm:px-8 sm:py-4 sm:text-lg"
                       >
-                        Parcourir les Maillots
+                        Parcourir les maillots
                       </Link>
                     </div>
                   </div>

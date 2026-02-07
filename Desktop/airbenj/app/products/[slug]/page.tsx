@@ -125,7 +125,7 @@ export default async function ProductPage({ params, searchParams }: ProductPageP
             {/* Product Selector (Size, Color, Audience) */}
             <ProductSelector
               product={product}
-              forcedColor={colorParam ?? null}
+              forcedColor={colorParam ? null}
               lockColor={lockColor}
             />
 
@@ -166,7 +166,7 @@ export default async function ProductPage({ params, searchParams }: ProductPageP
                   {
                     title: "Conseils d'entretien",
                     content:
-                      "Lavez à l'envers à 30°C. Ne pas utiliser d'eau de Javel. Repasser à basse température. Ne pas sécher en machine.",
+                      "Lavez à l'envers à 30 °C. Ne pas utiliser d'eau de Javel. Repasser à basse température. Ne pas sécher en machine.",
                   },
                 ]}
               />

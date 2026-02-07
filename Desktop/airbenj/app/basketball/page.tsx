@@ -5,7 +5,7 @@ import FilterableProductGrid from "@/components/catalog/FilterableProductGrid";
 
 export const metadata: Metadata = {
   title: "Basketball",
-  description: "Decouvrez notre collection basketball officielle",
+  description: "Découvrez notre collection officielle de basketball",
 };
 
 export default function BasketballPage() {
@@ -37,7 +37,7 @@ export default function BasketballPage() {
               Basketball
             </h1>
             <p className="mt-2 text-sm text-white/90 sm:mt-3 sm:text-base md:mt-4 md:text-lg">
-              Collection basket officielle
+              Collection basketball officielle
             </p>
           </div>
         </div>

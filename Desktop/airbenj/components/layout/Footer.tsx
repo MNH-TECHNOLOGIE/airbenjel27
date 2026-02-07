@@ -161,11 +161,10 @@ export default function Footer() {
             © {new Date().getFullYear()} AIR BENJEL 27. Tous droits réservés.
           </p>
           <p className="mt-2 text-center text-xs text-gray-500">
-            Équipementier Sportif - Conception, Fabrication & Commercialisation
+            Équipementier sportif - Conception, fabrication & commercialisation
           </p>
         </div>
       </div>
     </footer>
   );
 }
-

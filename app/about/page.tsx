@@ -3,7 +3,8 @@ import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "À propos",
-  description: "AIR BENJEL 27 - Équipementier sportif et fournisseur officiel des produits dérivés de l'équipe nationale de Guinée Équatoriale (NZALANG NACIONAL) 🇬🇶. Spécialisé dans la conception, fabrication et commercialisation d'articles de sport.",
+  description:
+    "AIR BENJEL 27 - Équipementier sportif et fournisseur officiel des produits dérivés de l'équipe nationale de Guinée équatoriale (NZALANG NACIONAL). Spécialisé dans la conception, la fabrication et la commercialisation d'articles de sport.",
 };
 
 export default function AboutPage() {
@@ -21,12 +22,12 @@ export default function AboutPage() {
               AIR BENJEL 27
             </h1>
             <p className="mx-auto max-w-2xl text-lg text-white/90 sm:text-xl md:text-2xl">
-              Une marque africaine d&apos;authentiques vêtements de sport, basée à Casablanca au Maroc
+              Une marque africaine d&apos;authentiques vêtements de sport, basée à Casablanca, au Maroc.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <div className="flex items-center gap-2 rounded-full bg-white/20 px-4 py-2 backdrop-blur-sm">
                 <span className="text-2xl">🇬🇶</span>
-                <span className="text-sm font-semibold text-white">Fournisseur Officiel</span>
+                <span className="text-sm font-semibold text-white">Fournisseur officiel</span>
               </div>
               <div className="text-sm text-white/80">NZALANG NACIONAL</div>
             </div>
@@ -90,10 +91,10 @@ export default function AboutPage() {
           <div className="mb-16">
             <div className="mb-8 text-center">
               <h3 className="text-2xl font-bold text-secondary sm:text-3xl">
-                Direction Generale
+                Direction générale
               </h3>
               <p className="mt-2 text-base text-gray-600 sm:text-lg">
-                Les dirigeants de AIR BENJEL 27
+                Les dirigeants d&apos;AIR BENJEL 27
               </p>
             </div>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
@@ -143,7 +144,7 @@ export default function AboutPage() {
               </div>
               <h3 className="mb-3 text-xl font-bold text-secondary">Notre Mission</h3>
               <p className="leading-relaxed text-gray-600">
-                Rendre accessibles les vêtements de sports de haute qualité, tout en offrant une large gamme de services personnalisés, notamment des designs uniques et la production des produits dérivés, grâce à des technologies innovantes et des installations ultramodernes.
+                Rendre accessibles les vêtements de sport de haute qualité, tout en offrant une large gamme de services personnalisés, notamment des designs uniques et la production de produits dérivés, grâce à des technologies innovantes et des installations ultramodernes.
               </p>
             </div>
 
@@ -167,7 +168,7 @@ export default function AboutPage() {
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <h2 className="mb-4 text-3xl font-bold text-secondary sm:text-4xl md:text-5xl">
-              Création de AIR BENJEL 27
+              Création d&apos;AIR BENJEL 27
             </h2>
             <div className="mx-auto h-1 w-20 bg-primary"></div>
           </div>
@@ -181,7 +182,7 @@ export default function AboutPage() {
                   Une révolution panafricaine
                 </h3>
                 <p className="leading-relaxed text-gray-700">
-                  <strong>Jean Francis BELINGA BENJEL</strong> et <strong>Samuel BENJEL E. BELINGA</strong> ont révolutionné l&apos;industrie du vêtement de sport en Afrique du Nord, du Centre et de l&apos;Ouest. La famille a identifié un manque sur le marché des répliques de maillots de haute qualité pour les clubs sportifs, fédérations et associations sportives.
+                  <strong>Jean Francis BELINGA BENJEL</strong> et <strong>Samuel BENJEL E. BELINGA</strong> ont révolutionné l&apos;industrie du vêtement de sport en Afrique du Nord, du Centre et de l&apos;Ouest. La famille a identifié un manque sur le marché des répliques de maillots de haute qualité destinées aux clubs sportifs, fédérations et associations sportives.
                 </p>
               </div>
 
@@ -192,7 +193,7 @@ export default function AboutPage() {
                   La naissance d&apos;une marque
                 </h3>
                 <p className="leading-relaxed text-gray-700">
-                  C&apos;est ainsi qu&apos;elle a décidé de répondre à ce besoin en créant sa propre marque, <strong>AIR BENJEL 27 en 2025</strong>, avec l&apos;ambition de proposer des vêtements non seulement esthétiques, mais aussi fonctionnels et durables.
+                  C&apos;est ainsi que la famille a décidé de répondre à ce besoin en créant sa propre marque, <strong>AIR BENJEL 27</strong>, en 2025, avec l&apos;ambition de proposer des vêtements non seulement esthétiques, mais aussi fonctionnels et durables.
                 </p>
               </div>
 
@@ -214,7 +215,7 @@ export default function AboutPage() {
                   Innovation et durabilité
                 </h3>
                 <p className="leading-relaxed text-gray-700">
-                  La marque se distingue par l&apos;utilisation de matériaux écologiques et novateurs, conçus pour améliorer les performances physiques. Cette frustration a conduit le Père et le Fils à réfléchir à la création d&apos;une marque de sport locale qui puisse répondre aux besoins spécifiques des passionnés de sport africains.
+                  La marque se distingue par l&apos;utilisation de matériaux écologiques et novateurs, conçus pour améliorer les performances physiques. Cette frustration a conduit le père et le fils à réfléchir à la création d&apos;une marque de sport locale qui puisse répondre aux besoins spécifiques des passionnés de sport africains.
                 </p>
               </div>
             </div>
@@ -231,15 +232,15 @@ export default function AboutPage() {
                 <span className="text-sm font-semibold text-white">Inspiration</span>
               </div>
               <h3 className="mb-6 text-2xl font-bold text-white sm:text-3xl">
-                (27) tiré du Psaume 27.1
+                (27) tiré du Psaume 27,1
               </h3>
             </div>
             <div className="rounded-xl bg-white/10 p-8 backdrop-blur-sm">
               <p className="text-center text-lg italic leading-relaxed text-white sm:text-xl">
-                L&apos;Eternel est ma lumière et mon salut :<br />
+                L&apos;Éternel est ma lumière et mon salut :<br />
                 <span className="font-semibold">De qui aurai-je peur ?</span>
                 <br /><br />
-                L&apos;Eternel est le soutien de ma vie :<br />
+                L&apos;Éternel est le soutien de ma vie :<br />
                 <span className="font-semibold">Qui devrais-je redouter ?</span>
               </p>
             </div>
@@ -257,16 +258,16 @@ export default function AboutPage() {
               </div>
               <div className="flex flex-col justify-center">
                 <div className="mb-4 inline-block w-fit rounded-full bg-primary px-4 py-1.5">
-                  <span className="text-sm font-semibold text-white">Partenariat Officiel</span>
+                  <span className="text-sm font-semibold text-white">Partenariat officiel</span>
                 </div>
                 <h3 className="mb-4 text-2xl font-bold text-secondary sm:text-3xl">
                   NZALANG NACIONAL
                 </h3>
                 <p className="mb-4 text-lg font-semibold text-primary">
-                  Équipe Nationale de Guinée Équatoriale
+                  Équipe nationale de Guinée équatoriale
                 </p>
                 <p className="leading-relaxed text-gray-700">
-                  Nous sommes fiers d&apos;être le fournisseur officiel de l&apos;équipe nationale de Guinée Équatoriale, fournissant des équipements et produits dérivés de qualité supérieure pour soutenir les performances de nos athlètes sur la scène internationale.
+                  Nous sommes fiers d&apos;être le fournisseur officiel de l&apos;équipe nationale de Guinée équatoriale, en fournissant des équipements et produits dérivés de qualité supérieure pour soutenir les performances de nos athlètes sur la scène internationale.
                 </p>
               </div>
             </div>
@@ -279,7 +280,7 @@ export default function AboutPage() {
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <h2 className="mb-4 text-3xl font-bold text-secondary sm:text-4xl md:text-5xl">
-              Nos Activités
+              Nos activités
             </h2>
             <div className="mx-auto h-1 w-20 bg-primary"></div>
             <p className="mt-4 text-lg text-gray-600">
@@ -289,12 +290,12 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { icon: "📋", title: "Conception & Fabrication", desc: "Articles de sport de qualité supérieure répondant aux standards internationaux" },
+              { icon: "📋", title: "Conception et fabrication", desc: "Articles de sport de qualité supérieure répondant aux standards internationaux" },
               { icon: "🛒", title: "Commercialisation", desc: "Équipements, articles et accessoires de sport et de mode" },
-              { icon: "🏗️", title: "Construction de Sites Sportifs", desc: "Aménagement selon les normes internationales" },
-              { icon: "💼", title: "Consulting de Sport", desc: "Conseil et accompagnement pour professionnels et organisations" },
-              { icon: "🌐", title: "Négoce International", desc: "Import et export d'équipements sportifs à l'échelle mondiale" },
-              { icon: "📈", title: "Marketing & Services", desc: "Représentation commerciale et prestations de services" },
+              { icon: "🏗️", title: "Construction de sites sportifs", desc: "Aménagement selon les normes internationales" },
+              { icon: "💼", title: "Consulting sportif", desc: "Conseil et accompagnement pour professionnels et organisations" },
+              { icon: "🌐", title: "Négoce international", desc: "Import et export d'équipements sportifs à l'échelle mondiale" },
+              { icon: "📈", title: "Marketing & services", desc: "Représentation commerciale et prestations de services" },
             ].map((activity, index) => (
               <div
                 key={index}

@@ -197,7 +197,7 @@ export default function Loading() {
 
         {/* Sports Equipment Text */}
         <p className="mt-2 text-xs text-gray-500 sm:text-sm">
-          Équipementier Sportif
+          Équipementier sportif
         </p>
       </div>
 
