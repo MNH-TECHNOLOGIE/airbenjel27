@@ -11,16 +11,20 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   return (
     <div className="group relative flex flex-col overflow-hidden rounded-lg bg-gray-100 transition-all hover:shadow-xl hover:-translate-y-1">
-      {/* Image Container - Full height with player/product photo */}
+      {/* Image Container - Consistent size and full image visibility */}
       <div className="relative aspect-[3/4] w-full overflow-hidden bg-gray-200">
         {product.images.length > 0 ? (
-          <Image
-            src={imageSrc}
-            alt={product.name}
-            fill
-            className="object-contain object-center transition-transform duration-300 group-hover:scale-[1.02]"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-          />
+          <div className="absolute inset-0 p-3 sm:p-4">
+            <div className="relative h-full w-full">
+              <Image
+                src={imageSrc}
+                alt={product.name}
+                fill
+                className="object-contain object-center transition-transform duration-300 group-hover:scale-[1.02]"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+              />
+            </div>
+          </div>
         ) : (
           <div className="flex h-full items-center justify-center text-gray-400">
             <svg
