@@ -13,14 +13,17 @@ export default function HomeLifestylePage() {
   return (
     <div className="min-h-screen bg-white pt-12 sm:pt-14">
       {/* Header Section */}
-      <div className="bg-secondary py-12 sm:py-16">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl">
-            Maison & Lifestyle
-          </h1>
-          <p className="mt-3 text-base text-white/90 sm:mt-4 sm:text-lg">
-            Décorez votre intérieur avec nos produits officiels
-          </p>
+      <div className="relative w-full overflow-hidden aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] bg-secondary">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="mx-auto w-full max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+            <h1 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl">
+              Maison & Lifestyle
+            </h1>
+            <p className="mt-3 text-base text-white/90 sm:mt-4 sm:text-lg">
+              Decorez votre interieur avec nos produits officiels
+            </p>
+          </div>
         </div>
       </div>
 
