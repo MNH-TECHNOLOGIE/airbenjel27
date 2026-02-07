@@ -13,7 +13,7 @@ export default function HomeLifestylePage() {
   return (
     <div className="min-h-screen bg-white pt-12 sm:pt-14">
       {/* Header Section */}
-      <div className="relative w-full overflow-hidden aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] bg-secondary">
+      <div className="relative h-[180px] w-full overflow-hidden sm:h-[220px] md:h-[250px] lg:h-[300px] bg-secondary">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="mx-auto w-full max-w-7xl px-4 text-center sm:px-6 lg:px-8">

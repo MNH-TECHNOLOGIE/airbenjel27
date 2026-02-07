@@ -14,7 +14,7 @@ export default function CollectionsPage() {
   return (
     <div className="min-h-screen bg-white pt-12 sm:pt-14">
       {/* Header Section with Banner */}
-      <div className="relative w-full overflow-hidden aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9]">
+      <div className="relative h-[180px] w-full overflow-hidden sm:h-[220px] md:h-[250px] lg:h-[300px]">
         <Image
           src="/banner 1.png"
           alt="Collections"
