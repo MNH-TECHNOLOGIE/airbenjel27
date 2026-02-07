@@ -1,6 +1,5 @@
 "use client";
 
-import { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useCart } from "@/lib/cart-context";
@@ -8,7 +7,7 @@ import { useCartDrawer } from "@/lib/cart-drawer-context";
 import OrderForm from "@/components/cart/OrderForm";
 
 export default function CartDrawer() {
-  const { items, removeFromCart, updateQuantity, totalItems, totalPrice } = useCart();
+  const { items, removeFromCart, updateQuantity } = useCart();
   const { isOpen, closeCartDrawer, showOrderForm, openOrderForm, closeOrderForm } = useCartDrawer();
 
   if (!isOpen) return null;
@@ -33,7 +32,6 @@ export default function CartDrawer() {
           <div className="relative z-10 w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-lg bg-white shadow-2xl">
             <OrderForm
               items={items}
-              totalPrice={totalPrice}
               onCancel={closeOrderForm}
             />
           </div>
@@ -106,7 +104,7 @@ export default function CartDrawer() {
                         src={item.product.images[0]}
                         alt={item.product.name}
                         fill
-                        className="object-cover"
+                        className="object-contain"
                         sizes="80px"
                       />
                     ) : (
@@ -173,11 +171,6 @@ export default function CartDrawer() {
                           +
                         </button>
                       </div>
-                      <div className="text-right">
-                        <p className="font-semibold text-secondary">
-                          {(item.product.price * item.quantity).toFixed(2)} {item.product.currency}
-                        </p>
-                      </div>
                     </div>
                   </div>
 
@@ -210,25 +203,6 @@ export default function CartDrawer() {
         {/* Footer */}
         {items.length > 0 && (
           <div className="border-t border-gray-200 bg-gray-50 p-4 sm:p-6">
-            {/* Price Summary */}
-            <div className="mb-4 space-y-2">
-              <div className="flex items-center justify-between text-sm text-gray-600">
-                <span>Sous-total ({totalItems} article{totalItems > 1 ? "s" : ""})</span>
-                <span className="font-medium">{totalPrice.toFixed(2)} EUR</span>
-              </div>
-              <div className="flex items-center justify-between text-sm text-gray-600">
-                <span>Livraison</span>
-                <span className="font-medium">À calculer</span>
-              </div>
-              <div className="border-t border-gray-300 pt-2">
-                <div className="flex items-center justify-between">
-                  <span className="text-lg font-bold text-secondary">Total:</span>
-                  <span className="text-xl font-bold text-secondary">
-                    {totalPrice.toFixed(2)} EUR
-                  </span>
-                </div>
-              </div>
-            </div>
             <div className="space-y-3">
               <button
                 onClick={openOrderForm}
@@ -250,4 +224,3 @@ export default function CartDrawer() {
     </>
   );
 }
-

@@ -6,11 +6,10 @@ import type { CartItem } from "@/lib/cart-context";
 
 interface OrderFormProps {
   items: CartItem[];
-  totalPrice: number;
   onCancel: () => void;
 }
 
-export default function OrderForm({ items, totalPrice, onCancel }: OrderFormProps) {
+export default function OrderForm({ items, onCancel }: OrderFormProps) {
   const { clearCart } = useCart();
   const [formData, setFormData] = useState({
     firstName: "",
@@ -217,56 +216,37 @@ export default function OrderForm({ items, totalPrice, onCancel }: OrderFormProp
           {/* Order Summary */}
           <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
             <h3 className="mb-3 text-lg font-semibold text-secondary">
-              Résumé de la commande
+              R?sum? de la commande
             </h3>
-            <div className="mb-4 space-y-2">
+            <div className="space-y-2">
               {items.map((item) => (
                 <div key={item.id} className="rounded-md bg-white p-3 text-sm">
                   <div className="flex items-start justify-between gap-2">
                     <div className="font-medium text-secondary">{item.product.name}</div>
                     {item.customization && (
                       <span className="flex-shrink-0 rounded-full bg-primary px-2 py-0.5 text-[10px] font-bold uppercase text-white">
-                        Personnalisé
+                        Personnalis?
                       </span>
                     )}
                   </div>
                   <div className="mt-1 text-gray-600">
                     {item.size && <span>Taille: {item.size}</span>}
-                    {item.size && item.color && <span> • </span>}
+                    {item.size && item.color && <span> ? </span>}
                     {item.color && <span>Couleur: {item.color}</span>}
                   </div>
                   {item.customization && (
                     <div className="mt-2 rounded-md bg-green-50 border border-green-200 p-2">
-                      <p className="text-xs font-semibold text-green-800 uppercase">Produit Personnalisé</p>
+                      <p className="text-xs font-semibold text-green-800 uppercase">Produit Personnalis?</p>
                       <p className="mt-1 text-sm font-bold text-green-900">
-                        {item.customization.name.toUpperCase()} • {item.customization.number}
+                        {item.customization.name.toUpperCase()} ? {item.customization.number}
                       </p>
                     </div>
                   )}
-                  <div className="mt-1 flex justify-between">
-                    <span className="text-gray-600">Quantité: {item.quantity}</span>
-                    <span className="font-medium text-secondary">
-                      {(item.product.price * item.quantity).toFixed(2)} {item.product.currency}
-                    </span>
+                  <div className="mt-1">
+                    <span className="text-gray-600">Quantit?: {item.quantity}</span>
                   </div>
                 </div>
               ))}
-            </div>
-            <div className="space-y-2 text-sm">
-              <div className="flex justify-between">
-                <span className="text-gray-600">
-                  Sous-total ({items.reduce((sum, item) => sum + item.quantity, 0)} article{items.reduce((sum, item) => sum + item.quantity, 0) > 1 ? "s" : ""})
-                </span>
-                <span className="font-medium text-secondary">
-                  {totalPrice.toFixed(2)} EUR
-                </span>
-              </div>
-              <div className="border-t border-gray-300 pt-2">
-                <div className="flex justify-between font-bold text-secondary">
-                  <span>Total</span>
-                  <span>{totalPrice.toFixed(2)} EUR</span>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -292,4 +272,3 @@ export default function OrderForm({ items, totalPrice, onCancel }: OrderFormProp
     </div>
   );
 }
-

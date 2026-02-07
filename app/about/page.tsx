@@ -86,6 +86,53 @@ export default function AboutPage() {
             </div>
           </div>
 
+          {/* CEO Photos Section */}
+          <div className="mb-16">
+            <div className="mb-8 text-center">
+              <h3 className="text-2xl font-bold text-secondary sm:text-3xl">
+                Direction Generale
+              </h3>
+              <p className="mt-2 text-base text-gray-600 sm:text-lg">
+                Les dirigeants de AIR BENJEL 27
+              </p>
+            </div>
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+              {[
+                {
+                  name: "Jean Francis BELINGA BENJEL",
+                  role: "CEO & Fondateur",
+                  image: "/1.jpeg",
+                },
+                {
+                  name: "Samuel BENJEL E. BELINGA",
+                  role: "CEO & Fondateur",
+                  image: "/2.jpeg",
+                },
+              ].map((leader) => (
+                <div
+                  key={leader.name}
+                  className="overflow-hidden rounded-2xl bg-white shadow-lg"
+                >
+                  <div className="relative h-64 w-full bg-gray-100 p-4 sm:h-72 md:h-[360px]">
+                    <Image
+                      src={leader.image}
+                      alt={leader.name}
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 640px) 100vw, 480px"
+                    />
+                  </div>
+                  <div className="p-6 text-center">
+                    <p className="text-lg font-semibold text-secondary">
+                      {leader.name}
+                    </p>
+                    <p className="mt-1 text-sm text-gray-600">{leader.role}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Mission Section */}
           <div className="mb-12 grid gap-8 md:grid-cols-2">
             <div className="rounded-xl bg-white p-8 shadow-lg">

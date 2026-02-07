@@ -8,14 +8,22 @@ import { useCart } from "@/lib/cart-context";
 import { useCartDrawer } from "@/lib/cart-drawer-context";
 
 const navItems = [
-  { name: "Maillots", href: "/kits" },
-  { name: "Vêtements", href: "/apparel" },
+  {
+    name: "Maillots",
+    href: "/kits",
+    children: [
+      { name: "Football", href: "/football" },
+      { name: "Basketball", href: "/basketball" },
+    ],
+  },
+  { name: "Vetements", href: "/apparel" },
   { name: "Accessoires", href: "/accessories" },
   { name: "Clubs Partenaires", href: "/clubs-partenaires" },
+  { name: "Sport Militaire", href: "/sport-militaire" },
   { name: "Promotion", href: "/promotion" },
   { name: "Catalogue", href: "/collections" },
   { name: "Cadeaux", href: "/gifts" },
-  { name: "À propos", href: "/about" },
+  { name: "A propos", href: "/about" },
 ];
 
 export default function Header() {
@@ -52,7 +60,7 @@ export default function Header() {
                 className="flex items-center transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
               >
                 <Image
-                  src="/logowithout.png"
+                  src="/logo1.png"
                   alt="AIR BENJEL 27 Logo"
                   width={120}
                   height={40}
@@ -65,17 +73,34 @@ export default function Header() {
             {/* Desktop Navigation */}
             <nav className="hidden items-center gap-4 md:gap-6 lg:flex">
               {navItems.map((item) => (
-                <Link
+                <div
                   key={item.name}
-                  href={item.href}
-                  className={`text-xs font-medium transition-colors hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary md:text-sm ${
-                    scrolled || !isHomePage
-                      ? "text-secondary hover:text-primary"
-                      : "text-white/90 hover:text-white"
-                  }`}
+                  className={`relative ${item.children ? "group" : ""}`}
                 >
-                  {item.name}
-                </Link>
+                  <Link
+                    href={item.href}
+                    className={`text-xs font-medium transition-colors hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary md:text-sm ${
+                      scrolled || !isHomePage
+                        ? "text-secondary hover:text-primary"
+                        : "text-white/90 hover:text-white"
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                  {item.children && (
+                    <div className="absolute left-0 top-full mt-2 hidden min-w-[180px] rounded-md border border-gray-200 bg-white py-2 shadow-lg group-hover:block group-focus-within:block">
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.name}
+                          href={child.href}
+                          className="block px-4 py-2 text-sm text-secondary transition-colors hover:bg-accent hover:text-primary"
+                        >
+                          {child.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ))}
             </nav>
 
@@ -242,6 +267,20 @@ export default function Header() {
                     >
                       {item.name}
                     </Link>
+                    {item.children && (
+                      <div className="mt-1 flex flex-col gap-1 pl-3">
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.name}
+                            href={child.href}
+                            className="block rounded-lg px-3 py-2 text-xs font-medium text-gray-600 transition-colors hover:bg-accent hover:text-primary sm:text-sm"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {child.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
                   </li>
                 ))}
               </ul>

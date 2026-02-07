@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 const shopLinks = [
+  { name: "Football", href: "/football" },
+  { name: "Basketball", href: "/basketball" },
   { name: "Maillots", href: "/kits" },
   { name: "Vêtements", href: "/apparel" },
   { name: "Accessoires", href: "/accessories" },
@@ -166,5 +168,4 @@ export default function Footer() {
     </footer>
   );
 }
-
 
