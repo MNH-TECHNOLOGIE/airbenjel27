@@ -52,7 +52,7 @@ export default function HeroCarousel() {
   return (
     <section className="relative w-full overflow-hidden">
       {/* Carousel Container - Pleine page comme Palmador */}
-      <div className="relative h-[60vh] w-full sm:h-[70vh] lg:h-[80vh]">
+      <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9]">
         {heroImages.map((image, index) => (
           <div
             key={index}

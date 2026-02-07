@@ -14,7 +14,7 @@ export default function SportMilitairePage() {
   return (
     <div className="min-h-screen bg-white pt-12 sm:pt-14">
       {/* Header Section */}
-      <div className="relative h-[180px] w-full overflow-hidden sm:h-[220px] md:h-[250px] lg:h-[300px]">
+      <div className="relative w-full overflow-hidden aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9]">
         <div className="absolute inset-0 bg-gradient-to-br from-secondary via-secondary-dark to-black" />
         <div className="absolute inset-0 bg-black/35" />
         <div className="absolute inset-0 flex items-center justify-center">

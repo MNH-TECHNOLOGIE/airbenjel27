@@ -45,7 +45,7 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
+        className={`relative z-50 w-full transition-all duration-300 ${
           scrolled || !isHomePage
             ? "bg-white/95 backdrop-blur-sm shadow-lg"
             : "bg-transparent"
