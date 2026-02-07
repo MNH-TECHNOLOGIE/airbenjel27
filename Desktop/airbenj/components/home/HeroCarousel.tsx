@@ -6,20 +6,20 @@ import Link from "next/link";
 
 const heroImages = [
   {
-    src: "/hero.jpg",
-    alt: "Hero Banner 1",
+    src: "/hero-5.png",
+    alt: "Hero Banner 5",
     title: "Bienvenue chez AIR BENJEL 27",
     subtitle: "Découvrez notre collection officielle d'équipements sportifs authentiques",
   },
   {
-    src: "/hero-2.jpg",
-    alt: "Hero Banner 2",
+    src: "/hero-6.png",
+    alt: "Hero Banner 6",
     title: "Nouvelle Collection",
     subtitle: "Des maillots aux accessoires exclusifs",
   },
   {
-    src: "/hero-3.jpg",
-    alt: "Hero Banner 3",
+    src: "/hero-7.png",
+    alt: "Hero Banner 7",
     title: "Équipementier Sportif",
     subtitle: "Conception, fabrication et commercialisation d'articles de sport",
   },
@@ -52,7 +52,7 @@ export default function HeroCarousel() {
   return (
     <section className="relative w-full overflow-hidden">
       {/* Carousel Container - Pleine page comme Palmador */}
-      <div className="relative h-[70vh] w-full sm:h-[80vh] lg:h-screen">
+      <div className="relative h-[60vh] w-full sm:h-[70vh] lg:h-[80vh]">
         {heroImages.map((image, index) => (
           <div
             key={index}
@@ -94,10 +94,10 @@ export default function HeroCarousel() {
                     }`}
                   >
                     {/* Titre principal */}
-                    <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+                    <h1 className="text-2xl font-bold tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
                       {image.title}
                     </h1>
-                    <p className="mt-4 text-base leading-7 text-white/90 sm:mt-6 sm:text-lg sm:leading-8 md:text-xl lg:text-2xl">
+                    <p className="mt-4 text-sm leading-6 text-white/90 sm:mt-6 sm:text-base sm:leading-7 md:text-lg lg:text-xl">
                       {image.subtitle}
                     </p>
                     <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:mt-10 sm:flex-row sm:gap-6">
