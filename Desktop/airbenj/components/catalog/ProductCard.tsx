@@ -18,7 +18,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             src={imageSrc}
             alt={product.name}
             fill
-            className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
+            className="object-contain object-center transition-transform duration-300 group-hover:scale-[1.02]"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           />
         ) : (
@@ -68,16 +68,8 @@ export default function ProductCard({ product }: ProductCardProps) {
           )}
         </div>
 
-        {/* Price and Buy Button Row */}
-        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
-          {/* Price */}
-          <div className="flex-1">
-            <span className="text-lg font-bold text-secondary sm:text-xl">
-              {product.price.toFixed(2)} {product.currency}
-            </span>
-          </div>
-
-          {/* Buy Now Button - Style like player cards */}
+        {/* Buy Now Button - Style like player cards */}
+        <div className="flex">
           <Link
             href={`/products/${product.slug}`}
             className="w-full rounded-md bg-primary px-4 py-2 text-xs font-bold uppercase tracking-wide text-white transition-all duration-300 hover:bg-primary-dark hover:scale-105 active:scale-95 shadow-md sm:w-auto sm:px-5 sm:py-2.5"
@@ -89,4 +81,3 @@ export default function ProductCard({ product }: ProductCardProps) {
     </div>
   );
 }
-

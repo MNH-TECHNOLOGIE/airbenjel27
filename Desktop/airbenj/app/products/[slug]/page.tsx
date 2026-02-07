@@ -62,7 +62,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                   src={product.images[0]}
                   alt={product.name}
                   fill
-                  className="object-cover object-center"
+                  className="object-contain object-center"
                   priority
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
@@ -96,7 +96,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                       src={image}
                       alt={`${product.name} ${index + 1}`}
                       fill
-                      className="object-cover"
+                      className="object-contain"
                       sizes="(max-width: 1024px) 25vw, 12.5vw"
                     />
                   </div>
@@ -112,13 +112,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
               <h1 className="text-2xl font-bold text-secondary sm:text-3xl md:text-4xl lg:text-5xl">
                 {product.name}
               </h1>
-            </div>
-
-            {/* Price */}
-            <div>
-              <p className="text-2xl font-bold text-secondary sm:text-3xl md:text-4xl">
-                {product.price.toFixed(2)} {product.currency}
-              </p>
             </div>
 
             {/* Product Selector (Size, Color, Audience) */}
@@ -185,4 +178,3 @@ export default async function ProductPage({ params }: ProductPageProps) {
     </div>
   );
 }
-

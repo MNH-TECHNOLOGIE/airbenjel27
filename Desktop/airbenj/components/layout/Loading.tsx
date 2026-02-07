@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Loading() {
@@ -104,15 +105,17 @@ export default function Loading() {
       <div className="relative z-10 flex flex-col items-center justify-center">
         {/* Logo with Animation - Much Larger */}
         <div className="mb-12 animate-scale-in">
-          <img
-            src="/logowithout.png"
+          <Image
+            src="/logo1.png"
             alt="AIR BENJEL 27 Logo"
+            width={600}
+            height={200}
             className="h-48 w-auto object-contain drop-shadow-lg sm:h-64 md:h-80 lg:h-96"
-            style={{ maxWidth: '600px' }}
+            style={{ maxWidth: "600px" }}
             onError={(e) => {
-              console.error('Error loading logo:', e);
+              console.error("Error loading logo:", e);
               // Fallback to text if image fails
-              e.currentTarget.style.display = 'none';
+              e.currentTarget.style.display = "none";
             }}
           />
         </div>
@@ -352,9 +355,3 @@ export default function Loading() {
     </div>
   );
 }
-
-
-
-
-
-

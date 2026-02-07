@@ -7,7 +7,7 @@ import { useCart } from "@/lib/cart-context";
 import OrderForm from "@/components/cart/OrderForm";
 
 export default function CartPage() {
-  const { items, removeFromCart, updateQuantity, totalItems, totalPrice } = useCart();
+  const { items, removeFromCart, updateQuantity, totalItems } = useCart();
   const [showOrderForm, setShowOrderForm] = useState(false);
 
   if (items.length === 0) {
@@ -50,7 +50,6 @@ export default function CartPage() {
         {showOrderForm ? (
           <OrderForm
             items={items}
-            totalPrice={totalPrice}
             onCancel={() => setShowOrderForm(false)}
           />
         ) : (
@@ -69,7 +68,7 @@ export default function CartPage() {
                         src={item.product.images[0]}
                         alt={item.product.name}
                         fill
-                        className="object-cover"
+                        className="object-contain"
                         sizes="(max-width: 640px) 128px, 96px"
                       />
                     ) : (
@@ -142,11 +141,7 @@ export default function CartPage() {
                         </div>
                       </div>
 
-                      {/* Price */}
-                      <div className="flex items-center justify-between sm:justify-end sm:gap-8">
-                        <p className="text-lg font-bold text-secondary sm:text-xl">
-                          {(item.product.price * item.quantity).toFixed(2)} {item.product.currency}
-                        </p>
+                      <div className="flex items-center justify-end">
                         <button
                           onClick={() => removeFromCart(item.id)}
                           className="rounded-lg p-2 text-gray-400 transition-colors hover:bg-gray-100 hover:text-primary"
@@ -175,27 +170,14 @@ export default function CartPage() {
 
             {/* Order Summary */}
             <div className="rounded-lg border border-gray-200 bg-gray-50 p-6">
-              <h2 className="mb-4 text-xl font-bold text-secondary">Résumé de la commande</h2>
-              <div className="space-y-3">
-                <div className="flex justify-between text-base">
-                  <span className="text-gray-600">Sous-total ({totalItems} articles)</span>
-                  <span className="font-medium text-secondary">
-                    {totalPrice.toFixed(2)} EUR
-                  </span>
-                </div>
-                <div className="flex justify-between text-base">
-                  <span className="text-gray-600">Livraison</span>
-                  <span className="font-medium text-secondary">À calculer</span>
-                </div>
-                <div className="border-t border-gray-300 pt-3">
-                  <div className="flex justify-between text-lg font-bold text-secondary">
-                    <span>Total</span>
-                    <span>{totalPrice.toFixed(2)} EUR</span>
-                  </div>
-                </div>
-              </div>
+              <h2 className="mb-4 text-xl font-bold text-secondary">R?sum? de la commande</h2>
+              <p className="text-base text-gray-600">
+                Articles dans votre panier: {" "}
+                <span className="font-medium text-secondary">{totalItems}</span>
+              </p>
+            </div>
 
-              {/* Order Button */}
+            {/* Order Button */}
               <button
                 onClick={() => setShowOrderForm(true)}
                 className="btn-primary mt-6 w-full sm:text-lg"
@@ -217,4 +199,3 @@ export default function CartPage() {
     </div>
   );
 }
-
