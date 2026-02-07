@@ -44,13 +44,7 @@ export default function Header() {
 
   return (
     <>
-      <header
-        className={`relative z-50 w-full transition-all duration-300 ${
-          scrolled || !isHomePage
-            ? "bg-white/95 backdrop-blur-sm shadow-lg"
-            : "bg-transparent"
-        }`}
-      >
+      <header className="relative z-50 w-full bg-black transition-all duration-300">
         <div className="mx-auto w-full max-w-7xl px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="flex h-12 items-center justify-between sm:h-14">
             {/* Logo */}
@@ -79,11 +73,7 @@ export default function Header() {
                 >
                   <Link
                     href={item.href}
-                    className={`text-xs font-medium transition-colors hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary md:text-sm ${
-                      scrolled || !isHomePage
-                        ? "text-secondary hover:text-primary"
-                        : "text-white/90 hover:text-white"
-                    }`}
+                    className="text-xs font-medium text-white/90 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary md:text-sm"
                   >
                     {item.name}
                   </Link>
@@ -109,11 +99,7 @@ export default function Header() {
               {/* Search Icon */}
               <Link
                 href="/search"
-                className={`hidden rounded-lg p-2 transition-all hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary lg:block ${
-                  scrolled || !isHomePage
-                    ? "text-secondary hover:bg-accent"
-                    : "text-white hover:bg-white/20"
-                }`}
+                className="hidden rounded-lg p-2 text-white transition-all hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary lg:block"
                 aria-label="Rechercher"
               >
                 <svg
@@ -134,11 +120,7 @@ export default function Header() {
               {/* Account Icon */}
               <Link
                 href="/account"
-                className={`hidden rounded-lg p-2 transition-all hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary lg:block ${
-                  scrolled || !isHomePage
-                    ? "text-secondary hover:bg-accent"
-                    : "text-white hover:bg-white/20"
-                }`}
+                className="hidden rounded-lg p-2 text-white transition-all hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary lg:block"
                 aria-label="Mon compte"
               >
                 <svg
@@ -160,11 +142,7 @@ export default function Header() {
               <button
                 type="button"
                 onClick={openCartDrawer}
-                className={`relative rounded-lg p-2 transition-all hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${
-                  scrolled || !isHomePage
-                    ? "text-secondary hover:bg-accent"
-                    : "text-white hover:bg-white/20"
-                }`}
+                className="relative rounded-lg p-2 text-white transition-all hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                 aria-label="Panier"
               >
                 <svg
@@ -191,11 +169,7 @@ export default function Header() {
               {/* Mobile Menu Button */}
               <button
                 type="button"
-                className={`rounded-lg p-2 transition-all hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary lg:hidden ${
-                  scrolled || !isHomePage
-                    ? "text-secondary hover:bg-accent"
-                    : "text-white hover:bg-white/20"
-                }`}
+                className="rounded-lg p-2 text-white transition-all hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary lg:hidden"
                 onClick={() => setMobileMenuOpen(true)}
                 aria-label="Ouvrir le menu"
               >

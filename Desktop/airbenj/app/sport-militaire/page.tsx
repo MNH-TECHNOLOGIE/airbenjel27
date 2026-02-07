@@ -10,6 +10,27 @@ export const metadata: Metadata = {
 
 export default function SportMilitairePage() {
   const products = getProductsByCategory("sport-militaire") || [];
+  const priorityNames = [
+    "Airbenjel Sport Militaire 5",
+    "Airbenjel Sport Militaire 6",
+    "Airbenjel Sport Militaire 7",
+    "Airbenjel Sport Militaire 8",
+    "Airbenjel Sport Militaire 9",
+  ];
+  const priorityMap = new Map(priorityNames.map((name, index) => [name, index]));
+  const sortedProducts = products
+    .map((product, index) => ({ product, index }))
+    .sort((a, b) => {
+      const aPriority = priorityMap.has(a.product.name)
+        ? priorityMap.get(a.product.name)!
+        : Number.POSITIVE_INFINITY;
+      const bPriority = priorityMap.has(b.product.name)
+        ? priorityMap.get(b.product.name)!
+        : Number.POSITIVE_INFINITY;
+      if (aPriority !== bPriority) return aPriority - bPriority;
+      return a.index - b.index;
+    })
+    .map(({ product }) => product);
 
   return (
     <div className="min-h-screen bg-white pt-12 sm:pt-14">
@@ -41,7 +62,7 @@ export default function SportMilitairePage() {
             </p>
           </div>
 
-          <ProductGrid products={products} />
+          <ProductGrid products={sortedProducts} />
         </div>
       </section>
     </div>
