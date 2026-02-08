@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Product } from "@/data/types";
@@ -11,12 +11,18 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   const imageList = product.images.length > 0 ? product.images : ["/placeholder-product.jpg"];
-  const imageSrc = imageList[0];
   const defaultColor = product.colors && product.colors.length > 0 ? product.colors[0] : null;
   const buyHref = defaultColor
     ? `/products/${product.slug}?color=${encodeURIComponent(defaultColor)}&lockColor=1`
     : `/products/${product.slug}`;
   const [showImage, setShowImage] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const modalScrollerRef = useRef<HTMLDivElement>(null);
+
+  const openModal = () => {
+    setActiveIndex(0);
+    setShowImage(true);
+  };
 
   useEffect(() => {
     if (!showImage) return;
@@ -24,20 +30,45 @@ export default function ProductCard({ product }: ProductCardProps) {
       if (event.key === "Escape") {
         setShowImage(false);
       }
+      if (event.key === "ArrowRight") {
+        setActiveIndex((current) => Math.min(current + 1, imageList.length - 1));
+      }
+      if (event.key === "ArrowLeft") {
+        setActiveIndex((current) => Math.max(current - 1, 0));
+      }
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [showImage]);
+  }, [showImage, imageList.length]);
+
+  useEffect(() => {
+    if (!showImage) return;
+    const scroller = modalScrollerRef.current;
+    if (!scroller) return;
+    scroller.scrollTo({
+      left: activeIndex * scroller.clientWidth,
+      behavior: "smooth",
+    });
+  }, [activeIndex, showImage]);
+
+  const handleModalScroll = () => {
+    const scroller = modalScrollerRef.current;
+    if (!scroller) return;
+    const nextIndex = Math.round(scroller.scrollLeft / scroller.clientWidth);
+    if (nextIndex !== activeIndex) {
+      setActiveIndex(nextIndex);
+    }
+  };
 
   return (
     <>
       <div
         role="button"
         tabIndex={0}
-        onClick={() => setShowImage(true)}
+        onClick={openModal}
         onKeyDown={(event) => {
           if (event.key === "Enter" || event.key === " ") {
-            setShowImage(true);
+            openModal();
           }
         }}
         className="group relative flex flex-col overflow-hidden rounded-lg bg-gray-100 transition-all hover:shadow-xl hover:-translate-y-1"
@@ -112,14 +143,27 @@ export default function ProductCard({ product }: ProductCardProps) {
           aria-modal="true"
         >
           <div
-            className="relative max-h-[92vh] max-w-[92vw] rounded-lg bg-white p-3"
+            className="relative max-h-[92vh] w-full max-w-[92vw] rounded-lg bg-white p-3"
             onClick={(event) => event.stopPropagation()}
           >
-            <img
-              src={imageSrc}
-              alt={product.name}
-              className="block h-auto w-auto max-h-[88vh] max-w-[88vw] object-contain"
-            />
+            <div
+              ref={modalScrollerRef}
+              onScroll={handleModalScroll}
+              className="flex max-h-[88vh] w-full snap-x snap-mandatory overflow-x-auto scroll-smooth touch-pan-x"
+            >
+              {imageList.map((src, index) => (
+                <div
+                  key={`${product.id}-modal-${index}`}
+                  className="flex h-[88vh] w-[88vw] flex-shrink-0 snap-center items-center justify-center"
+                >
+                  <img
+                    src={src}
+                    alt={`${product.name} ${index + 1}`}
+                    className="block max-h-[88vh] max-w-[88vw] object-contain"
+                  />
+                </div>
+              ))}
+            </div>
             <button
               type="button"
               onClick={() => setShowImage(false)}
