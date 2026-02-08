@@ -10,7 +10,8 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
-  const imageSrc = product.images[0] || "/placeholder-product.jpg";
+  const imageList = product.images.length > 0 ? product.images : ["/placeholder-product.jpg"];
+  const imageSrc = imageList[0];
   const defaultColor = product.colors && product.colors.length > 0 ? product.colors[0] : null;
   const buyHref = defaultColor
     ? `/products/${product.slug}?color=${encodeURIComponent(defaultColor)}&lockColor=1`
@@ -44,31 +45,22 @@ export default function ProductCard({ product }: ProductCardProps) {
       >
         {/* Image Container - Fill card with a clean crop */}
         <div className="relative aspect-[3/4] w-full overflow-hidden bg-gray-200">
-          {product.images.length > 0 ? (
-            <Image
-              src={imageSrc}
-              alt={product.name}
-              fill
-              className="object-cover object-center transition-transform duration-300 group-hover:scale-[1.04]"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-            />
-          ) : (
-            <div className="flex h-full items-center justify-center text-gray-400">
-              <svg
-                className="h-12 w-12"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+          <div className="absolute inset-0 flex h-full w-full snap-x snap-mandatory overflow-x-auto scroll-smooth">
+            {imageList.map((src, index) => (
+              <div
+                key={`${product.id}-image-${index}`}
+                className="relative h-full w-full flex-shrink-0 snap-center"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                <Image
+                  src={src}
+                  alt={product.name}
+                  fill
+                  className="object-cover object-center transition-transform duration-300 group-hover:scale-[1.04]"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 />
-              </svg>
-            </div>
-          )}
+              </div>
+            ))}
+          </div>
 
           {/* Badges */}
           <div className="absolute left-2 top-2 flex flex-col gap-1.5">
