@@ -54,7 +54,7 @@ export default function ClubsPartenairesPage() {
             </h2>
             <p className="mt-4 text-base text-gray-600 sm:text-lg">
               AIR BENJEL 27 est fier de collaborer avec des clubs sportifs,
-              fédérations et associations à travers l'Afrique.
+              fédérations et associations à travers l&apos;Afrique.
             </p>
           </div>
 
@@ -134,7 +134,7 @@ export default function ClubsPartenairesPage() {
             </h3>
             <p className="mb-6 text-center text-base text-gray-700 sm:text-lg">
               AIR BENJEL 27 recherche des partenariats avec des clubs sportifs,
-              fédérations et associations à travers l'Afrique.
+              fédérations et associations à travers l&apos;Afrique.
             </p>
             <div className="mx-auto max-w-2xl">
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">

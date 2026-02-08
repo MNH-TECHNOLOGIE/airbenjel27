@@ -44,7 +44,7 @@ export default function SportMilitairePage() {
               SPORT MILITAIRE
             </h1>
             <p className="mt-2 text-sm text-white/90 sm:mt-3 sm:text-base md:mt-4 md:text-lg">
-              Tenues techniques, résistantes et confortables pour l'effort
+              Tenues techniques, résistantes et confortables pour l&apos;effort
             </p>
           </div>
         </div>

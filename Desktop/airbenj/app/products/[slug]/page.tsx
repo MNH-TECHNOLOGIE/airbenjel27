@@ -125,7 +125,7 @@ export default async function ProductPage({ params, searchParams }: ProductPageP
             {/* Product Selector (Size, Color, Audience) */}
             <ProductSelector
               product={product}
-              forcedColor={colorParam ? null}
+              forcedColor={colorParam ?? null}
               lockColor={lockColor}
             />
 
