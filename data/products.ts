@@ -1066,7 +1066,6 @@ export const products: Product[] = [
     images: [
       "/airbenjel photo produit/sport militaire/bleu/image (54).png",
       "/airbenjel photo produit/sport militaire/bleu/WhatsApp Image 2026-02-05 at 20.10.45 (5).jpeg",
-      "/airbenjel photo produit/sport militaire/WhatsApp Image 2026-02-05 at 20.10.44.jpeg",
     ],
     categoryId: "sport-militaire",
     collectionIds: [],
@@ -1088,7 +1087,6 @@ export const products: Product[] = [
     images: [
       "/airbenjel photo produit/sport militaire/bleu ciel/image (53).png",
       "/airbenjel photo produit/sport militaire/bleu ciel/WhatsApp Image 2026-02-05 at 20.10.45 (4).jpeg",
-      "/airbenjel photo produit/sport militaire/WhatsApp Image 2026-02-05 at 20.10.44 (1).jpeg",
     ],
     categoryId: "sport-militaire",
     collectionIds: [],
@@ -1110,7 +1108,6 @@ export const products: Product[] = [
     images: [
       "/airbenjel photo produit/sport militaire/noir/image (52).png",
       "/airbenjel photo produit/sport militaire/noir/WhatsApp Image 2026-02-05 at 20.10.45 (2).jpeg",
-      "/airbenjel photo produit/sport militaire/WhatsApp Image 2026-02-05 at 20.10.44 (2).jpeg",
     ],
     categoryId: "sport-militaire",
     collectionIds: [],
@@ -1132,7 +1129,6 @@ export const products: Product[] = [
     images: [
       "/airbenjel photo produit/sport militaire/orange/image (51).png",
       "/airbenjel photo produit/sport militaire/orange/WhatsApp Image 2026-02-05 at 20.10.45 (3).jpeg",
-      "/airbenjel photo produit/sport militaire/WhatsApp Image 2026-02-05 at 20.10.45.jpeg",
     ],
     categoryId: "sport-militaire",
     collectionIds: [],
@@ -1154,7 +1150,6 @@ export const products: Product[] = [
     images: [
       "/airbenjel photo produit/sport militaire/rouge/image (43).png",
       "/airbenjel photo produit/sport militaire/rouge/WhatsApp Image 2026-02-05 at 20.10.45 (1).jpeg",
-      "/airbenjel photo produit/sport militaire/WhatsApp Image 2026-02-05 at 20.10.45 (1).jpeg",
     ],
     categoryId: "sport-militaire",
     collectionIds: [],
@@ -1176,7 +1171,6 @@ export const products: Product[] = [
     images: [
       "/airbenjel photo produit/sport militaire/maillot rouge/image (50).png",
       "/airbenjel photo produit/sport militaire/maillot rouge/WhatsApp Image 2026-02-05 at 20.10.45.jpeg",
-      "/airbenjel photo produit/sport militaire/WhatsApp Image 2026-02-05 at 20.10.45 (2).jpeg",
     ],
     categoryId: "sport-militaire",
     collectionIds: [],
@@ -1198,7 +1192,6 @@ export const products: Product[] = [
     images: [
       "/airbenjel photo produit/sport militaire/maillot rouge , blanc/image (49).png",
       "/airbenjel photo produit/sport militaire/maillot rouge , blanc/WhatsApp Image 2026-02-05 at 20.10.44.jpeg",
-      "/airbenjel photo produit/sport militaire/WhatsApp Image 2026-02-05 at 20.10.45 (3).jpeg",
     ],
     categoryId: "sport-militaire",
     collectionIds: [],
@@ -1220,7 +1213,6 @@ export const products: Product[] = [
     images: [
       "/airbenjel photo produit/sport militaire/maillot vert/image (47).png",
       "/airbenjel photo produit/sport militaire/maillot vert/WhatsApp Image 2026-02-05 at 20.10.44 (2).jpeg",
-      "/airbenjel photo produit/sport militaire/WhatsApp Image 2026-02-05 at 20.10.45 (4).jpeg",
     ],
     categoryId: "sport-militaire",
     collectionIds: [],
@@ -1242,7 +1234,6 @@ export const products: Product[] = [
     images: [
       "/airbenjel photo produit/sport militaire/maillot vert balc/image (46).png",
       "/airbenjel photo produit/sport militaire/maillot vert balc/WhatsApp Image 2026-02-05 at 20.10.44 (1).jpeg",
-      "/airbenjel photo produit/sport militaire/WhatsApp Image 2026-02-05 at 20.10.45 (5).jpeg",
     ],
     categoryId: "sport-militaire",
     collectionIds: [],
