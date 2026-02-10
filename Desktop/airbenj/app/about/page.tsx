@@ -104,11 +104,6 @@ export default function AboutPage() {
                   role: "CEO & Fondateur",
                   image: "/1.jpeg",
                 },
-                {
-                  name: "Samuel BENJEL E. BELINGA",
-                  role: "CEO & Fondateur",
-                  image: "/2.jpeg",
-                },
               ].map((leader) => (
                 <div
                   key={leader.name}
