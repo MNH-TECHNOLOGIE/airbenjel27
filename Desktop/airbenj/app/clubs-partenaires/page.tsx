@@ -1,11 +1,11 @@
-ï»¿import { Metadata } from "next";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Clubs Partenaires",
   description:
-    "DÃ©couvrez les clubs partenaires d'AIR BENJEL 27 - Nos collaborations avec les Ã©quipes sportives.",
+    "Découvrez les clubs partenaires d'AIR BENJEL 27 - Nos collaborations avec les équipes sportives.",
 };
 
 export default function ClubsPartenairesPage() {
@@ -26,23 +26,6 @@ export default function ClubsPartenairesPage() {
 
   return (
     <div className="min-h-screen bg-white pt-12 sm:pt-14">
-      {/* Header Section with Banner */}
-      <div className="relative h-[180px] w-full overflow-hidden sm:h-[220px] md:h-[250px] lg:h-[300px]">
-        <div className="absolute inset-0 bg-gradient-to-br from-secondary to-secondary-dark"></div>
-        {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/40"></div>
-        {/* Content */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="mx-auto w-full max-w-7xl px-3 text-center sm:px-4 md:px-6 lg:px-8">
-            <h1 className="text-2xl font-bold text-white sm:text-3xl md:text-4xl lg:text-5xl">
-              Clubs Partenaires
-            </h1>
-            <p className="mt-2 text-sm text-white/90 sm:mt-3 sm:text-base md:mt-4 md:text-lg">
-              Nos collaborations avec les Ã©quipes sportives
-            </p>
-          </div>
-        </div>
-      </div>
 
       {/* Main Content */}
       <section className="py-8 sm:py-12 md:py-16">
@@ -54,7 +37,7 @@ export default function ClubsPartenairesPage() {
             </h2>
             <p className="mt-4 text-base text-gray-600 sm:text-lg">
               AIR BENJEL 27 est fier de collaborer avec des clubs sportifs,
-              fÃ©dÃ©rations et associations Ã  travers l&apos;Afrique.
+              fédérations et associations à travers l&apos;Afrique.
             </p>
           </div>
 
@@ -65,26 +48,26 @@ export default function ClubsPartenairesPage() {
                 <div className="relative h-8 w-12 overflow-hidden rounded-sm shadow-sm sm:h-9 sm:w-14">
                   <Image
                     src="/flags/flag-guinee-equatoriale.svg"
-                    alt="Drapeau de la GuinÃ©e Ã©quatoriale"
+                    alt="Drapeau de la Guinée équatoriale"
                     fill
                     className="object-cover"
                     sizes="56px"
                   />
                 </div>
                 <span className="text-sm font-semibold text-secondary">
-                  GuinÃ©e Ã©quatoriale
+                  Guinée équatoriale
                 </span>
               </div>
               <h3 className="text-xl font-bold text-secondary sm:text-2xl">
                 NZALANG NACIONAL
               </h3>
               <p className="mt-2 text-base font-semibold text-primary sm:text-lg">
-                Ã‰quipe nationale de GuinÃ©e Ã©quatoriale
+                Équipe nationale de Guinée équatoriale
               </p>
               <p className="mt-2 text-base text-gray-700 sm:text-lg">
-                Nous sommes fiers d&apos;Ãªtre le fournisseur officiel des produits
-                dÃ©rivÃ©s de l&apos;Ã©quipe nationale de GuinÃ©e Ã©quatoriale. Nos
-                Ã©quipements et produits dÃ©rivÃ©s sont de qualitÃ© supÃ©rieure.
+                Nous sommes fiers d&apos;être le fournisseur officiel des produits
+                dérivés de l&apos;équipe nationale de Guinée équatoriale. Nos
+                équipements et produits dérivés sont de qualité supérieure.
               </p>
             </div>
           </div>
@@ -118,7 +101,7 @@ export default function ClubsPartenairesPage() {
                         href={`/products/${card.slug}`}
                         className="btn-outline-secondary flex-1 text-center text-xs sm:text-sm"
                       >
-                        DÃ©tails
+                        Détails
                       </Link>
                     </div>
                   </div>
@@ -134,26 +117,26 @@ export default function ClubsPartenairesPage() {
             </h3>
             <p className="mb-6 text-center text-base text-gray-700 sm:text-lg">
               AIR BENJEL 27 recherche des partenariats avec des clubs sportifs,
-              fÃ©dÃ©rations et associations Ã  travers l&apos;Afrique.
+              fédérations et associations à travers l&apos;Afrique.
             </p>
             <div className="mx-auto max-w-2xl">
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div className="rounded-lg border border-gray-200 bg-white p-4">
                   <h4 className="mb-2 font-semibold text-secondary">Clubs Sportifs</h4>
                   <p className="text-sm text-gray-600">
-                    Ã‰quipements et produits dÃ©rivÃ©s pour vos Ã©quipes
+                    Équipements et produits dérivés pour vos équipes
                   </p>
                 </div>
                 <div className="rounded-lg border border-gray-200 bg-white p-4">
-                  <h4 className="mb-2 font-semibold text-secondary">FÃ©dÃ©rations</h4>
+                  <h4 className="mb-2 font-semibold text-secondary">Fédérations</h4>
                   <p className="text-sm text-gray-600">
-                    Solutions complÃ¨tes pour vos compÃ©titions
+                    Solutions complètes pour vos compétitions
                   </p>
                 </div>
                 <div className="rounded-lg border border-gray-200 bg-white p-4">
                   <h4 className="mb-2 font-semibold text-secondary">Associations</h4>
                   <p className="text-sm text-gray-600">
-                    Partenariats sur mesure pour vos Ã©vÃ©nements
+                    Partenariats sur mesure pour vos événements
                   </p>
                 </div>
                 <div className="rounded-lg border border-gray-200 bg-white p-4">
