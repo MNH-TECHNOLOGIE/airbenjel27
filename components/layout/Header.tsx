@@ -68,7 +68,7 @@ export default function Header() {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden items-center gap-4 md:gap-6 lg:flex">
+            <nav className="hidden items-center gap-3 lg:flex">
               {navItems.map((item) => (
                 <div
                   key={item.name}
@@ -76,7 +76,7 @@ export default function Header() {
                 >
                   <Link
                     href={item.href}
-                    className="text-xs font-medium text-white/90 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary md:text-sm"
+                    className="whitespace-nowrap text-[11px] font-medium text-white/90 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                   >
                     {item.name}
                   </Link>
@@ -86,7 +86,7 @@ export default function Header() {
                         <Link
                           key={child.name}
                           href={child.href}
-                          className="block px-4 py-2 text-sm text-secondary transition-colors hover:bg-accent hover:text-primary"
+                          className="block whitespace-nowrap px-4 py-2 text-sm text-secondary transition-colors hover:bg-accent hover:text-primary"
                         >
                           {child.name}
                         </Link>
