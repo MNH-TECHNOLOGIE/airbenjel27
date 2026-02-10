@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Clubs Partenaires",
   description:
-    "Découvrez les clubs partenaires d'AIR BENJEL 27 - Nos collaborations avec les équipes sportives.",
+    "Decouvrez les clubs partenaires d'AIR BENJEL 27 et nos collaborations sportives.",
 };
 
 export default function ClubsPartenairesPage() {
@@ -26,7 +26,6 @@ export default function ClubsPartenairesPage() {
 
   return (
     <div className="min-h-screen bg-white pt-12 sm:pt-14">
-
       {/* Main Content */}
       <section className="py-8 sm:py-12 md:py-16">
         <div className="mx-auto w-full max-w-7xl px-3 sm:px-4 md:px-6 lg:px-8">
@@ -37,7 +36,7 @@ export default function ClubsPartenairesPage() {
             </h2>
             <p className="mt-4 text-base text-gray-600 sm:text-lg">
               AIR BENJEL 27 est fier de collaborer avec des clubs sportifs,
-              fédérations et associations à travers l&apos;Afrique.
+              federations et associations a travers l'Afrique.
             </p>
           </div>
 
@@ -48,26 +47,26 @@ export default function ClubsPartenairesPage() {
                 <div className="relative h-8 w-12 overflow-hidden rounded-sm shadow-sm sm:h-9 sm:w-14">
                   <Image
                     src="/flags/flag-guinee-equatoriale.svg"
-                    alt="Drapeau de la Guinée équatoriale"
+                    alt="Drapeau de la Guinee equatoriale"
                     fill
                     className="object-cover"
                     sizes="56px"
                   />
                 </div>
                 <span className="text-sm font-semibold text-secondary">
-                  Guinée équatoriale
+                  Guinee equatoriale
                 </span>
               </div>
               <h3 className="text-xl font-bold text-secondary sm:text-2xl">
                 NZALANG NACIONAL
               </h3>
               <p className="mt-2 text-base font-semibold text-primary sm:text-lg">
-                Équipe nationale de Guinée équatoriale
+                Equipe nationale de Guinee equatoriale
               </p>
               <p className="mt-2 text-base text-gray-700 sm:text-lg">
-                Nous sommes fiers d&apos;être le fournisseur officiel des produits
-                dérivés de l&apos;équipe nationale de Guinée équatoriale. Nos
-                équipements et produits dérivés sont de qualité supérieure.
+                Nous sommes fiers d'etre le fournisseur officiel des produits
+                derives de l'equipe nationale de Guinee equatoriale. Nos
+                equipements et produits derives sont de qualite superieure.
               </p>
             </div>
           </div>
@@ -101,7 +100,7 @@ export default function ClubsPartenairesPage() {
                         href={`/products/${card.slug}`}
                         className="btn-outline-secondary flex-1 text-center text-xs sm:text-sm"
                       >
-                        Détails
+                        Details
                       </Link>
                     </div>
                   </div>
@@ -117,26 +116,26 @@ export default function ClubsPartenairesPage() {
             </h3>
             <p className="mb-6 text-center text-base text-gray-700 sm:text-lg">
               AIR BENJEL 27 recherche des partenariats avec des clubs sportifs,
-              fédérations et associations à travers l&apos;Afrique.
+              federations et associations a travers l'Afrique.
             </p>
             <div className="mx-auto max-w-2xl">
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div className="rounded-lg border border-gray-200 bg-white p-4">
                   <h4 className="mb-2 font-semibold text-secondary">Clubs Sportifs</h4>
                   <p className="text-sm text-gray-600">
-                    Équipements et produits dérivés pour vos équipes
+                    Equipements et produits derives pour vos equipes
                   </p>
                 </div>
                 <div className="rounded-lg border border-gray-200 bg-white p-4">
-                  <h4 className="mb-2 font-semibold text-secondary">Fédérations</h4>
+                  <h4 className="mb-2 font-semibold text-secondary">Federations</h4>
                   <p className="text-sm text-gray-600">
-                    Solutions complètes pour vos compétitions
+                    Solutions completes pour vos competitions
                   </p>
                 </div>
                 <div className="rounded-lg border border-gray-200 bg-white p-4">
                   <h4 className="mb-2 font-semibold text-secondary">Associations</h4>
                   <p className="text-sm text-gray-600">
-                    Partenariats sur mesure pour vos événements
+                    Partenariats sur mesure pour vos evenements
                   </p>
                 </div>
                 <div className="rounded-lg border border-gray-200 bg-white p-4">
