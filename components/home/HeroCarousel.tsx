@@ -91,14 +91,7 @@ export default function HeroCarousel() {
                         : "translate-y-[-30px] opacity-0"
                     }`}
                   >
-                    {/* Titre principal */}
-                    <h1 className="text-2xl font-bold tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
-                      {image.title}
-                    </h1>
-                    <p className="mt-4 text-sm leading-6 text-white/90 sm:mt-6 sm:text-base sm:leading-7 md:text-lg lg:text-xl">
-                      {image.subtitle}
-                    </p>
-                    <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:mt-10 sm:flex-row sm:gap-6">
+                    <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
                       <Link
                         href="/collections"
                         className="btn-primary w-full shadow-xl sm:w-auto sm:px-8 sm:py-4 sm:text-lg"
