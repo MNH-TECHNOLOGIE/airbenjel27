@@ -36,7 +36,7 @@ export default function ClubsPartenairesPage() {
             </h2>
             <p className="mt-4 text-base text-gray-600 sm:text-lg">
               AIR BENJEL 27 est fier de collaborer avec des clubs sportifs,
-              federations et associations a travers l'Afrique.
+              federations et associations a travers l&apos;Afrique.
             </p>
           </div>
 
@@ -64,8 +64,8 @@ export default function ClubsPartenairesPage() {
                 Equipe nationale de Guinee equatoriale
               </p>
               <p className="mt-2 text-base text-gray-700 sm:text-lg">
-                Nous sommes fiers d'etre le fournisseur officiel des produits
-                derives de l'equipe nationale de Guinee equatoriale. Nos
+                Nous sommes fiers d&apos;etre le fournisseur officiel des produits
+                derives de l&apos;equipe nationale de Guinee equatoriale. Nos
                 equipements et produits derives sont de qualite superieure.
               </p>
             </div>
@@ -116,7 +116,7 @@ export default function ClubsPartenairesPage() {
             </h3>
             <p className="mb-6 text-center text-base text-gray-700 sm:text-lg">
               AIR BENJEL 27 recherche des partenariats avec des clubs sportifs,
-              federations et associations a travers l'Afrique.
+              federations et associations a travers l&apos;Afrique.
             </p>
             <div className="mx-auto max-w-2xl">
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -160,3 +160,4 @@ export default function ClubsPartenairesPage() {
     </div>
   );
 }
+
