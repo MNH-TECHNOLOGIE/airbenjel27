@@ -23,6 +23,7 @@ const navItems = [
   { name: "Promotion", href: "/promotion" },
   { name: "Catalogue", href: "/collections" },
   { name: "Cadeaux", href: "/gifts" },
+  { name: "Brand Ambassador", href: "/brand-ambassador" },
   { name: "À propos", href: "/about" },
 ];
 
@@ -307,3 +308,6 @@ export default function Header() {
       </>
     );
   }
+
+
+

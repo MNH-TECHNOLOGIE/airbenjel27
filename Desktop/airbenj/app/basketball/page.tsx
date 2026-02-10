@@ -12,7 +12,7 @@ export default function BasketballPage() {
       {/* Header Section with Banner */}
       <div className="relative h-[180px] w-full overflow-hidden sm:h-[220px] md:h-[250px] lg:h-[300px]">
         <Image
-          src="/banner 4.png"
+          src="/banner 1.png"
           alt="Basketball"
           fill
           priority
