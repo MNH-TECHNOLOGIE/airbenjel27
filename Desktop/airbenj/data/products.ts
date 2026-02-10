@@ -5,7 +5,7 @@ export const products: Product[] = [
   {
     id: "1",
     slug: "airbenjel-tshirt-1",
-    name: "Airbenjel T-shirt 1",
+    name: "Maillot Pro 1",
     description: "T-shirt officiel Airbenjel de la saison 2024-2025",
     price: 89.99,
     currency: "EUR",
@@ -27,7 +27,7 @@ export const products: Product[] = [
   {
     id: "2",
     slug: "airbenjel-tshirt-2",
-    name: "Airbenjel T-shirt 2",
+    name: "Maillot Pro 2",
     description: "T-shirt officiel Airbenjel de la saison 2024-2025",
     price: 89.99,
     currency: "EUR",
@@ -49,7 +49,7 @@ export const products: Product[] = [
   {
     id: "3",
     slug: "airbenjel-tshirt-3",
-    name: "Airbenjel T-shirt 3",
+    name: "Maillot Pro 3",
     description: "T-shirt officiel Airbenjel de la saison 2024-2025",
     price: 89.99,
     currency: "EUR",
@@ -71,7 +71,7 @@ export const products: Product[] = [
   {
     id: "4",
     slug: "airbenjel-tshirt-4",
-    name: "Airbenjel T-shirt 4",
+    name: "Maillot Pro 4",
     description: "T-shirt officiel Airbenjel avec design exclusif",
     price: 94.99,
     currency: "EUR",
@@ -93,7 +93,7 @@ export const products: Product[] = [
   {
     id: "5",
     slug: "airbenjel-tshirt-5",
-    name: "Airbenjel T-shirt 5",
+    name: "Maillot Pro 5",
     description: "T-shirt officiel Airbenjel édition spéciale",
     price: 94.99,
     currency: "EUR",
@@ -114,7 +114,7 @@ export const products: Product[] = [
   {
     id: "6",
     slug: "airbenjel-tshirt-6",
-    name: "Airbenjel T-shirt 6",
+    name: "Maillot Pro 6",
     description: "T-shirt officiel Airbenjel collection premium",
     price: 89.99,
     currency: "EUR",
@@ -135,7 +135,7 @@ export const products: Product[] = [
   {
     id: "7",
     slug: "airbenjel-tshirt-7",
-    name: "Airbenjel T-shirt 7",
+    name: "Maillot Pro 7",
     description: "T-shirt officiel Airbenjel collection premium",
     price: 89.99,
     currency: "EUR",
@@ -156,7 +156,7 @@ export const products: Product[] = [
   {
     id: "8",
     slug: "airbenjel-tshirt-8",
-    name: "Airbenjel T-shirt 8",
+    name: "Maillot Pro 8",
     description: "T-shirt officiel Airbenjel collection premium",
     price: 89.99,
     currency: "EUR",
@@ -177,7 +177,7 @@ export const products: Product[] = [
   {
     id: "9",
     slug: "airbenjel-tshirt-9",
-    name: "Airbenjel T-shirt 9",
+    name: "Maillot Pro 9",
     description: "T-shirt officiel Airbenjel collection premium",
     price: 89.99,
     currency: "EUR",
@@ -198,7 +198,7 @@ export const products: Product[] = [
   {
     id: "10",
     slug: "airbenjel-tshirt-10",
-    name: "Airbenjel T-shirt 10",
+    name: "Maillot Pro 10",
     description: "T-shirt officiel Airbenjel collection premium",
     price: 89.99,
     currency: "EUR",
@@ -219,7 +219,7 @@ export const products: Product[] = [
   {
     id: "11",
     slug: "airbenjel-tshirt-11",
-    name: "Airbenjel T-shirt 11",
+    name: "Maillot Pro 11",
     description: "T-shirt officiel Airbenjel collection premium",
     price: 89.99,
     currency: "EUR",
@@ -240,7 +240,7 @@ export const products: Product[] = [
   {
     id: "12",
     slug: "airbenjel-tshirt-12",
-    name: "Airbenjel T-shirt 12",
+    name: "Maillot Pro 12",
     description: "T-shirt officiel Airbenjel collection spéciale",
     price: 99.99,
     currency: "EUR",
@@ -261,7 +261,7 @@ export const products: Product[] = [
   {
     id: "13",
     slug: "airbenjel-tshirt-13",
-    name: "Airbenjel T-shirt 13",
+    name: "Maillot Pro 13",
     description: "T-shirt officiel Airbenjel collection spéciale",
     price: 99.99,
     currency: "EUR",
@@ -282,7 +282,7 @@ export const products: Product[] = [
   {
     id: "14",
     slug: "airbenjel-tshirt-14",
-    name: "Airbenjel T-shirt 14",
+    name: "Maillot Pro 14",
     description: "T-shirt officiel Airbenjel collection spéciale",
     price: 99.99,
     currency: "EUR",
@@ -303,7 +303,7 @@ export const products: Product[] = [
   {
     id: "15",
     slug: "airbenjel-tshirt-15",
-    name: "Airbenjel T-shirt 15",
+    name: "Maillot Pro 15",
     description: "T-shirt officiel Airbenjel collection spéciale",
     price: 99.99,
     currency: "EUR",
@@ -324,7 +324,7 @@ export const products: Product[] = [
   {
     id: "16",
     slug: "airbenjel-tshirt-16",
-    name: "Airbenjel T-shirt 16",
+    name: "Maillot Pro 16",
     description: "T-shirt officiel Airbenjel collection spéciale",
     price: 99.99,
     currency: "EUR",
@@ -345,7 +345,7 @@ export const products: Product[] = [
   {
     id: "17",
     slug: "airbenjel-tshirt-17",
-    name: "Airbenjel T-shirt 17",
+    name: "Maillot Pro 17",
     description: "T-shirt officiel Airbenjel collection spéciale",
     price: 99.99,
     currency: "EUR",
@@ -366,7 +366,7 @@ export const products: Product[] = [
   {
     id: "18",
     slug: "airbenjel-tshirt-18",
-    name: "Airbenjel T-shirt 18",
+    name: "Maillot Pro 18",
     description: "T-shirt officiel Airbenjel collection premium",
     price: 89.99,
     currency: "EUR",
@@ -387,7 +387,7 @@ export const products: Product[] = [
   {
     id: "19",
     slug: "airbenjel-tshirt-19",
-    name: "Airbenjel T-shirt 19",
+    name: "Maillot Pro 19",
     description: "T-shirt officiel Airbenjel collection premium",
     price: 94.99,
     currency: "EUR",
@@ -408,7 +408,7 @@ export const products: Product[] = [
   {
     id: "20",
     slug: "airbenjel-tshirt-20",
-    name: "Airbenjel T-shirt 20",
+    name: "Maillot Pro 20",
     description: "T-shirt officiel Airbenjel collection premium",
     price: 89.99,
     currency: "EUR",
@@ -429,7 +429,7 @@ export const products: Product[] = [
   {
     id: "21",
     slug: "airbenjel-tshirt-21",
-    name: "Airbenjel T-shirt 21",
+    name: "Maillot Pro 21",
     description: "T-shirt officiel Airbenjel collection premium",
     price: 89.99,
     currency: "EUR",
@@ -450,7 +450,7 @@ export const products: Product[] = [
   {
     id: "22",
     slug: "airbenjel-tshirt-22",
-    name: "Airbenjel T-shirt 22",
+    name: "Maillot Pro 22",
     description: "T-shirt officiel Airbenjel collection premium",
     price: 94.99,
     currency: "EUR",
@@ -471,7 +471,7 @@ export const products: Product[] = [
   {
     id: "23",
     slug: "airbenjel-tshirt-23",
-    name: "Airbenjel T-shirt 23",
+    name: "Maillot Pro 23",
     description: "T-shirt officiel Airbenjel collection spéciale",
     price: 99.99,
     currency: "EUR",
@@ -492,7 +492,7 @@ export const products: Product[] = [
   {
     id: "24",
     slug: "airbenjel-tshirt-24",
-    name: "Airbenjel T-shirt 24",
+    name: "Maillot Pro 24",
     description: "T-shirt officiel Airbenjel collection spéciale",
     price: 99.99,
     currency: "EUR",
@@ -597,7 +597,7 @@ export const products: Product[] = [
   {
     id: "29",
     slug: "airbenjel-t-shirt-casual-1",
-    name: "Airbenjel T-shirt Casual 1",
+    name: "Maillot Pro Casual 1",
     description: "T-shirt décontracté Airbenjel avec design moderne",
     price: 29.99,
     currency: "EUR",
@@ -618,7 +618,7 @@ export const products: Product[] = [
   {
     id: "30",
     slug: "airbenjel-t-shirt-casual-2",
-    name: "Airbenjel T-shirt Casual 2",
+    name: "Maillot Pro Casual 2",
     description: "T-shirt décontracté Airbenjel avec design moderne",
     price: 29.99,
     currency: "EUR",
@@ -1246,3 +1246,4 @@ export const products: Product[] = [
     stock: 25,
   },
 ];
+
