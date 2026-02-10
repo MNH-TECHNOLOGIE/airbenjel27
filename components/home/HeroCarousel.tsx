@@ -82,7 +82,7 @@ export default function HeroCarousel() {
               <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/40"></div>
               
               {/* Contenu centré comme Palmador */}
-              <div className="relative z-10 flex h-full items-center justify-center px-4">
+              <div className="relative z-10 flex h-full items-end justify-center px-4 pb-6 sm:pb-8">
                 <div className="mx-auto w-full max-w-4xl text-center sm:px-6 lg:px-8">
                   <div
                     className={`transition-all duration-1000 ${
@@ -91,7 +91,7 @@ export default function HeroCarousel() {
                         : "translate-y-[-30px] opacity-0"
                     }`}
                   >
-                    <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
+                    <div className="hidden flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6 md:flex">
                       <Link
                         href="/collections"
                         className="btn-primary w-full shadow-xl sm:w-auto sm:px-8 sm:py-4 sm:text-lg"
