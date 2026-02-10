@@ -594,48 +594,7 @@ export const products: Product[] = [
     isCustomizable: false,
     stock: 25,
   },
-  {
-    id: "29",
-    slug: "airbenjel-t-shirt-casual-1",
-    name: "Maillot Pro Casual 1",
-    description: "T-shirt décontracté Airbenjel avec design moderne",
-    price: 29.99,
-    currency: "EUR",
-    images: [
-      "/airbenjel photo produit/basket orange noir/WhatsApp Image 2026-02-04 at 16.59.07.jpeg",
-    ],
-    categoryId: "basketball",
-    collectionIds: [],
-    tags: ["tshirt", "casual", "everyday", "airbenjel"],
-    gender: "unisex",
-    sizes: ["XS", "S", "M", "L", "XL", "XXL"],
-    colors: ["Blanc", "Noir", "Gris", "Rouge"],
-    isNew: false,
-    isFeatured: false,
-    isCustomizable: false,
-    stock: 60,
-  },
-  {
-    id: "30",
-    slug: "airbenjel-t-shirt-casual-2",
-    name: "Maillot Pro Casual 2",
-    description: "T-shirt décontracté Airbenjel avec design moderne",
-    price: 29.99,
-    currency: "EUR",
-    images: [
-      "/airbenjel photo produit/basket vert/WhatsApp Image 2026-02-04 at 16.59.07.jpeg",
-    ],
-    categoryId: "basketball",
-    collectionIds: [],
-    tags: ["tshirt", "casual", "everyday", "airbenjel"],
-    gender: "unisex",
-    sizes: ["XS", "S", "M", "L", "XL"],
-    colors: ["Blanc", "Noir", "Gris", "Bleu"],
-    isNew: false,
-    isFeatured: false,
-    isCustomizable: false,
-    stock: 55,
-  },
+
   {
     id: "31",
     slug: "airbenjel-polo-1",
@@ -1246,4 +1205,5 @@ export const products: Product[] = [
     stock: 25,
   },
 ];
+
 
