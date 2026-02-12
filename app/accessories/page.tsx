@@ -1,59 +1,79 @@
 import { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Accessoires - Bientôt disponible",
-  description: "Nos accessoires arrivent bientôt. Restez connectés.",
+  title: "Accessoires",
+  description: "Accessoires officiels AIR BENJEL 27.",
 };
+
+const accessories = [
+  {
+    name: "Accessoire 1",
+    image: "/airbenjel photo produit/accessoir/WhatsApp Image 2026-02-12 at 12.51.57.jpeg",
+  },
+  {
+    name: "Accessoire 2",
+    image: "/airbenjel photo produit/accessoir/WhatsApp Image 2026-02-12 at 12.51.57 (1).jpeg",
+  },
+  {
+    name: "Accessoire 3",
+    image: "/airbenjel photo produit/accessoir/WhatsApp Image 2026-02-12 at 12.51.57 (2).jpeg",
+  },
+  {
+    name: "Accessoire 4",
+    image: "/airbenjel photo produit/accessoir/WhatsApp Image 2026-02-12 at 12.51.57 (3).jpeg",
+  },
+  {
+    name: "Accessoire 5",
+    image: "/airbenjel photo produit/accessoir/WhatsApp Image 2026-02-12 at 12.51.57 (4).jpeg",
+  },
+  {
+    name: "Accessoire 6",
+    image: "/airbenjel photo produit/accessoir/WhatsApp Image 2026-02-12 at 12.51.57 (5).jpeg",
+  },
+  {
+    name: "Accessoire 7",
+    image: "/airbenjel photo produit/accessoir/WhatsApp Image 2026-02-12 at 12.51.57 (6).jpeg",
+  },
+  {
+    name: "Accessoire 8",
+    image: "/airbenjel photo produit/accessoir/WhatsApp Image 2026-02-12 at 12.51.58.jpeg",
+  },
+];
 
 export default function AccessoriesPage() {
   return (
     <div className="min-h-screen bg-white pt-12 sm:pt-14">
-
-      {/* Coming Soon Section */}
       <section className="py-10 sm:py-14 md:py-18">
         <div className="mx-auto w-full max-w-7xl px-3 sm:px-4 md:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl rounded-2xl border border-gray-200 bg-gradient-to-br from-white via-white to-gray-50 p-6 text-center shadow-lg sm:p-8">
-            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-primary sm:h-16 sm:w-16">
-              <svg
-                className="h-7 w-7 sm:h-8 sm:w-8"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 6v6l4 2M4 12a8 8 0 1116 0 8 8 0 01-16 0z"
-                />
-              </svg>
-            </div>
-            <h2 className="text-2xl font-bold text-secondary sm:text-3xl">
-              Bientôt disponible
-            </h2>
+          <div className="mb-8 text-center">
+            <h1 className="text-2xl font-bold text-secondary sm:text-3xl md:text-4xl">
+              Accessoires
+            </h1>
             <p className="mt-3 text-base text-gray-600 sm:text-lg">
-              Nos accessoires officiels arrivent bientôt. Nous préparons une
-              sélection premium pour compléter votre style.
+              Selection d'accessoires officiels AIR BENJEL 27
             </p>
-            <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3">
-              <div className="rounded-xl border border-gray-200 bg-white p-4 text-sm text-gray-700 shadow-sm">
-                Qualité officielle
-              </div>
-              <div className="rounded-xl border border-gray-200 bg-white p-4 text-sm text-gray-700 shadow-sm">
-                Designs exclusifs
-              </div>
-              <div className="rounded-xl border border-gray-200 bg-white p-4 text-sm text-gray-700 shadow-sm">
-                Disponibilité limitée
-              </div>
-            </div>
-            <div className="mt-8">
-              <a
-                href="/contact"
-                className="btn-primary inline-block px-6 py-3 text-sm sm:text-base"
+          </div>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {accessories.map((item) => (
+              <div
+                key={item.image}
+                className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm"
               >
-                Nous contacter
-              </a>
-            </div>
+                <div className="relative h-44 w-full bg-gray-50">
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  />
+                </div>
+                <div className="p-4 text-center">
+                  <p className="text-sm font-semibold text-secondary">{item.name}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
