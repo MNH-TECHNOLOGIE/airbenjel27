@@ -1,45 +1,12 @@
 import { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
+import { accessories } from "@/data/accessories";
 
 export const metadata: Metadata = {
   title: "Accessoires",
   description: "Accessoires officiels AIR BENJEL 27.",
 };
-
-const accessories = [
-  {
-    name: "Accessoire 1",
-    image: "/airbenjel photo produit/accessoir/WhatsApp Image 2026-02-12 at 12.51.57.jpeg",
-  },
-  {
-    name: "Accessoire 2",
-    image: "/airbenjel photo produit/accessoir/WhatsApp Image 2026-02-12 at 12.51.57 (1).jpeg",
-  },
-  {
-    name: "Accessoire 3",
-    image: "/airbenjel photo produit/accessoir/WhatsApp Image 2026-02-12 at 12.51.57 (2).jpeg",
-  },
-  {
-    name: "Accessoire 4",
-    image: "/airbenjel photo produit/accessoir/WhatsApp Image 2026-02-12 at 12.51.57 (3).jpeg",
-  },
-  {
-    name: "Accessoire 5",
-    image: "/airbenjel photo produit/accessoir/WhatsApp Image 2026-02-12 at 12.51.57 (4).jpeg",
-  },
-  {
-    name: "Accessoire 6",
-    image: "/airbenjel photo produit/accessoir/WhatsApp Image 2026-02-12 at 12.51.57 (5).jpeg",
-  },
-  {
-    name: "Accessoire 7",
-    image: "/airbenjel photo produit/accessoir/WhatsApp Image 2026-02-12 at 12.51.57 (6).jpeg",
-  },
-  {
-    name: "Accessoire 8",
-    image: "/airbenjel photo produit/accessoir/WhatsApp Image 2026-02-12 at 12.51.58.jpeg",
-  },
-];
 
 export default function AccessoriesPage() {
   return (
@@ -56,9 +23,10 @@ export default function AccessoriesPage() {
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {accessories.map((item) => (
-              <div
-                key={item.image}
-                className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm"
+              <Link
+                key={item.slug}
+                href={`/accessories/${item.slug}`}
+                className="group overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
               >
                 <div className="relative h-44 w-full bg-gray-50">
                   <Image
@@ -71,8 +39,9 @@ export default function AccessoriesPage() {
                 </div>
                 <div className="p-4 text-center">
                   <p className="text-sm font-semibold text-secondary">{item.name}</p>
+                  <p className="mt-1 text-xs text-gray-500">Voir les details</p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
