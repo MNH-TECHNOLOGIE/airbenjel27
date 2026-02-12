@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function ArbitePage() {
   const maillotItems = [
     {
-      color: "Jaune",
+      color: "Vert fluo",
       image: "/airbenjel photo produit/arbites maillot/jaune (1).png",
     },
     {
@@ -81,3 +81,4 @@ export default function ArbitePage() {
     </div>
   );
 }
+

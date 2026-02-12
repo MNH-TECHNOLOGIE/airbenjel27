@@ -974,46 +974,7 @@ export const products: Product[] = [
     isCustomizable: false,
     stock: 15,
   },
-  {
-    id: "49",
-    slug: "airbenjel-coffret-cadeau-2",
-    name: "Airbenjel Coffret Cadeau Premium 2",
-    description: "Coffret cadeau Airbenjel avec plusieurs articles",
-    price: 119.99,
-    currency: "EUR",
-    images: [
-      "/airbenjel photo produit/basket jaune noir/WhatsApp Image 2026-02-04 at 16.59.08.jpeg",
-    ],
-    categoryId: "gifts",
-    collectionIds: ["gifts"],
-    tags: ["gift", "premium", "bundle", "airbenjel"],
-    gender: "unisex",
-    sizes: [],
-    isNew: false,
-    isFeatured: true,
-    isCustomizable: false,
-    stock: 12,
-  },
-  {
-    id: "50",
-    slug: "airbenjel-coffret-cadeau-3",
-    name: "Airbenjel Coffret Cadeau Premium 3",
-    description: "Coffret cadeau Airbenjel avec plusieurs articles",
-    price: 149.99,
-    currency: "EUR",
-    images: [
-      "/airbenjel photo produit/basket noir blanc/WhatsApp Image 2026-02-04 at 16.59.07.jpeg",
-    ],
-    categoryId: "gifts",
-    collectionIds: ["gifts"],
-    tags: ["gift", "premium", "bundle", "airbenjel"],
-    gender: "unisex",
-    sizes: [],
-    isNew: false,
-    isFeatured: true,
-    isCustomizable: false,
-    stock: 10,
-  },
+
   // Sport Militaire - Nouveaux produits
   {
     id: "51",
@@ -1245,5 +1206,6 @@ export const products: Product[] = [
     stock: 25,
   },
 ];
+
 
 

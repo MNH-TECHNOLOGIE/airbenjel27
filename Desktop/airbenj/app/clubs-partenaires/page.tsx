@@ -11,13 +11,13 @@ export const metadata: Metadata = {
 export default function ClubsPartenairesPage() {
   const partnerProducts = [
     {
-      name: "Airbenjel Polo 1",
+      name: "Maillot Pro 1",
       slug: "airbenjel-polo-1",
       image:
         "/airbenjel photo produit/club partenaire/WhatsApp Image 2026-02-04 at 17.02.14.jpeg",
     },
     {
-      name: "Airbenjel Short 1",
+      name: "Maillot Pro 2",
       slug: "airbenjel-short-1",
       image:
         "/airbenjel photo produit/club partenaire/WhatsApp Image 2026-02-04 at 17.02.14d.jpeg",
@@ -160,4 +160,5 @@ export default function ClubsPartenairesPage() {
     </div>
   );
 }
+
 
