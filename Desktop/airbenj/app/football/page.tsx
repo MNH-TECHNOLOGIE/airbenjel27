@@ -4,16 +4,16 @@ import FilterableProductGrid from "@/components/catalog/FilterableProductGrid";
 
 export const metadata: Metadata = {
   title: "Football",
-  description: "Decouvrez notre collection officielle de football",
+  description: "Découvrez notre collection officielle de football",
 };
 
 export default function FootballPage() {
   const products = getProductsByCategory("kits") || [];
   const filters = [
     { label: "Domicile", value: "home-kit" },
-    { label: "Exterieur", value: "away-kit" },
+    { label: "Extérieur", value: "away-kit" },
     { label: "Third", value: "third-kit" },
-    { label: "Edition limitee", value: "limited" },
+    { label: "Édition limitée", value: "limited" },
     { label: "Premium", value: "premium" },
   ];
 

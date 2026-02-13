@@ -15,7 +15,7 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: AccessoryPageProps): Metadata {
   const item = accessories.find((entry) => entry.slug === params.slug);
   if (!item) {
-    return { title: "Accessoire non trouve" };
+    return { title: "Accessoire non trouvé" };
   }
   return {
     title: item.name,
@@ -63,7 +63,7 @@ export default function AccessoryDetailPage({ params }: AccessoryPageProps) {
                 Accessoire officiel AIR BENJEL 27.
               </p>
               <div className="mt-6 rounded-xl border border-gray-200 bg-white p-4 text-sm text-gray-600">
-                Disponibilite bientot. Contactez-nous pour reserver.
+                Disponibilité bientôt. Contactez-nous pour réserver.
               </div>
               <div className="mt-6">
                 <a

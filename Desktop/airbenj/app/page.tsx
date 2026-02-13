@@ -5,49 +5,62 @@ import ProductGrid from "@/components/catalog/ProductGrid";
 import ProductCard from "@/components/catalog/ProductCard";
 
 export default function Home() {
-  const featuredKits = getProductsByCategory("kits").slice(0, 3);
+  const expandProducts = (products: ReturnType<typeof getProductsByCategory>) =>
+    products.flatMap((product) => {
+      if (product.images.length <= 1) {
+        return product;
+      }
+
+      return product.images.map((image, index) => ({
+        ...product,
+        id: `${product.id}-image-${index + 1}`,
+        images: [image],
+      }));
+    });
+
+  const featuredKits = expandProducts(getProductsByCategory("kits").slice(0, 3));
   const categorySections = [
     {
       title: "Maillots",
       description: "Sélection officielle de football",
       href: "/kits",
-      products: getProductsByCategory("kits").slice(0, 3),
+      products: expandProducts(getProductsByCategory("kits").slice(0, 3)),
     },
     {
       title: "Vêtements",
       description: "Pièces confortables pour tous les jours",
       href: "/apparel",
-      products: getProductsByCategory("apparel").slice(0, 3),
+      products: expandProducts(getProductsByCategory("apparel").slice(0, 3)),
     },
     {
       title: "Basketball",
       description: "Collection basketball",
       href: "/basketball",
-      products: getProductsByCategory("basketball").slice(0, 3),
+      products: expandProducts(getProductsByCategory("basketball").slice(0, 3)),
     },
     {
       title: "Sport Militaire",
       description: "Tenues robustes et techniques",
       href: "/sport-militaire",
-      products: getProductsByCategory("sport-militaire").slice(0, 3),
+      products: expandProducts(getProductsByCategory("sport-militaire").slice(0, 3)),
     },
     {
       title: "Accessoires",
       description: "Compléments et essentiels",
       href: "/accessories",
-      products: getProductsByCategory("accessories").slice(0, 3),
+      products: expandProducts(getProductsByCategory("accessories").slice(0, 3)),
     },
     {
       title: "Maison & Lifestyle",
       description: "Décor et confort à la maison",
       href: "/home-lifestyle",
-      products: getProductsByCategory("home-lifestyle").slice(0, 3),
+      products: expandProducts(getProductsByCategory("home-lifestyle").slice(0, 3)),
     },
     {
       title: "Cadeaux",
       description: "Idées premium à offrir",
       href: "/gifts",
-      products: getProductsByCategory("gifts").slice(0, 3),
+      products: expandProducts(getProductsByCategory("gifts").slice(0, 3)),
     },
   ].filter((section) => section.products.length > 0);
 

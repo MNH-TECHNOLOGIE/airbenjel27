@@ -5,7 +5,7 @@ import ProductGrid from "@/components/catalog/ProductGrid";
 export const metadata: Metadata = {
   title: "Sport Militaire",
   description:
-    "Collection Sport Militaire AIR BENJEL 27: tenues techniques, resistantes et confortables.",
+    "Collection Sport Militaire AIR BENJEL 27: tenues techniques, résistantes et confortables.",
 };
 
 export default function SportMilitairePage() {
@@ -42,7 +42,7 @@ export default function SportMilitairePage() {
               Collection Sport Militaire
             </h2>
             <p className="mt-3 text-base text-gray-600 sm:text-lg">
-              Selection de pieces robustes pour la performance et la mobilite.
+              Sélection de pièces robustes pour la performance et la mobilité.
             </p>
           </div>
 

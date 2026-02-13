@@ -18,7 +18,7 @@ export default function AccessoriesPage() {
               Accessoires
             </h1>
             <p className="mt-3 text-base text-gray-600 sm:text-lg">
-              Selection d'accessoires officiels AIR BENJEL 27
+              Sélection d&apos;accessoires officiels AIR BENJEL 27
             </p>
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -39,7 +39,7 @@ export default function AccessoriesPage() {
                 </div>
                 <div className="p-4 text-center">
                   <p className="text-sm font-semibold text-secondary">{item.name}</p>
-                  <p className="mt-1 text-xs text-gray-500">Voir les details</p>
+                  <p className="mt-1 text-xs text-gray-500">Voir les détails</p>
                 </div>
               </Link>
             ))}

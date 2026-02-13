@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Arbitre",
-  description: "Collection d'arbitre AIR BENJEL 27.",
+  description: "Collection d'arbitres AIR BENJEL 27.",
 };
 
 export default function ArbitePage() {
@@ -36,7 +36,7 @@ export default function ArbitePage() {
                 Maillot Arbitre Pro
               </h2>
               <p className="mt-3 text-base text-gray-600">
-                Decouvrez la tenue officielle d&apos;arbitre concue pour la performance
+                Découvrez la tenue officielle d&apos;arbitre conçue pour la performance
                 et le confort.
               </p>
               <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -66,13 +66,13 @@ export default function ArbitePage() {
             </div>
             <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-lg">
               <h2 className="text-xl font-bold text-secondary sm:text-2xl">
-                Survetement Arbitres
+                Survêtement Arbitres
               </h2>
               <p className="mt-3 text-base text-gray-600">
-                Ensemble complet d&apos;arbitre pour l&apos;avant et l&apos;apres match.
+                Ensemble complet d&apos;arbitre pour l&apos;avant et l&apos;après match.
               </p>
               <div className="mt-6 rounded-xl border border-gray-200 bg-gray-50 p-4 text-sm text-gray-600">
-                Bientot disponible
+                Bientôt disponible
               </div>
             </div>
           </div>

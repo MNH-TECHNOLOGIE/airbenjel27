@@ -2,7 +2,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Collection Olympic 2026",
-  description: "La collection Olympic 2026 arrive bientot.",
+  description: "La collection Olympic 2026 arrive bientôt.",
 };
 
 export default function Olympic2026Page() {
@@ -29,21 +29,21 @@ export default function Olympic2026Page() {
               </svg>
             </div>
             <h2 className="text-2xl font-bold text-secondary sm:text-3xl">
-              Bientot disponible
+              Bientôt disponible
             </h2>
             <p className="mt-3 text-base text-gray-600 sm:text-lg">
-              La collection Olympic 2026 est en preparation. Des pieces exclusives
-              et des editions limitees arrivent bientot.
+              La collection Olympic 2026 est en préparation. Des pièces exclusives
+              et des éditions limitées arrivent bientôt.
             </p>
             <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3">
               <div className="rounded-xl border border-gray-200 bg-white p-4 text-sm text-gray-700 shadow-sm">
-                Edition speciale
+                Édition spéciale
               </div>
               <div className="rounded-xl border border-gray-200 bg-white p-4 text-sm text-gray-700 shadow-sm">
-                Qualite premium
+                Qualité premium
               </div>
               <div className="rounded-xl border border-gray-200 bg-white p-4 text-sm text-gray-700 shadow-sm">
-                Quantites limitees
+                Quantités limitées
               </div>
             </div>
             <div className="mt-8">
