@@ -45,4 +45,24 @@ export const accessories: AccessoryItem[] = [
     name: "Accessoire 8",
     image: "/airbenjel photo produit/accessoir/WhatsApp Image 2026-02-12 at 12.51.58.jpeg",
   },
+  {
+    slug: "sac-air",
+    name: "Sac Air",
+    image: "/sac air.png",
+  },
+  {
+    slug: "sac-airbenjel",
+    name: "Sac Airbenjel",
+    image: "/sac airbenjel.png",
+  },
+  {
+    slug: "cartable-air",
+    name: "Cartable Air",
+    image: "/cartablle air.png",
+  },
+  {
+    slug: "cartable-airbenjel",
+    name: "Cartable Airbenjel",
+    image: "/cartable airbenjel.png",
+  },
 ];
