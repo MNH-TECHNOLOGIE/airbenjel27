@@ -43,30 +43,38 @@ export default function ClubsPartenairesPage() {
           {/* NZALANG NACIONAL Section */}
           <div className="mb-12 rounded-lg border-2 border-primary/20 bg-primary/5 p-6 sm:p-8">
             <div className="text-center sm:text-left">
-              <div className="mb-4 flex items-center justify-center gap-3 sm:justify-start">
-                <div className="relative h-8 w-12 overflow-hidden rounded-sm shadow-sm sm:h-9 sm:w-14">
+              <div className="mt-5">
+                <div className="relative aspect-[16/9] w-full overflow-hidden rounded-lg bg-gray-100">
                   <Image
-                    src="/flags/flag-guinee-equatoriale.svg"
-                    alt="Drapeau de la Guinée équatoriale"
+                    src="/club partenaire.jpeg"
+                    alt="Signature du contrat NZALANG NACIONAL"
                     fill
-                    className="object-cover"
-                    sizes="56px"
+                    className="object-contain"
+                    sizes="(max-width: 640px) 100vw, 640px"
                   />
                 </div>
-                <span className="text-sm font-semibold text-secondary">
-                  Guinée équatoriale
-                </span>
               </div>
+              <p className="mt-3 text-sm font-semibold text-gray-800 sm:text-base">
+                Mr Venacion Tomas NDONG MICHA, Pr&eacute;sident de la F&eacute;d&eacute;ration
+                &Eacute;quato-Guin&eacute;enne de Football (FEGUIFUT), et Mr Jean Francis BELINGA
+                BENJEL (Fondateur AIR BENJEL 27), lors de la signature du contrat
+                comme &Eacute;quipementier Officiel des Produits D&eacute;riv&eacute;s du NZALANG
+                NACIONAL.
+              </p>
+              <p className="mb-3 text-sm font-semibold text-secondary">
+                Guin&eacute;e &eacute;quatoriale
+              </p>
               <h3 className="text-xl font-bold text-secondary sm:text-2xl">
                 NZALANG NACIONAL
               </h3>
               <p className="mt-2 text-base font-semibold text-primary sm:text-lg">
-                Équipe nationale de Guinée équatoriale
+                &Eacute;quipe nationale de Guin&eacute;e &eacute;quatoriale
               </p>
-              <p className="mt-2 text-base text-gray-700 sm:text-lg">
-                Nous sommes fiers d&apos;être le fournisseur officiel des produits
-                dérivés de l&apos;équipe nationale de Guinée équatoriale. Nos
-                équipements et produits dérivés sont de qualité supérieure.
+              <p className="mt-4 text-base text-gray-700 sm:text-lg">
+                Nous sommes fiers d&apos;&ecirc;tre le fournisseur officiel des produits
+                d&eacute;riv&eacute;s de l&apos;&eacute;quipe nationale de Guin&eacute;e &eacute;quatoriale. Nos
+                &eacute;quipements sportifs et produits d&eacute;riv&eacute;s sont de qualit&eacute;
+                sup&eacute;rieure.
               </p>
             </div>
           </div>
