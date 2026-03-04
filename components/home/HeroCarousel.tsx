@@ -1,15 +1,16 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { buttonClasses } from "@/components/ui/Button";
 
 const heroImages = [
   {
     src: "/hero-5.png",
     alt: "Hero Banner 5",
     title: "Bienvenue chez AIR BENJEL 27",
-    subtitle: "Découvrez notre collection officielle d'équipements sportifs authentiques",
+    subtitle: "Decouvrez notre collection officielle d'equipements sportifs authentiques",
   },
   {
     src: "/hero-6.png",
@@ -20,19 +21,30 @@ const heroImages = [
   {
     src: "/hero-7_1200x800.jpg",
     alt: "Hero Banner 7",
-    title: "Équipementier sportif",
+    title: "Equipementier sportif",
     subtitle: "Conception, fabrication et commercialisation d'articles de sport",
+  },
+  {
+    src: "/airbenjel photo produit/arbites maillot/hero10.png",
+    alt: "Arbitres – Maillot officiel AIR BENJEL 27",
+    title: "Collection Arbitres",
+    subtitle: "Maillot officiel AIR BENJEL 27",
+  },
+  {
+    src: "/club partenaire.jpeg",
+    alt: "Clubs partenaires – AIR BENJEL 27",
+    title: "Clubs partenaires",
+    subtitle: "AIR BENJEL 27 accompagne ses clubs partenaires",
   },
 ];
 
 export default function HeroCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Auto-play carousel
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % heroImages.length);
-    }, 5000); // Change slide every 5 seconds
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
@@ -51,56 +63,53 @@ export default function HeroCarousel() {
 
   return (
     <section className="relative w-full overflow-hidden">
-      {/* Carousel Container - Pleine page comme Palmador */}
-      <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9]">
+      <div className="relative w-full aspect-[16/10] lg:h-[520px] lg:aspect-auto">
         {heroImages.map((image, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
-              index === currentIndex
-                ? "opacity-100 z-10 scale-100"
-                : "opacity-0 z-0 scale-105"
+            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+              index === currentIndex ? "z-10 opacity-100" : "z-0 opacity-0"
             }`}
           >
-            {/* Container principal - Pleine page */}
-            <div className="relative h-full w-full overflow-hidden">
+            <div className="relative h-full w-full overflow-hidden bg-black">
               <Image
                 src={image.src}
                 alt={image.alt}
                 fill
                 priority={index === 0}
-                quality={100}
-                unoptimized={true}
-                className="transition-transform duration-[10000ms] ease-out scale-100"
-                style={{
-                  objectFit: "contain",
-                  objectPosition: "center",
-                }}
-                sizes="100vw"
+                quality={80}
+                placeholder="empty"
+                className="object-contain object-center lg:object-cover"
+                sizes="(min-width: 1024px) 100vw, 100vw"
               />
-              {/* Overlay sombre pour lisibilité du texte et navbar */}
-              <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/40"></div>
-              
-              {/* Contenu centré comme Palmador */}
+              <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/40" />
+
               <div className="relative z-10 flex h-full items-end justify-center px-4 pb-6 sm:pb-8">
                 <div className="mx-auto w-full max-w-4xl text-center sm:px-6 lg:px-8">
                   <div
                     className={`transition-all duration-1000 ${
-                      index === currentIndex
-                        ? "translate-y-0 opacity-100"
-                        : "translate-y-[-30px] opacity-0"
+                      index === currentIndex ? "translate-y-0 opacity-100" : "-translate-y-8 opacity-0"
                     }`}
                   >
-                    <div className="hidden flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6 md:flex">
+                    <div className="hidden items-center justify-center gap-4 sm:flex sm:gap-6 md:flex-row">
                       <Link
                         href="/collections"
-                        className="btn-primary w-full shadow-xl sm:w-auto sm:px-8 sm:py-4 sm:text-lg"
+                        className={buttonClasses({
+                          variant: "primary",
+                          size: "lg",
+                          className: "w-full shadow-xl sm:w-auto",
+                        })}
                       >
                         Voir la collection
                       </Link>
                       <Link
                         href="/kits"
-                        className="w-full rounded-md border-2 border-white bg-white/10 px-6 py-3 text-base font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/20 hover:scale-105 hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:scale-95 sm:w-auto sm:px-8 sm:py-4 sm:text-lg"
+                        className={buttonClasses({
+                          variant: "ghost",
+                          size: "lg",
+                          className:
+                            "w-full border-2 border-white bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:text-white sm:w-auto",
+                        })}
                       >
                         Parcourir les maillots
                       </Link>
@@ -112,11 +121,10 @@ export default function HeroCarousel() {
           </div>
         ))}
 
-        {/* Navigation Arrows - Style simple comme Palmador */}
         <button
           onClick={goToPrevious}
           className="absolute left-2 top-1/2 z-20 -translate-y-1/2 rounded-full bg-white/20 p-2 text-white backdrop-blur-sm transition-all hover:bg-white/30 focus:outline-none focus:ring-2 focus:ring-white/50 sm:left-4 sm:p-3"
-          aria-label="Image précédente"
+          aria-label="Image precedente"
         >
           <svg
             className="h-5 w-5 sm:h-6 sm:w-6"
@@ -152,18 +160,15 @@ export default function HeroCarousel() {
           </svg>
         </button>
 
-        {/* Dots Indicator - Style simple comme Palmador */}
         <div className="absolute bottom-4 left-1/2 z-20 flex -translate-x-1/2 gap-2 sm:bottom-8">
           {heroImages.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
               className={`h-2 rounded-full transition-all ${
-                index === currentIndex
-                  ? "w-8 bg-white"
-                  : "w-2 bg-white/50 hover:bg-white/75"
+                index === currentIndex ? "w-8 bg-white" : "w-2 bg-white/50 hover:bg-white/75"
               }`}
-              aria-label={`Aller à l'image ${index + 1}`}
+              aria-label={`Aller a l'image ${index + 1}`}
             />
           ))}
         </div>
@@ -171,4 +176,3 @@ export default function HeroCarousel() {
     </section>
   );
 }
-

@@ -1,0 +1,172 @@
+import { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Clubs Partenaires",
+  description:
+    "Découvrez les clubs partenaires d'AIR BENJEL 27 et nos collaborations sportives.",
+};
+
+export default function ClubsPartenairesPage() {
+  const partnerProducts = [
+    {
+      name: "Maillot Pro 1",
+      slug: "airbenjel-polo-1",
+      image:
+        "/airbenjel photo produit/club partenaire/WhatsApp Image 2026-02-04 at 17.02.14.jpeg",
+    },
+    {
+      name: "Maillot Pro 2",
+      slug: "airbenjel-short-1",
+      image:
+        "/airbenjel photo produit/club partenaire/WhatsApp Image 2026-02-04 at 17.02.14d.jpeg",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-white pt-12 sm:pt-14">
+      {/* Main Content */}
+      <section className="py-8 sm:py-12 md:py-16">
+        <div className="mx-auto w-full max-w-7xl px-3 sm:px-4 md:px-6 lg:px-8">
+          {/* Introduction */}
+          <div className="mb-12 text-center">
+            <h2 className="text-2xl font-bold text-secondary sm:text-3xl md:text-4xl">
+              Nos Partenariats
+            </h2>
+            <p className="mt-4 text-base text-gray-600 sm:text-lg">
+              AIR BENJEL 27 est fier de collaborer avec des clubs sportifs,
+              fédérations et associations à travers l&apos;Afrique.
+            </p>
+          </div>
+
+          {/* NZALANG NACIONAL Section */}
+          <div className="mb-12 rounded-lg border-2 border-primary/20 bg-primary/5 p-6 sm:p-8">
+            <div className="text-center sm:text-left">
+              <div className="mt-5">
+                <div className="relative aspect-[16/9] w-full overflow-hidden rounded-lg bg-gray-100">
+                  <Image
+                    src="/club partenaire.jpeg"
+                    alt="Signature du contrat NZALANG NACIONAL"
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 640px) 100vw, 640px"
+                  />
+                </div>
+              </div>
+              <p className="mt-3 text-sm font-semibold text-gray-800 sm:text-base">
+                Mr Venacion Tomas NDONG MICHA, Pr&eacute;sident de la F&eacute;d&eacute;ration
+                &Eacute;quato-Guin&eacute;enne de Football (FEGUIFUT), et Mr Jean Francis BELINGA
+                BENJEL (Fondateur AIR BENJEL 27), lors de la signature du contrat
+                comme &Eacute;quipementier Officiel des Produits D&eacute;riv&eacute;s du NZALANG
+                NACIONAL.
+              </p>
+              <p className="mb-3 text-sm font-semibold text-secondary">
+                Guin&eacute;e &eacute;quatoriale
+              </p>
+              <h3 className="text-xl font-bold text-secondary sm:text-2xl">
+                NZALANG NACIONAL
+              </h3>
+              <p className="mt-2 text-base font-semibold text-primary sm:text-lg">
+                &Eacute;quipe nationale de Guin&eacute;e &eacute;quatoriale
+              </p>
+              <p className="mt-4 text-base text-gray-700 sm:text-lg">
+                Nous sommes fiers d&apos;&ecirc;tre le fournisseur officiel des produits
+                d&eacute;riv&eacute;s de l&apos;&eacute;quipe nationale de Guin&eacute;e &eacute;quatoriale. Nos
+                &eacute;quipements sportifs et produits d&eacute;riv&eacute;s sont de qualit&eacute;
+                sup&eacute;rieure.
+              </p>
+            </div>
+          </div>
+
+          {/* Partner Products Section */}
+          <div className="mb-12">
+            <h3 className="mb-4 text-center text-xl font-bold text-secondary sm:text-2xl">
+              Produits Partenaires
+            </h3>
+            <div className="mx-auto grid max-w-3xl grid-cols-2 gap-4 sm:grid-cols-2">
+              {partnerProducts.map((card) => (
+                <div
+                  key={card.slug}
+                  className="flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm"
+                >
+                  <div className="relative aspect-square w-full bg-gray-100">
+                    <Image
+                      src={card.image}
+                      alt={card.name}
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 640px) 260px, 320px"
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col gap-3 p-4">
+                    <p className="text-sm font-semibold text-secondary sm:text-base">
+                      {card.name}
+                    </p>
+                    <div className="mt-auto flex gap-2">
+                      <Link
+                        href={`/products/${card.slug}`}
+                        className="btn-outline-secondary flex-1 text-center text-xs sm:text-sm"
+                      >
+                        Détails
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Future Partnerships */}
+          <div className="rounded-lg bg-accent px-6 py-8 sm:px-8 sm:py-10">
+            <h3 className="mb-4 text-center text-xl font-bold text-secondary sm:text-2xl">
+              Rejoignez nos partenaires
+            </h3>
+            <p className="mb-6 text-center text-base text-gray-700 sm:text-lg">
+              AIR BENJEL 27 recherche des partenariats avec des clubs sportifs,
+              fédérations et associations à travers l&apos;Afrique.
+            </p>
+            <div className="mx-auto max-w-2xl">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <div className="rounded-lg border border-gray-200 bg-white p-4">
+                  <h4 className="mb-2 font-semibold text-secondary">Clubs sportifs</h4>
+                  <p className="text-sm text-gray-600">
+                    Équipements et produits dérivés pour vos équipes
+                  </p>
+                </div>
+                <div className="rounded-lg border border-gray-200 bg-white p-4">
+                  <h4 className="mb-2 font-semibold text-secondary">Fédérations</h4>
+                  <p className="text-sm text-gray-600">
+                    Solutions complètes pour vos compétitions
+                  </p>
+                </div>
+                <div className="rounded-lg border border-gray-200 bg-white p-4">
+                  <h4 className="mb-2 font-semibold text-secondary">Associations</h4>
+                  <p className="text-sm text-gray-600">
+                    Partenariats sur mesure pour vos événements
+                  </p>
+                </div>
+                <div className="rounded-lg border border-gray-200 bg-white p-4">
+                  <h4 className="mb-2 font-semibold text-secondary">Organisations</h4>
+                  <p className="text-sm text-gray-600">
+                    Accompagnement dans tous vos projets sportifs
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="mt-8 text-center">
+              <a
+                href="/contact"
+                className="btn-primary inline-block sm:px-8 sm:py-3 sm:text-base"
+              >
+                Devenir Partenaire
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+

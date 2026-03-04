@@ -1,22 +1,13 @@
 import { Product } from "@/data/types";
 import ProductCard from "./ProductCard";
+import { expandProductsForGrid } from "@/lib/product-card-display";
 
 interface ProductGridProps {
   products: Product[];
 }
 
 export default function ProductGrid({ products }: ProductGridProps) {
-  const expandedProducts = products.flatMap((product) => {
-    if (product.images.length <= 1) {
-      return product;
-    }
-
-    return product.images.map((image, index) => ({
-      ...product,
-      id: `${product.id}-image-${index + 1}`,
-      images: [image],
-    }));
-  });
+  const expandedProducts = expandProductsForGrid(products);
 
   if (products.length === 0) {
     return (
@@ -27,7 +18,7 @@ export default function ProductGrid({ products }: ProductGridProps) {
   }
 
   return (
-    <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6 lg:grid-cols-3 lg:gap-8 xl:grid-cols-4">
+    <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 xl:grid-cols-4">
       {expandedProducts.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}

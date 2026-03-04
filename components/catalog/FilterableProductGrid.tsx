@@ -1,8 +1,13 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useMemo, useState } from "react";
 import { Product } from "@/data/types";
 import ProductGrid from "./ProductGrid";
+import Input from "@/components/ui/Input";
+import Button from "@/components/ui/Button";
+import Badge from "@/components/ui/Badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
+import { cn } from "@/components/ui/cn";
 
 interface FilterOption {
   label: string;
@@ -81,58 +86,63 @@ export default function FilterableProductGrid({
 
   return (
     <div className="space-y-6">
-      <div className="rounded-lg border border-gray-200 bg-white p-4 sm:p-5">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div className="flex-1">
-            <label className="mb-2 block text-sm font-semibold text-secondary">
-              Recherche
-            </label>
-            <input
-              value={searchTerm}
-              onChange={(event) => setSearchTerm(event.target.value)}
-              placeholder={searchPlaceholder}
-              className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-              type="search"
-            />
-          </div>
-          <button
-            type="button"
-            onClick={resetFilters}
-            className="rounded-md border border-gray-300 px-3 py-2 text-sm font-semibold text-secondary transition-colors hover:border-primary hover:text-primary"
-          >
-            Réinitialiser
-          </button>
-        </div>
-
-        {filters.length > 0 && (
-          <div className="mt-4">
-            <p className="mb-2 text-sm font-semibold text-secondary">Filtres</p>
-            <div className="flex flex-wrap gap-2">
-              {filters.map((filter) => {
-                const isActive = selectedFilters.includes(filter.value);
-                return (
-                  <button
-                    key={filter.value}
-                    type="button"
-                    onClick={() => toggleFilter(filter.value)}
-                    className={`rounded-full border px-4 py-2 text-xs font-semibold transition-colors sm:text-sm ${
-                      isActive
-                        ? "border-primary bg-primary text-white"
-                        : "border-gray-300 text-secondary hover:border-primary hover:text-primary"
-                    }`}
-                  >
-                    {filter.label}
-                  </button>
-                );
-              })}
+      <Card className="shadow-soft">
+        <CardHeader className="pb-0">
+          <CardTitle className="text-base sm:text-lg">Filtres catalogue</CardTitle>
+        </CardHeader>
+        <CardContent className="pt-4">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div className="flex-1">
+              <label className="mb-2 block text-sm font-semibold text-secondary">
+                Recherche
+              </label>
+              <Input
+                value={searchTerm}
+                onChange={(event) => setSearchTerm(event.target.value)}
+                placeholder={searchPlaceholder}
+                type="search"
+              />
             </div>
+            <Button
+              type="button"
+              variant="ghost"
+              size="md"
+              onClick={resetFilters}
+              className="border border-gray-300"
+            >
+              Reinitialiser
+            </Button>
           </div>
-        )}
 
-        <div className="mt-4 text-sm text-gray-600">
-          {filteredProducts.length} résultat(s) trouvé(s)
-        </div>
-      </div>
+          {filters.length > 0 && (
+            <div className="mt-4">
+              <p className="mb-2 text-sm font-semibold text-secondary">Filtres</p>
+              <div className="flex flex-wrap gap-2">
+                {filters.map((filter) => {
+                  const isActive = selectedFilters.includes(filter.value);
+                  return (
+                    <Button
+                      key={filter.value}
+                      type="button"
+                      size="sm"
+                      variant={isActive ? "primary" : "ghost"}
+                      onClick={() => toggleFilter(filter.value)}
+                      className={cn("rounded-full", !isActive && "border border-gray-300")}
+                    >
+                      {filter.label}
+                    </Button>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          <div className="mt-4 flex items-center gap-2 text-sm text-gray-600">
+            <Badge variant="neutral">{filteredProducts.length}</Badge>
+            <span>resultat(s) trouve(s)</span>
+          </div>
+        </CardContent>
+      </Card>
 
       <ProductGrid products={paginatedProducts} />
 
@@ -141,26 +151,29 @@ export default function FilterableProductGrid({
           Page {safePage} sur {totalPages}
         </p>
         <div className="flex items-center gap-2">
-          <button
+          <Button
             type="button"
+            variant="ghost"
+            size="sm"
             onClick={() => setCurrentPage((page) => Math.max(1, page - 1))}
             disabled={safePage === 1}
-            className="rounded-md border border-gray-300 px-3 py-2 text-sm font-semibold text-secondary transition-colors hover:border-primary hover:text-primary disabled:cursor-not-allowed disabled:opacity-50"
+            className="border border-gray-300"
           >
-            Précédent
-          </button>
-          <button
+            Precedent
+          </Button>
+          <Button
             type="button"
-            onClick={() =>
-              setCurrentPage((page) => Math.min(totalPages, page + 1))
-            }
+            variant="ghost"
+            size="sm"
+            onClick={() => setCurrentPage((page) => Math.min(totalPages, page + 1))}
             disabled={safePage === totalPages}
-            className="rounded-md border border-gray-300 px-3 py-2 text-sm font-semibold text-secondary transition-colors hover:border-primary hover:text-primary disabled:cursor-not-allowed disabled:opacity-50"
+            className="border border-gray-300"
           >
             Suivant
-          </button>
+          </Button>
         </div>
       </div>
     </div>
   );
 }
+

@@ -51,6 +51,7 @@ export default function CartPage() {
           <OrderForm
             items={items}
             onCancel={() => setShowOrderForm(false)}
+            onSuccess={() => setShowOrderForm(false)}
           />
         ) : (
           <>

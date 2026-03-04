@@ -1,91 +1,134 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { FormEvent, useState } from "react";
+import { useRouter } from "next/navigation";
 import { useCart } from "@/lib/cart-context";
 import type { CartItem } from "@/lib/cart-context";
+import {
+  buildStoredOrder,
+  generateLocalOrderId,
+  saveOrder,
+  type OrderCustomerInfo,
+} from "@/lib/order-storage";
+
+type OrderFormData = OrderCustomerInfo;
+type OrderFormErrors = Partial<Record<keyof OrderFormData, string>>;
 
 interface OrderFormProps {
   items: CartItem[];
   onCancel: () => void;
+  onSuccess?: () => void;
 }
 
-export default function OrderForm({ items, onCancel }: OrderFormProps) {
+function validateOrderForm(values: OrderFormData): OrderFormErrors {
+  const errors: OrderFormErrors = {};
+
+  if (values.firstName.trim().length < 2) {
+    errors.firstName = "Le prenom doit contenir au moins 2 caracteres.";
+  }
+
+  if (values.lastName.trim().length < 2) {
+    errors.lastName = "Le nom doit contenir au moins 2 caracteres.";
+  }
+
+  const phonePattern = /^[0-9+\s().-]{8,20}$/;
+  if (!phonePattern.test(values.phone.trim())) {
+    errors.phone = "Entrez un numero de telephone valide.";
+  }
+
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(values.email.trim())) {
+    errors.email = "Entrez une adresse email valide.";
+  }
+
+  if (values.address.trim().length < 10) {
+    errors.address = "L'adresse doit contenir au moins 10 caracteres.";
+  }
+
+  return errors;
+}
+
+export default function OrderForm({ items, onCancel, onSuccess }: OrderFormProps) {
+  const router = useRouter();
   const { clearCart } = useCart();
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<OrderFormData>({
     firstName: "",
     lastName: "",
     phone: "",
     email: "",
     address: "",
   });
+  const [errors, setErrors] = useState<OrderFormErrors>({});
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setFormData((current) => ({
+      ...current,
+      [name]: value,
+    }));
+
+    if (name in errors) {
+      setErrors((current) => ({
+        ...current,
+        [name]: "",
+      }));
+    }
   };
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+
+    const validationErrors = validateOrderForm(formData);
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    if (items.length === 0) {
+      setSubmitError("Votre panier est vide. Ajoutez des produits avant de commander.");
+      return;
+    }
+
     setIsSubmitting(true);
+    setSubmitError(null);
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const customer: OrderCustomerInfo = {
+        firstName: formData.firstName.trim(),
+        lastName: formData.lastName.trim(),
+        phone: formData.phone.trim(),
+        email: formData.email.trim().toLowerCase(),
+        address: formData.address.trim(),
+      };
 
-    // Clear cart and show success message
-    clearCart();
-    setIsSubmitted(true);
-    setIsSubmitting(false);
-    
-    // Close form after 3 seconds and redirect
-    setTimeout(() => {
-      onCancel();
-      window.location.href = "/";
-    }, 3000);
+      const orderId = generateLocalOrderId();
+      const order = buildStoredOrder(orderId, customer, items);
+
+      saveOrder(order);
+      clearCart();
+
+      if (onSuccess) {
+        onSuccess();
+      } else {
+        onCancel();
+      }
+
+      router.push(`/order-confirmation/${encodeURIComponent(orderId)}`);
+    } catch {
+      setSubmitError("Impossible d'enregistrer la commande. Veuillez reessayer.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  if (isSubmitted) {
-    return (
-      <div className="p-8 text-center">
-        <div className="mb-4 flex justify-center">
-          <div className="rounded-full bg-green-100 p-4">
-            <svg
-              className="h-12 w-12 text-green-600"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-          </div>
-        </div>
-        <h2 className="mb-2 text-2xl font-bold text-secondary">
-          Commande confirmée !
-        </h2>
-        <p className="mb-6 text-gray-600">
-          Merci pour votre commande. Nous vous contacterons bientôt pour confirmer les détails.
-        </p>
-        <a
-          href="/"
-          className="btn-primary inline-block"
-        >
-          Retour à l&apos;accueil
-        </a>
-      </div>
-    );
-  }
+  const fieldClassName =
+    "w-full rounded-md border border-gray-300 px-4 py-2.5 text-base focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20";
+  const errorClassName = "mt-1 text-sm text-red-600";
 
   return (
     <div className="p-6 sm:p-8">
-      {/* Header with close button */}
       <div className="mb-6 flex items-center justify-between">
         <h2 className="text-2xl font-bold text-secondary sm:text-3xl">
           Informations de commande
@@ -112,28 +155,32 @@ export default function OrderForm({ items, onCancel }: OrderFormProps) {
       </div>
 
       <div className="space-y-6">
-        <form onSubmit={handleSubmit} className="space-y-6">
-          {/* First Name */}
+        <form onSubmit={handleSubmit} noValidate className="space-y-6">
           <div>
             <label
               htmlFor="firstName"
               className="mb-2 block text-sm font-medium text-secondary"
             >
-              Prénom <span className="text-primary">*</span>
+              Prenom <span className="text-primary">*</span>
             </label>
             <input
               type="text"
               id="firstName"
               name="firstName"
-              required
               value={formData.firstName}
               onChange={handleChange}
-              className="w-full rounded-md border border-gray-300 px-4 py-2.5 text-base focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-              placeholder="Votre prénom"
+              aria-invalid={Boolean(errors.firstName)}
+              aria-describedby={errors.firstName ? "firstName-error" : undefined}
+              className={fieldClassName}
+              placeholder="Votre prenom"
             />
+            {errors.firstName && (
+              <p id="firstName-error" className={errorClassName}>
+                {errors.firstName}
+              </p>
+            )}
           </div>
 
-          {/* Last Name */}
           <div>
             <label
               htmlFor="lastName"
@@ -145,35 +192,45 @@ export default function OrderForm({ items, onCancel }: OrderFormProps) {
               type="text"
               id="lastName"
               name="lastName"
-              required
               value={formData.lastName}
               onChange={handleChange}
-              className="w-full rounded-md border border-gray-300 px-4 py-2.5 text-base focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+              aria-invalid={Boolean(errors.lastName)}
+              aria-describedby={errors.lastName ? "lastName-error" : undefined}
+              className={fieldClassName}
               placeholder="Votre nom"
             />
+            {errors.lastName && (
+              <p id="lastName-error" className={errorClassName}>
+                {errors.lastName}
+              </p>
+            )}
           </div>
 
-          {/* Phone */}
           <div>
             <label
               htmlFor="phone"
               className="mb-2 block text-sm font-medium text-secondary"
             >
-              Numéro de téléphone <span className="text-primary">*</span>
+              Numero de telephone <span className="text-primary">*</span>
             </label>
             <input
               type="tel"
               id="phone"
               name="phone"
-              required
               value={formData.phone}
               onChange={handleChange}
-              className="w-full rounded-md border border-gray-300 px-4 py-2.5 text-base focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+              aria-invalid={Boolean(errors.phone)}
+              aria-describedby={errors.phone ? "phone-error" : undefined}
+              className={fieldClassName}
               placeholder="+33 6 12 34 56 78"
             />
+            {errors.phone && (
+              <p id="phone-error" className={errorClassName}>
+                {errors.phone}
+              </p>
+            )}
           </div>
 
-          {/* Email */}
           <div>
             <label
               htmlFor="email"
@@ -185,39 +242,47 @@ export default function OrderForm({ items, onCancel }: OrderFormProps) {
               type="email"
               id="email"
               name="email"
-              required
               value={formData.email}
               onChange={handleChange}
-              className="w-full rounded-md border border-gray-300 px-4 py-2.5 text-base focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+              aria-invalid={Boolean(errors.email)}
+              aria-describedby={errors.email ? "email-error" : undefined}
+              className={fieldClassName}
               placeholder="votre.email@exemple.com"
             />
+            {errors.email && (
+              <p id="email-error" className={errorClassName}>
+                {errors.email}
+              </p>
+            )}
           </div>
 
-          {/* Address */}
           <div>
             <label
               htmlFor="address"
               className="mb-2 block text-sm font-medium text-secondary"
             >
-              Adresse complète <span className="text-primary">*</span>
+              Adresse complete <span className="text-primary">*</span>
             </label>
             <textarea
               id="address"
               name="address"
-              required
               rows={4}
               value={formData.address}
               onChange={handleChange}
-              className="w-full rounded-md border border-gray-300 px-4 py-2.5 text-base focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-              placeholder="Numéro et nom de rue&#10;Code postal et ville&#10;Pays"
+              aria-invalid={Boolean(errors.address)}
+              aria-describedby={errors.address ? "address-error" : undefined}
+              className={fieldClassName}
+              placeholder={"Numero et nom de rue\nCode postal et ville\nPays"}
             />
+            {errors.address && (
+              <p id="address-error" className={errorClassName}>
+                {errors.address}
+              </p>
+            )}
           </div>
 
-          {/* Order Summary */}
           <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-            <h3 className="mb-3 text-lg font-semibold text-secondary">
-              Résumé de la commande
-            </h3>
+            <h3 className="mb-3 text-lg font-semibold text-secondary">Resume de la commande</h3>
             <div className="space-y-2">
               {items.map((item) => (
                 <div key={item.id} className="rounded-md bg-white p-3 text-sm">
@@ -225,7 +290,7 @@ export default function OrderForm({ items, onCancel }: OrderFormProps) {
                     <div className="font-medium text-secondary">{item.product.name}</div>
                     {item.customization && (
                       <span className="flex-shrink-0 rounded-full bg-primary px-2 py-0.5 text-[10px] font-bold uppercase text-white">
-                        Personnalisé
+                        Personnalise
                       </span>
                     )}
                   </div>
@@ -237,34 +302,39 @@ export default function OrderForm({ items, onCancel }: OrderFormProps) {
                     {item.color && <span>Couleur: {item.color}</span>}
                   </div>
                   {item.customization && (
-                    <div className="mt-2 rounded-md bg-green-50 border border-green-200 p-2">
-                      <p className="text-xs font-semibold text-green-800 uppercase">Produit personnalisé</p>
+                    <div className="mt-2 rounded-md border border-green-200 bg-green-50 p-2">
+                      <p className="text-xs font-semibold uppercase text-green-800">Produit personnalise</p>
                       <p className="mt-1 text-sm font-bold text-green-900">
                         {item.customization.name.toUpperCase()} • {item.customization.number}
                       </p>
                     </div>
                   )}
                   <div className="mt-1">
-                    <span className="text-gray-600">Quantité: {item.quantity}</span>
+                    <span className="text-gray-600">Quantite: {item.quantity}</span>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Submit Button */}
+          {submitError && (
+            <div className="rounded-md border border-red-200 bg-red-50 p-3 text-sm text-red-700">
+              {submitError}
+            </div>
+          )}
+
           <div className="flex flex-col gap-3 sm:flex-row">
             <button
               type="button"
               onClick={onCancel}
-              className="w-full rounded-md border-2 border-gray-300 px-6 py-3 text-base font-semibold text-gray-700 transition-all duration-300 hover:border-gray-400 hover:bg-gray-100 hover:scale-105 active:scale-95 sm:w-auto"
+              className="w-full rounded-md border-2 border-gray-300 px-6 py-3 text-base font-semibold text-gray-700 transition-all duration-300 hover:scale-105 hover:border-gray-400 hover:bg-gray-100 active:scale-95 sm:w-auto"
             >
               Annuler
             </button>
             <button
               type="submit"
               disabled={isSubmitting}
-              className="btn-primary flex-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+              className="btn-primary flex-1 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:scale-100"
             >
               {isSubmitting ? "Traitement..." : "Confirmer la commande"}
             </button>

@@ -21,25 +21,187 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold;
+    @apply font-bold tracking-tight text-secondary;
+  }
+
+  h1 {
+    @apply text-3xl leading-tight sm:text-4xl md:text-5xl;
+  }
+
+  h2 {
+    @apply text-2xl leading-tight sm:text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-xl leading-snug sm:text-2xl;
+  }
+
+  h4 {
+    @apply text-lg leading-snug;
+  }
+
+  h5 {
+    @apply text-base leading-snug;
+  }
+
+  h6 {
+    @apply text-sm leading-snug;
+  }
+
+  p {
+    @apply text-sm leading-relaxed text-gray-600 sm:text-base;
   }
 }
 
 @layer components {
-  /* Button Styles with Animation and Border */
+  .btn-glow {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    transform: translateY(0);
+    transition:
+      transform 280ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 280ms cubic-bezier(0.22, 1, 0.36, 1),
+      background-color 280ms ease,
+      border-color 280ms ease,
+      color 280ms ease;
+  }
+
+  .btn-glow::before {
+    content: "";
+    position: absolute;
+    inset: -42%;
+    pointer-events: none;
+    background: linear-gradient(
+      115deg,
+      transparent 32%,
+      rgba(255, 255, 255, 0.38) 50%,
+      transparent 68%
+    );
+    transform: translateX(-125%) rotate(12deg);
+    transition: transform 760ms cubic-bezier(0.22, 1, 0.36, 1);
+    opacity: 0.9;
+  }
+
+  .btn-glow::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.22),
+      rgba(255, 255, 255, 0.06) 34%,
+      transparent 70%
+    );
+    opacity: 0.55;
+  }
+
+  .btn-glow:hover::before,
+  .btn-glow:focus-visible::before {
+    transform: translateX(125%) rotate(12deg);
+  }
+
+  .btn-glow-primary {
+    box-shadow: 0 8px 20px rgba(43, 45, 66, 0.14);
+  }
+
+  .btn-glow-primary:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 14px 32px rgba(255, 78, 69, 0.35),
+      0 10px 24px rgba(43, 45, 66, 0.2);
+  }
+
+  .btn-glow-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 14px rgba(43, 45, 66, 0.16);
+  }
+
+  .btn-glow-secondary {
+    box-shadow: 0 8px 20px rgba(43, 45, 66, 0.12);
+  }
+
+  .btn-glow-secondary::before {
+    opacity: 0.72;
+  }
+
+  .btn-glow-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 12px 28px rgba(43, 45, 66, 0.28),
+      0 8px 18px rgba(43, 45, 66, 0.2);
+  }
+
+  .btn-glow-secondary:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 12px rgba(43, 45, 66, 0.16);
+  }
+
+  .btn-glow-outline {
+    box-shadow: 0 6px 14px rgba(43, 45, 66, 0.08);
+  }
+
+  .btn-glow-outline::before {
+    opacity: 0.55;
+  }
+
+  .btn-glow-outline:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 10px 22px rgba(43, 45, 66, 0.14),
+      0 8px 16px rgba(255, 78, 69, 0.1);
+  }
+
+  .btn-glow-outline:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(43, 45, 66, 0.1);
+  }
+
+  .btn-glow-icon {
+    box-shadow: 0 4px 12px rgba(43, 45, 66, 0.08);
+  }
+
+  .btn-glow-icon::before {
+    opacity: 0.45;
+  }
+
+  .btn-glow-icon:hover {
+    transform: translateY(-1px);
+    box-shadow:
+      0 9px 18px rgba(43, 45, 66, 0.13),
+      0 7px 16px rgba(255, 78, 69, 0.12);
+  }
+
+  .btn-glow-icon:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px rgba(43, 45, 66, 0.1);
+  }
+
+  /* Button Styles with Glow + Sweep */
   .btn-primary {
-    @apply rounded-md border-2 border-primary bg-primary px-6 py-3 text-base font-semibold text-white transition-all duration-300 hover:bg-primary-dark hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 active:scale-95;
+    @apply btn-glow btn-glow-primary rounded-md border-2 border-primary bg-primary px-6 py-3 text-base font-semibold text-white hover:border-primary-dark hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2;
   }
 
   .btn-secondary {
-    @apply rounded-md border-2 border-secondary bg-secondary px-6 py-3 text-base font-semibold text-white transition-all duration-300 hover:bg-secondary-dark hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 active:scale-95;
+    @apply btn-glow btn-glow-secondary rounded-md border-2 border-secondary bg-secondary px-6 py-3 text-base font-semibold text-white hover:border-secondary-dark hover:bg-secondary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2;
   }
 
   .btn-outline {
-    @apply rounded-md border-2 border-primary bg-transparent px-6 py-3 text-base font-semibold text-primary transition-all duration-300 hover:bg-primary hover:text-white hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 active:scale-95;
+    @apply btn-glow btn-glow-outline rounded-md border-2 border-primary bg-transparent px-6 py-3 text-base font-semibold text-primary hover:bg-primary hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2;
   }
 
   .btn-outline-secondary {
-    @apply rounded-md border-2 border-secondary bg-transparent px-6 py-3 text-base font-semibold text-secondary transition-all duration-300 hover:bg-secondary hover:text-white hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 active:scale-95;
+    @apply btn-glow btn-glow-outline rounded-md border-2 border-secondary bg-transparent px-6 py-3 text-base font-semibold text-secondary hover:bg-secondary hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-glow,
+  .btn-glow::before,
+  .btn-glow::after {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
   }
 }

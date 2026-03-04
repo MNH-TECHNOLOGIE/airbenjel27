@@ -14,6 +14,10 @@
 
 # production
 /build
+/dist
+
+# nested/parasite workspaces
+/Desktop/
 
 # misc
 .DS_Store

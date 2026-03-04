@@ -1,10 +1,11 @@
-import { Metadata } from "next";
-import { getProductsByCategory } from "@/lib/catalog";
+import type { Metadata } from "next";
 import FilterableProductGrid from "@/components/catalog/FilterableProductGrid";
+import Section from "@/components/ui/Section";
+import { getProductsByCategory } from "@/lib/catalog";
 
 export const metadata: Metadata = {
-  title: "Vêtements",
-  description: "Découvrez notre collection de vêtements officiels",
+  title: "Vetements",
+  description: "Decouvrez notre collection de vetements officiels",
 };
 
 export default function ApparelPage() {
@@ -12,13 +13,9 @@ export default function ApparelPage() {
 
   return (
     <div className="min-h-screen bg-white pt-12 sm:pt-14">
-
-      {/* Products Section */}
-      <section className="py-8 sm:py-12 md:py-16">
-        <div className="mx-auto w-full max-w-7xl px-3 sm:px-4 md:px-6 lg:px-8">
-          <FilterableProductGrid products={products} />
-        </div>
-      </section>
+      <Section spacingClassName="py-8 sm:py-12 md:py-16">
+        <FilterableProductGrid products={products} />
+      </Section>
     </div>
   );
 }

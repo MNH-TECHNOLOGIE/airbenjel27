@@ -33,6 +33,10 @@ export default function CartDrawer() {
             <OrderForm
               items={items}
               onCancel={closeOrderForm}
+              onSuccess={() => {
+                closeOrderForm();
+                closeCartDrawer();
+              }}
             />
           </div>
         </div>
@@ -157,6 +161,15 @@ export default function CartDrawer() {
                         </p>
                       </div>
                     )}
+                    <div className="mt-2 text-sm text-gray-700">
+                      <span className="font-semibold text-secondary">
+                        {item.product.price.toLocaleString("fr-FR")} MAD
+                      </span>
+                      <span className="text-gray-500"> / unité</span>
+                    </div>
+                    <div className="mt-1 text-xs text-gray-500">
+                      Sous-total: {(item.product.price * item.quantity).toLocaleString("fr-FR")} MAD
+                    </div>
                     <div className="mt-auto flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         <button
@@ -226,3 +239,4 @@ export default function CartDrawer() {
     </>
   );
 }
+

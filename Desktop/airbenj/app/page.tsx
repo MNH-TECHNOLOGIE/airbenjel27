@@ -36,7 +36,7 @@ export default function Home() {
       title: "Basketball",
       description: "Collection basketball",
       href: "/basketball",
-      products: expandProducts(getProductsByCategory("basketball").slice(0, 3)),
+      products: [],
     },
     {
       title: "Sport Militaire",

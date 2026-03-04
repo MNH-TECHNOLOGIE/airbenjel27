@@ -1,7 +1,7 @@
 import { Product } from "./types";
 
 export const products: Product[] = [
-  // Maillots (Kits) - Renommés avec airbenjel
+  // Maillots (Kits) - RenommÃ©s avec airbenjel
   {
     id: "1",
     slug: "airbenjel-tshirt-1",
@@ -94,7 +94,7 @@ export const products: Product[] = [
     id: "5",
     slug: "airbenjel-tshirt-5",
     name: "Maillot Pro 5",
-    description: "T-shirt officiel Airbenjel édition spéciale",
+    description: "T-shirt officiel Airbenjel Ã©dition spÃ©ciale",
     price: 94.99,
     currency: "EUR",
     images: [
@@ -224,8 +224,8 @@ export const products: Product[] = [
     price: 89.99,
     currency: "EUR",
     images: [
-      "/airbenjel photo produit/vert foncé mkhatet/image (55).png",
-      "/airbenjel photo produit/vert foncé mkhatet/WhatsApp Image 2026-02-04 at 16.59.06.jpeg",
+      "/airbenjel photo produit/vert foncÃ© mkhatet/image (55).png",
+      "/airbenjel photo produit/vert foncÃ© mkhatet/WhatsApp Image 2026-02-04 at 16.59.06.jpeg",
     ],
     categoryId: "kits",
     collectionIds: [],
@@ -241,7 +241,7 @@ export const products: Product[] = [
     id: "12",
     slug: "airbenjel-tshirt-12",
     name: "Maillot Pro 12",
-    description: "T-shirt officiel Airbenjel collection spéciale",
+    description: "T-shirt officiel Airbenjel collection spÃ©ciale",
     price: 99.99,
     currency: "EUR",
     images: [
@@ -262,12 +262,12 @@ export const products: Product[] = [
     id: "13",
     slug: "airbenjel-tshirt-13",
     name: "Maillot Pro 13",
-    description: "T-shirt officiel Airbenjel collection spéciale",
+    description: "T-shirt officiel Airbenjel collection spÃ©ciale",
     price: 99.99,
     currency: "EUR",
     images: [
-      "/airbenjel photo produit/bleu foncé/image (77).png",
-      "/airbenjel photo produit/bleu foncé/WhatsApp Image 2026-02-04 at 16.59.06.jpeg",
+      "/airbenjel photo produit/bleu foncÃ©/image (77).png",
+      "/airbenjel photo produit/bleu foncÃ©/WhatsApp Image 2026-02-04 at 16.59.06.jpeg",
     ],
     categoryId: "kits",
     collectionIds: ["limited-edition"],
@@ -283,7 +283,7 @@ export const products: Product[] = [
     id: "14",
     slug: "airbenjel-tshirt-14",
     name: "Maillot Pro 14",
-    description: "T-shirt officiel Airbenjel collection spéciale",
+    description: "T-shirt officiel Airbenjel collection spÃ©ciale",
     price: 99.99,
     currency: "EUR",
     images: [
@@ -304,7 +304,7 @@ export const products: Product[] = [
     id: "15",
     slug: "airbenjel-tshirt-15",
     name: "Maillot Pro 15",
-    description: "T-shirt officiel Airbenjel collection spéciale",
+    description: "T-shirt officiel Airbenjel collection spÃ©ciale",
     price: 99.99,
     currency: "EUR",
     images: [
@@ -325,7 +325,7 @@ export const products: Product[] = [
     id: "16",
     slug: "airbenjel-tshirt-16",
     name: "Maillot Pro 16",
-    description: "T-shirt officiel Airbenjel collection spéciale",
+    description: "T-shirt officiel Airbenjel collection spÃ©ciale",
     price: 99.99,
     currency: "EUR",
     images: [
@@ -346,7 +346,7 @@ export const products: Product[] = [
     id: "17",
     slug: "airbenjel-tshirt-17",
     name: "Maillot Pro 17",
-    description: "T-shirt officiel Airbenjel collection spéciale",
+    description: "T-shirt officiel Airbenjel collection spÃ©ciale",
     price: 99.99,
     currency: "EUR",
     images: [
@@ -472,7 +472,7 @@ export const products: Product[] = [
     id: "23",
     slug: "airbenjel-tshirt-23",
     name: "Ensemble Training Bleu",
-    description: "T-shirt officiel Airbenjel collection spéciale",
+    description: "T-shirt officiel Airbenjel collection spÃ©ciale",
     price: 99.99,
     currency: "EUR",
     images: [
@@ -493,7 +493,7 @@ export const products: Product[] = [
     id: "24",
     slug: "airbenjel-tshirt-24",
     name: "Ensemble Training Orange",
-    description: "T-shirt officiel Airbenjel collection spéciale",
+    description: "T-shirt officiel Airbenjel collection spÃ©ciale",
     price: 99.99,
     currency: "EUR",
     images: [
@@ -510,7 +510,7 @@ export const products: Product[] = [
     isCustomizable: false,
     stock: 4,
   },
-  // Vêtements (Apparel) - Nouveaux produits
+  // VÃªtements (Apparel) - Nouveaux produits
   {
     id: "25",
     slug: "airbenjel-sweat-shirt-1",
@@ -557,8 +557,8 @@ export const products: Product[] = [
   {
     id: "27",
     slug: "airbenjel-pantalon-survetement-1",
-    name: "Airbenjel Pantalon de Survêtement 1",
-    description: "Pantalon de survêtement officiel Airbenjel",
+    name: "Airbenjel Pantalon de SurvÃªtement 1",
+    description: "Pantalon de survÃªtement officiel Airbenjel",
     price: 49.99,
     currency: "EUR",
     images: [
@@ -577,8 +577,8 @@ export const products: Product[] = [
   {
     id: "28",
     slug: "airbenjel-pantalon-survetement-2",
-    name: "Airbenjel Pantalon de Survêtement 2",
-    description: "Pantalon de survêtement officiel Airbenjel",
+    name: "Airbenjel Pantalon de SurvÃªtement 2",
+    description: "Pantalon de survÃªtement officiel Airbenjel",
     price: 49.99,
     currency: "EUR",
     images: [
@@ -599,7 +599,7 @@ export const products: Product[] = [
     id: "31",
     slug: "airbenjel-polo-1",
     name: "Airbenjel Polo 1",
-    description: "Polo élégant Airbenjel pour un look décontracté",
+    description: "Polo Ã©lÃ©gant Airbenjel pour un look dÃ©contractÃ©",
     price: 39.99,
     currency: "EUR",
     images: [
@@ -619,7 +619,7 @@ export const products: Product[] = [
     id: "32",
     slug: "airbenjel-short-1",
     name: "Airbenjel Short 1",
-    description: "Short de sport Airbenjel confortable et stylé",
+    description: "Short de sport Airbenjel confortable et stylÃ©",
     price: 34.99,
     currency: "EUR",
     images: [
@@ -640,12 +640,11 @@ export const products: Product[] = [
     id: "33",
     slug: "airbenjel-casquette-1",
     name: "Airbenjel Casquette 1",
-    description: "Casquette Airbenjel avec logo brodé",
+    description: "Casquette Airbenjel avec logo brodÃ©",
     price: 24.99,
     currency: "EUR",
     images: [
-      "/airbenjel photo produit/bleu/image (79).png",
-      "/airbenjel photo produit/bleu/WhatsApp Image 2026-02-04 at 16.59.06.jpeg",
+      "/airbenjel photo produit/accessoir/WhatsApp Image 2026-02-12 at 12.51.57 (1).jpeg",
     ],
     categoryId: "accessories",
     collectionIds: [],
@@ -661,12 +660,11 @@ export const products: Product[] = [
     id: "34",
     slug: "airbenjel-casquette-2",
     name: "Airbenjel Casquette 2",
-    description: "Casquette Airbenjel avec logo brodé",
+    description: "Casquette Airbenjel avec logo brodÃ©",
     price: 24.99,
     currency: "EUR",
     images: [
-      "/airbenjel photo produit/bleu ciel/image (78).png",
-      "/airbenjel photo produit/bleu ciel/WhatsApp Image 2026-02-04 at 16.59.06.jpeg",
+      "/airbenjel photo produit/accessoir/WhatsApp Image 2026-02-12 at 12.51.57 (2).jpeg",
     ],
     categoryId: "accessories",
     collectionIds: [],
@@ -682,12 +680,11 @@ export const products: Product[] = [
     id: "35",
     slug: "airbenjel-sac-sport-1",
     name: "Airbenjel Sac de Sport 1",
-    description: "Sac de sport Airbenjel spacieux et résistant",
+    description: "Sac de sport Airbenjel spacieux et rÃ©sistant",
     price: 39.99,
     currency: "EUR",
     images: [
-      "/airbenjel photo produit/bleu foncé/image (77).png",
-      "/airbenjel photo produit/bleu foncé/WhatsApp Image 2026-02-04 at 16.59.06.jpeg",
+      "/airbenjel photo produit/accessoir/WhatsApp Image 2026-02-12 at 12.51.57 (3).jpeg",
     ],
     categoryId: "accessories",
     collectionIds: [],
@@ -703,12 +700,11 @@ export const products: Product[] = [
     id: "36",
     slug: "airbenjel-sac-sport-2",
     name: "Airbenjel Sac de Sport 2",
-    description: "Sac de sport Airbenjel spacieux et résistant",
+    description: "Sac de sport Airbenjel spacieux et rÃ©sistant",
     price: 39.99,
     currency: "EUR",
     images: [
-      "/airbenjel photo produit/gris/image (64).png",
-      "/airbenjel photo produit/gris/WhatsApp Image 2026-02-04 at 16.59.06.jpeg",
+      "/airbenjel photo produit/accessoir/WhatsApp Image 2026-02-12 at 12.51.57 (4).jpeg",
     ],
     categoryId: "accessories",
     collectionIds: [],
@@ -724,12 +720,11 @@ export const products: Product[] = [
     id: "37",
     slug: "airbenjel-gourde-1",
     name: "Airbenjel Gourde 1",
-    description: "Gourde réutilisable Airbenjel avec logo",
+    description: "Gourde rÃ©utilisable Airbenjel avec logo",
     price: 19.99,
     currency: "EUR",
     images: [
-      "/airbenjel photo produit/mauve/image (62).png",
-      "/airbenjel photo produit/mauve/WhatsApp Image 2026-02-04 at 16.59.06.jpeg",
+      "/airbenjel photo produit/accessoir/WhatsApp Image 2026-02-12 at 12.51.57 (5).jpeg",
     ],
     categoryId: "accessories",
     collectionIds: [],
@@ -745,12 +740,11 @@ export const products: Product[] = [
     id: "38",
     slug: "airbenjel-gourde-2",
     name: "Airbenjel Gourde 2",
-    description: "Gourde réutilisable Airbenjel avec logo",
+    description: "Gourde rÃ©utilisable Airbenjel avec logo",
     price: 19.99,
     currency: "EUR",
     images: [
-      "/airbenjel photo produit/pistach/image (58).png",
-      "/airbenjel photo produit/pistach/WhatsApp Image 2026-02-04 at 16.59.06.jpeg",
+      "/airbenjel photo produit/accessoir/WhatsApp Image 2026-02-12 at 12.51.57 (6).jpeg",
     ],
     categoryId: "accessories",
     collectionIds: [],
@@ -766,12 +760,11 @@ export const products: Product[] = [
     id: "39",
     slug: "airbenjel-portefeuille-1",
     name: "Airbenjel Portefeuille 1",
-    description: "Portefeuille Airbenjel en cuir véritable",
+    description: "Portefeuille Airbenjel en cuir vÃ©ritable",
     price: 44.99,
     currency: "EUR",
     images: [
-      "/airbenjel photo produit/tenu noir/image (56).png",
-      "/airbenjel photo produit/tenu noir/WhatsApp Image 2026-02-04 at 16.59.06.jpeg",
+      "/airbenjel photo produit/accessoir/WhatsApp Image 2026-02-12 at 12.51.57.jpeg",
     ],
     categoryId: "accessories",
     collectionIds: [],
@@ -791,8 +784,7 @@ export const products: Product[] = [
     price: 34.99,
     currency: "EUR",
     images: [
-      "/airbenjel photo produit/tenu orange/image (57).png",
-      "/airbenjel photo produit/tenu orange/WhatsApp Image 2026-02-04 at 16.59.06.jpeg",
+      "/airbenjel photo produit/accessoir/WhatsApp Image 2026-02-12 at 12.51.58.jpeg",
     ],
     categoryId: "accessories",
     collectionIds: [],
@@ -809,7 +801,7 @@ export const products: Product[] = [
     id: "41",
     slug: "airbenjel-poster-1",
     name: "Airbenjel Poster 1",
-    description: "Poster encadré Airbenjel de l'équipe",
+    description: "Poster encadrÃ© Airbenjel de l'Ã©quipe",
     price: 14.99,
     currency: "EUR",
     images: [
@@ -830,7 +822,7 @@ export const products: Product[] = [
     id: "42",
     slug: "airbenjel-poster-2",
     name: "Airbenjel Poster 2",
-    description: "Poster encadré Airbenjel de l'équipe",
+    description: "Poster encadrÃ© Airbenjel de l'Ã©quipe",
     price: 14.99,
     currency: "EUR",
     images: [
@@ -851,7 +843,7 @@ export const products: Product[] = [
     id: "43",
     slug: "airbenjel-mug-1",
     name: "Airbenjel Mug 1",
-    description: "Mug Airbenjel en céramique avec logo",
+    description: "Mug Airbenjel en cÃ©ramique avec logo",
     price: 12.99,
     currency: "EUR",
     images: [
@@ -872,7 +864,7 @@ export const products: Product[] = [
     id: "44",
     slug: "airbenjel-mug-2",
     name: "Airbenjel Mug 2",
-    description: "Mug Airbenjel en céramique avec logo",
+    description: "Mug Airbenjel en cÃ©ramique avec logo",
     price: 12.99,
     currency: "EUR",
     images: [
@@ -893,7 +885,7 @@ export const products: Product[] = [
     id: "45",
     slug: "airbenjel-coussin-1",
     name: "Airbenjel Coussin 1",
-    description: "Coussin décoratif Airbenjel pour votre salon",
+    description: "Coussin dÃ©coratif Airbenjel pour votre salon",
     price: 24.99,
     currency: "EUR",
     images: [
@@ -914,7 +906,7 @@ export const products: Product[] = [
     id: "46",
     slug: "airbenjel-tapis-1",
     name: "Airbenjel Tapis 1",
-    description: "Tapis Airbenjel pour décorer votre intérieur",
+    description: "Tapis Airbenjel pour dÃ©corer votre intÃ©rieur",
     price: 49.99,
     currency: "EUR",
     images: [
@@ -935,7 +927,7 @@ export const products: Product[] = [
     id: "47",
     slug: "airbenjel-drap-1",
     name: "Airbenjel Drap de Lit 1",
-    description: "Drap de lit Airbenjel en coton de qualité",
+    description: "Drap de lit Airbenjel en coton de qualitÃ©",
     price: 39.99,
     currency: "EUR",
     images: [
@@ -1206,6 +1198,7 @@ export const products: Product[] = [
     stock: 25,
   },
 ];
+
 
 
 

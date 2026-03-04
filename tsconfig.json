@@ -21,8 +21,37 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "app/**/*.ts",
+    "app/**/*.tsx",
+    "app/**/*.d.ts",
+    "components/**/*.ts",
+    "components/**/*.tsx",
+    "components/**/*.d.ts",
+    "data/**/*.ts",
+    "data/**/*.tsx",
+    "data/**/*.d.ts",
+    "lib/**/*.ts",
+    "lib/**/*.tsx",
+    "lib/**/*.d.ts",
+    "types/**/*.ts",
+    "types/**/*.tsx",
+    "types/**/*.d.ts",
+    "styles/**/*.ts",
+    "styles/**/*.tsx",
+    "styles/**/*.d.ts",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "Desktop/**",
+    "node_modules",
+    ".next",
+    "dist",
+    "dist/**",
+    "build",
+    "build/**"
+  ]
 }
 
 
