@@ -79,7 +79,7 @@ export default function HeroCarousel() {
                 priority={index === 0}
                 quality={80}
                 placeholder="empty"
-                className="object-contain object-center lg:object-cover"
+                className="object-contain object-center"
                 sizes="(min-width: 1024px) 100vw, 100vw"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/40" />
